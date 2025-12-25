@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CPU内存数据传输协议, Can U C it?">
-    <meta name="description" content="CPU内存数据传输协议，对基于SOC的抗串扰编码的前置研究">
+    <meta name="keywords" content="装机，装机, Can U C it?">
+    <meta name="description" content="在IT侠接装机单必有幺蛾子">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CPU内存数据传输协议 | Can U C it?</title>
+    <title>装机，装机 | Can U C it?</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -290,12 +290,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CPU内存数据传输协议</h1>
+                    <h1 class="description center-align post-title">装机，装机</h1>
                 </div>
             </div>
         </div>
@@ -319,20 +319,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/ACC/">
-                                <span class="chip bg-color">ACC</span>
+                            <a href="/tags/%E7%83%82/">
+                                <span class="chip bg-color">烂</span>
                             </a>
                         
-                            <a href="/tags/%E5%A4%A7%E5%88%9B/">
-                                <span class="chip bg-color">大创</span>
+                            <a href="/tags/IT%E4%BE%A0/">
+                                <span class="chip bg-color">IT侠</span>
                             </a>
                         
-                            <a href="/tags/%E6%8A%97%E4%B8%B2%E6%89%B0%E7%BC%96%E7%A0%81%E4%B8%8E%E5%8E%8B%E7%BC%A9%E7%BC%96%E7%A0%81%E5%86%97%E4%BD%99%E5%B9%B3%E8%A1%A1/">
-                                <span class="chip bg-color">抗串扰编码与压缩编码冗余平衡</span>
+                            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
+                                <span class="chip bg-color">碎碎念</span>
                             </a>
                         
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/">
-                                <span class="chip bg-color">计算机架构</span>
+                            <a href="/tags/%E5%88%AB%E8%B7%9F%E6%88%91%E5%AD%A6/">
+                                <span class="chip bg-color">别跟我学</span>
                             </a>
                         
                     </div>
@@ -343,8 +343,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/ee-research/" class="post-category">
-                                ee-research
+                            <a href="/categories/%E4%BF%AE%E7%94%B5%E8%84%91%E6%97%A5%E8%AE%B0/" class="post-category">
+                                修电脑日记
                             </a>
                         
                     </div>
@@ -356,21 +356,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-12-25
+                    2025-10-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2025-12-25
+                    2025-10-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    486
                 </div>
                 
 
@@ -387,41 +387,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在物理层面我们看到的数据传输只是高低电平的交替，并不知道每一部分对应什么内容。因此在SerDes层面加入的抗串扰编码是直接作用于物理层的。然而大模型的压缩编码仅仅针对于被传输的实际数据本身，并不会作用于其他一些控制位地址位。要研究两者的平衡我们必须知道这些数据是如何被封装传输的。</p>
-<h1 id="研究的物理背景"><a href="#研究的物理背景" class="headerlink" title="研究的物理背景"></a>研究的物理背景</h1><p>CPU直接读取DRAM当中的数据，假设这一部分数据全部没有被读取过，因此在三级缓存查询中均miss，直接从内存读取。</p>
-<h1 id="Cache-Line"><a href="#Cache-Line" class="headerlink" title="Cache Line"></a>Cache Line</h1><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+--------------------------------------------------+</span><br><span class="line">| Tag | State | Dirty | Valid | (其它控制位) | Data |</span><br><span class="line">+--------------------------------------------------+</span><br><span class="line">                                               ↑</span><br><span class="line">                                            64 Bytes</span><br></pre></td></tr></tbody></table></figure>
-
-<p>数据都是被封装在cache line中被传输的，一个cache line的数据部分典型大小（英特尔x86）是64字节，前部还附加了控制位。控制位包含标记位，有效位，一致性状态位，脏位，以及一些其他自定义的位。</p>
-<h2 id="Data-Block（数据块）"><a href="#Data-Block（数据块）" class="headerlink" title="Data Block（数据块）"></a>Data Block（数据块）</h2><p>这是cache line的主体：</p>
-<p>大小：通常64字节</p>
-<p>内容：普通数据（load/store）或指令（I-cache）</p>
-<p>这是唯一会从内存读入，被写回内存，且经由DDR burst传输的部分。</p>
-<h2 id="Tag（标记）"><a href="#Tag（标记）" class="headerlink" title="Tag（标记）"></a>Tag（标记）</h2><p>Tag记录这64B数据对应内存中的哪一段地址。</p>
-<p>地址拆分（以64B line为例）：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">| Tag | Index | Offset |</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Offset：6 bit（2⁶ = 64B）</p>
-<p>Index：决定落在哪一组（set）</p>
-<p>Tag：剩余高位地址</p>
-<h2 id="Valid-bit（有效位）"><a href="#Valid-bit（有效位）" class="headerlink" title="Valid bit（有效位）"></a>Valid bit（有效位）</h2><p>表示这一条 cache line 是否包含有效数据</p>
-<p>cache 冷启动时全部为 0</p>
-<h2 id="Dirty-bit（脏位，D-cache）"><a href="#Dirty-bit（脏位，D-cache）" class="headerlink" title="Dirty bit（脏位，D-cache）"></a>Dirty bit（脏位，D-cache）</h2><p>只存在于写回型 cache</p>
-<p>表示数据是否被 CPU 修改过</p>
-<p>dirty line 被替换时才需要写回内存</p>
-<p>一点附加解释：</p>
-<p>因为 cache 是由多级组成，所以写策略一般而言有两种：写直达（write-through）和写回（write-back）。通过这两种策略使在 cache 中写入的数据和主存中的数据保持一致。</p>
-<p>写直达就是在将数据写入 cache 之后同时将这个数据立马写入到主存中，但是由于主存和 cache 本身性能差异，那么每次在写入主存的时候都将花费大量的时间。解决办法就是加一层写缓冲（write buffer），这样 CPU 在将数据写入 cache 和缓冲之后可以继续执行，等到缓冲写入到主存中再释放。</p>
-<p>但是如果写入速度大于缓冲释放速度，那么还是会阻塞 CPU 执行。那么可以考虑一下写回策略，这种机制会在每次写入的时候仅将新值写入 cache 中，只有当修改过的块被替换时才需要写到较低层存储结构中。脏位就是用以标注这种情况。</p>
-<h2 id="Cache-Coherence-State（一致性状态位）"><a href="#Cache-Coherence-State（一致性状态位）" class="headerlink" title="Cache Coherence State（一致性状态位）"></a>Cache Coherence State（一致性状态位）</h2><p>由于现在都是多核 CPU，并且 cache 分了多级，并且数据存在共享的情况，所以需要一种机制保证在不同的核中看到的 cache 数据必须时一致的。最常用来处理多核 CPU 之间的缓存一致性协议就是 MESI 协议。</p>
-<p>MESI 协议，是一种叫作写失效（Write Invalidate）的协议。在写失效协议里，只有一个 CPU 核心负责写入数据，其他的核心，只是同步读取到这个写入。在这个 CPU 核心写入 cache 之后，它会去广播一个“失效”请求告诉所有其他的 CPU 核心。</p>
-<p>MESI 协议对应的四个不同的标记，分别是：</p>
-<p>M：代表已修改（Modified）</p>
-<p>E：代表独占（Exclusive）</p>
-<p>S：代表共享（Shared）</p>
-<p>I：代表已失效（Invalidated）</p>
-<p>“已修改”和“已失效”比较容易理解，我们来看看 独占”和“共享” 两个状态。</p>
-<p>在独占状态下，对应的 cache Line 只加载到了当前 CPU 核所拥有的 cache 里。其他的 CPU 核，并没有加载对应的数据到自己的 cache 里。这个时候，如果要向独占的 cache Block 写入数据，我们可以自由地写入数据，而不需要告知其他 CPU 核。</p>
-<p>那么对应的，共享状态就是在多核中同时加载了同一份数据。所以在共享状态下想要修改数据要先向所有的其他 CPU 核心广播一个请求，要求先把其他 CPU 核心里面的 cache ，都变成无效的状态，然后再更新当前 cache 里面的数据。</p>
+                <h2 id="神秘8pin线"><a href="#神秘8pin线" class="headerlink" title="神秘8pin线"></a>神秘8pin线</h2><p>好久没接装机单了，就接了一单。上次接单还是在上次，印象里是装完点不亮，拆出来就好了，装回去解决。</p>
+<p>装完了，总之就是点不亮。两个人捣鼓半天，该拆的都拆了，上电就是电源啪一声像短路，怀疑是拼好机拼到了坏主板/CPU。拿去工作室代换了电源，点亮了，怀疑电源问题。但是还是不敢把矛头指向电源厂商，就说看看先吧。只插20pin，您猜怎么着，亮了。再 插上CPU线就不行。拔下来一看，我草怎么会两根线共用一个端子，这不短路12V和GND吗。<br>正当我们大喷特喷电源厂商的时候，陈机长让我们查查这个是不是PCIE线。我草怎么是6+2，还真是。</p>
+<p>为什么能插进去？省流：神人金河田把电源端的接口用在cpu/pcie端了，通通兼容，并且线上面没有标注。</p>
+<p>总之my bad没有看是6+2还是4+4，幸好电源有短路保护没烧。</p>
+<p>烂烂烂烂烂</p>
+<p>啊啊啊啊啊</p>
+<h2 id="有蠕虫的工具盘"><a href="#有蠕虫的工具盘" class="headerlink" title="有蠕虫的工具盘"></a>有蠕虫的工具盘</h2><p>被朱只因翻新过的工具盘，打开exe就被defender干，我们怀疑是不是没搞好。<br>今天得知盘中蠕虫了。<br>得得得，客户全recall。</p>
+<p>烂烂烂</p>
+<h2 id="碎碎念环节"><a href="#碎碎念环节" class="headerlink" title="碎碎念环节"></a>碎碎念环节</h2><p>唉唉我真的失去对硬件的兴趣了吗？<br>反正我对软件是没兴趣的。</p>
+<p>曾经对着积满灰的破烂服务器能捣鼓半天，现在抱着新显卡闻到电路板的气味，掂量着新CPU的分量，居然毫无感觉。</p>
+<p>“当你把兴趣当作了职业，那么兴趣也就不是兴趣了。”</p>
+<p>不知道，我可能还是会喜欢电子吧，但是或许再不是想当曾经想象的那个野生钢铁侠。</p>
+<p>下辈子我要学地理。</p>
 
                 
             </div>
@@ -448,7 +426,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://tukwhy.github.io/2025/12/25/acc1/">https://tukwhy.github.io/2025/12/25/acc1/</a>
+                    <a href="https://tukwhy.github.io/fixing-computer-1/">https://tukwhy.github.io/fixing-computer-1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -486,20 +464,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/ACC/">
-                                    <span class="chip bg-color">ACC</span>
+                                <a href="/tags/%E7%83%82/">
+                                    <span class="chip bg-color">烂</span>
                                 </a>
                             
-                                <a href="/tags/%E5%A4%A7%E5%88%9B/">
-                                    <span class="chip bg-color">大创</span>
+                                <a href="/tags/IT%E4%BE%A0/">
+                                    <span class="chip bg-color">IT侠</span>
                                 </a>
                             
-                                <a href="/tags/%E6%8A%97%E4%B8%B2%E6%89%B0%E7%BC%96%E7%A0%81%E4%B8%8E%E5%8E%8B%E7%BC%A9%E7%BC%96%E7%A0%81%E5%86%97%E4%BD%99%E5%B9%B3%E8%A1%A1/">
-                                    <span class="chip bg-color">抗串扰编码与压缩编码冗余平衡</span>
+                                <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
+                                    <span class="chip bg-color">碎碎念</span>
                                 </a>
                             
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/">
-                                    <span class="chip bg-color">计算机架构</span>
+                                <a href="/tags/%E5%88%AB%E8%B7%9F%E6%88%91%E5%AD%A6/">
+                                    <span class="chip bg-color">别跟我学</span>
                                 </a>
                             
                         </div>
@@ -549,31 +527,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2025/12/26/dse1/">
+                <a href="/acc1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="数字系统I实验生存指南">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="CPU内存数据传输协议">
                         
-                        <span class="card-title">数字系统I实验生存指南</span>
+                        <span class="card-title">CPU内存数据传输协议</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如何在NJUEE数字系统I实验课程中生存
+                            CPU内存数据传输协议，对基于SOC的抗串扰编码的前置研究
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-12-26
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-12-25
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/NJUEE-Lessons/" class="post-category">
-                                    NJUEE-Lessons
+                            <a href="/categories/ee-research/" class="post-category">
+                                    ee-research
                                 </a>
                             
                             
@@ -583,8 +561,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/NJUEE/">
-                        <span class="chip bg-color">NJUEE</span>
+                    <a href="/tags/ACC/">
+                        <span class="chip bg-color">ACC</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%A7%E5%88%9B/">
+                        <span class="chip bg-color">大创</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8A%97%E4%B8%B2%E6%89%B0%E7%BC%96%E7%A0%81%E4%B8%8E%E5%8E%8B%E7%BC%A9%E7%BC%96%E7%A0%81%E5%86%97%E4%BD%99%E5%B9%B3%E8%A1%A1/">
+                        <span class="chip bg-color">抗串扰编码与压缩编码冗余平衡</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/">
+                        <span class="chip bg-color">计算机架构</span>
                     </a>
                     
                 </div>
@@ -598,56 +588,32 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2025/10/12/fixing-computer-1/">
+                <a href="/my-hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="装机，装机">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Hello World!">
                         
-                        <span class="card-title">装机，装机</span>
+                        <span class="card-title">Hello World!</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在IT侠接装机单必有幺蛾子
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-10-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-10-06
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E4%BF%AE%E7%94%B5%E8%84%91%E6%97%A5%E8%AE%B0/" class="post-category">
-                                    修电脑日记
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            tukwhy
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%83%82/">
-                        <span class="chip bg-color">烂</span>
-                    </a>
-                    
-                    <a href="/tags/IT%E4%BE%A0/">
-                        <span class="chip bg-color">IT侠</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
-                        <span class="chip bg-color">碎碎念</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%88%AB%E8%B7%9F%E6%88%91%E5%AD%A6/">
-                        <span class="chip bg-color">别跟我学</span>
-                    </a>
-                    
                 </div>
                 
             </div>
