@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CPU内存数据传输协议, Can U C it?">
-    <meta name="description" content="CPU内存数据传输协议，对基于SOC的抗串扰编码的前置研究">
+    <meta name="keywords" content="西郊有密林，助君出重围, Can U C it?">
+    <meta name="description" content="2026新年快乐">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CPU内存数据传输协议 | Can U C it?</title>
+    <title>西郊有密林，助君出重围 | Can U C it?</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -290,12 +290,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CPU内存数据传输协议</h1>
+                    <h1 class="description center-align post-title">西郊有密林，助君出重围</h1>
                 </div>
             </div>
         </div>
@@ -319,20 +319,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/ACC/">
-                                <span class="chip bg-color">ACC</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%A4%A7%E5%88%9B/">
-                                <span class="chip bg-color">大创</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%8A%97%E4%B8%B2%E6%89%B0%E7%BC%96%E7%A0%81%E4%B8%8E%E5%8E%8B%E7%BC%A9%E7%BC%96%E7%A0%81%E5%86%97%E4%BD%99%E5%B9%B3%E8%A1%A1/">
-                                <span class="chip bg-color">抗串扰编码与压缩编码冗余平衡</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/">
-                                <span class="chip bg-color">计算机架构</span>
+                            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
+                                <span class="chip bg-color">碎碎念</span>
                             </a>
                         
                     </div>
@@ -343,8 +331,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/ee-research/" class="post-category">
-                                ee-research
+                            <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" class="post-category">
+                                碎碎念
                             </a>
                         
                     </div>
@@ -356,14 +344,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-12-25
+                    2025-12-30
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2025-12-26
+                    2025-12-30
                 </div>
                 
 
@@ -377,7 +365,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -392,41 +380,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在物理层面我们看到的数据传输只是高低电平的交替，并不知道每一部分对应什么内容。因此在SerDes层面加入的抗串扰编码是直接作用于物理层的。然而大模型的压缩编码仅仅针对于被传输的实际数据本身，并不会作用于其他一些控制位地址位。要研究两者的平衡我们必须知道这些数据是如何被封装传输的。</p>
-<h2 id="研究的物理背景"><a href="#研究的物理背景" class="headerlink" title="研究的物理背景"></a>研究的物理背景</h2><p>CPU直接读取DRAM当中的数据，假设这一部分数据全部没有被读取过，因此在三级缓存查询中均miss，直接从内存读取。</p>
-<h2 id="Cache-Line"><a href="#Cache-Line" class="headerlink" title="Cache Line"></a>Cache Line</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+--------------------------------------------------+</span><br><span class="line">| Tag | State | Dirty | Valid | (其它控制位) | Data |</span><br><span class="line">+--------------------------------------------------+</span><br><span class="line">                                               ↑</span><br><span class="line">                                            64 Bytes</span><br></pre></td></tr></tbody></table></figure>
-
-<p>数据都是被封装在cache line中被传输的，一个cache line的数据部分典型大小（英特尔x86）是64字节，前部还附加了控制位。控制位包含标记位，有效位，一致性状态位，脏位，以及一些其他自定义的位。</p>
-<h3 id="Data-Block（数据块）"><a href="#Data-Block（数据块）" class="headerlink" title="Data Block（数据块）"></a>Data Block（数据块）</h3><p>这是cache line的主体：</p>
-<p>大小：通常64字节</p>
-<p>内容：普通数据（load/store）或指令（I-cache）</p>
-<p>这是唯一会从内存读入，被写回内存，且经由DDR burst传输的部分。</p>
-<h3 id="Tag（标记）"><a href="#Tag（标记）" class="headerlink" title="Tag（标记）"></a>Tag（标记）</h3><p>Tag记录这64B数据对应内存中的哪一段地址。</p>
-<p>地址拆分（以64B line为例）：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">| Tag | Index | Offset |</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Offset：6 bit（2⁶ = 64B）</p>
-<p>Index：决定落在哪一组（set）</p>
-<p>Tag：剩余高位地址</p>
-<h3 id="Valid-bit（有效位）"><a href="#Valid-bit（有效位）" class="headerlink" title="Valid bit（有效位）"></a>Valid bit（有效位）</h3><p>表示这一条 cache line 是否包含有效数据</p>
-<p>cache 冷启动时全部为 0</p>
-<h3 id="Dirty-bit（脏位，D-cache）"><a href="#Dirty-bit（脏位，D-cache）" class="headerlink" title="Dirty bit（脏位，D-cache）"></a>Dirty bit（脏位，D-cache）</h3><p>只存在于写回型 cache</p>
-<p>表示数据是否被 CPU 修改过</p>
-<p>dirty line 被替换时才需要写回内存</p>
-<p>一点附加解释：</p>
-<p>因为 cache 是由多级组成，所以写策略一般而言有两种：写直达（write-through）和写回（write-back）。通过这两种策略使在 cache 中写入的数据和主存中的数据保持一致。</p>
-<p>写直达就是在将数据写入 cache 之后同时将这个数据立马写入到主存中，但是由于主存和 cache 本身性能差异，那么每次在写入主存的时候都将花费大量的时间。解决办法就是加一层写缓冲（write buffer），这样 CPU 在将数据写入 cache 和缓冲之后可以继续执行，等到缓冲写入到主存中再释放。</p>
-<p>但是如果写入速度大于缓冲释放速度，那么还是会阻塞 CPU 执行。那么可以考虑一下写回策略，这种机制会在每次写入的时候仅将新值写入 cache 中，只有当修改过的块被替换时才需要写到较低层存储结构中。脏位就是用以标注这种情况。</p>
-<h3 id="Cache-Coherence-State（一致性状态位）"><a href="#Cache-Coherence-State（一致性状态位）" class="headerlink" title="Cache Coherence State（一致性状态位）"></a>Cache Coherence State（一致性状态位）</h3><p>由于现在都是多核 CPU，并且 cache 分了多级，并且数据存在共享的情况，所以需要一种机制保证在不同的核中看到的 cache 数据必须时一致的。最常用来处理多核 CPU 之间的缓存一致性协议就是 MESI 协议。</p>
-<p>MESI 协议，是一种叫作写失效（Write Invalidate）的协议。在写失效协议里，只有一个 CPU 核心负责写入数据，其他的核心，只是同步读取到这个写入。在这个 CPU 核心写入 cache 之后，它会去广播一个“失效”请求告诉所有其他的 CPU 核心。</p>
-<p>MESI 协议对应的四个不同的标记，分别是：</p>
-<p>M：代表已修改（Modified）</p>
-<p>E：代表独占（Exclusive）</p>
-<p>S：代表共享（Shared）</p>
-<p>I：代表已失效（Invalidated）</p>
-<p>“已修改”和“已失效”比较容易理解，我们来看看 独占”和“共享” 两个状态。</p>
-<p>在独占状态下，对应的 cache Line 只加载到了当前 CPU 核所拥有的 cache 里。其他的 CPU 核，并没有加载对应的数据到自己的 cache 里。这个时候，如果要向独占的 cache Block 写入数据，我们可以自由地写入数据，而不需要告知其他 CPU 核。</p>
-<p>那么对应的，共享状态就是在多核中同时加载了同一份数据。所以在共享状态下想要修改数据要先向所有的其他 CPU 核心广播一个请求，要求先把其他 CPU 核心里面的 cache ，都变成无效的状态，然后再更新当前 cache 里面的数据。</p>
+                <p>2025，我好像做出了很多的选择。</p>
+<p>选课是一门艺术。对早点修完学分的贪心换来的是不尽如人意的结果。选修课质量一言难尽，却把课表填的满满当当。</p>
+<p>我真的很贪心，因此在选择摆在我面前是我选择了全选。学院里唯一一组参加了新生早期科研，做了无人机的行业应用，本以为是找到了自己喜欢的方向，却发现遇到了很不适合自己的老师。浪费了两个月时间，好在全身而退。</p>
+<p>总觉得自己学生工作不够，因此加入了团委，又担任了一个社团的负责人。</p>
+<p>南大有很多有意思的社团。因此我乐意在IT侠做志愿服务，帮助同学们解决电脑问题，又纯粹地去交流讨论技术。乱乱的工作室摆着形态各异的电脑，冰箱里放着各种坏了的芯片硬盘内存条，柜子的一隅挤满了各式各样的玩偶，这真的很符合我对极客的想象。这很酷。</p>
+<p>作为无人机俱乐部的负责人，我其实更像是吉祥物。飞行经验不如老社长，又懒的去做社团政治工作，我好像就是尽力在保持这个社团苟活着。别人的社团群里都是每天99+，而我们的社团群在期中之后已经门可罗雀，奄奄一息。唯一让我感到欣慰的是在内训之后，新社员，甚至是南师的飞友来向我感谢在培训中学到了新技能，让我感觉到吉祥物好像也有吉祥物的意义。</p>
+<p>这些活动确实占据了我绝大多数的课余时间，但是这也是我选择的一部分。忙碌程度好像一次一次地在刷新着上限。好在我确实做着我喜欢的事情，让我觉得我的付出是值得的。</p>
+<p>这一学期我拿了两项奖学金，一个荣誉称号，当然我知道这是对我上学年表现的肯定。在忙的焦头烂额的这学期我拿到对上学期的奖励反而让我压力倍增，尤其是期中考试线性代数又爆了大雷，反反复复计算着绩点，反而让我陷入了更深的焦虑。</p>
+<p>选择很坏，他总是把美好的蓝图摆在你面前，你总是能觉得你的选择是对的，却又能给你当头一棒。在自己选择的道路上遇到妖魔鬼怪，却好像每次又能尝到苦尽甘来的味道。</p>
+<p>这一年我的选择让我遇见了很多人。</p>
+<p>在团宣，我遇到了一群非常可爱的同学。总是听说高校的学生会啊党政机关啊官威很重，但是团宣截然不同。虽然是校团委下的分部，这里没有严肃分明的等级体系。大家因为创作热情聚在一起，为了内容质量反复讨论，因此打成一片。大家在团宣实现着各自的创作梦，是纯洁无暇的梦。</p>
+<p>看了一场音乐节，一场演唱会，一场livehouse。音乐节在武汉，约上了乔治。乔治阵容都没看就答应了，甚至为了陪我花完了这个月的生活费。江边的夜谈我或许不会记得聊过了什么，但是那夜的晚风，《秦皇岛》的小号响起时划过夜空的飞机我会记得一辈子。</p>
+<p>意外地遇到了她，可能也并非意外。很多人可能分别之后这辈子都不会再见，因此再次相识我觉得是一种莫大的缘分。我觉得这种恋爱方式反而恰到好处，身处异国让我们分外珍惜每一次见面的机会，平淡的相处模式却能让我们走地更长更远。思念是最长情的爱。</p>
+<p>我学会感激每一个我做过的选择，那些结果顺遂的自不必说，那些好似不尽如人意的却让我在磨砺中学会取舍的意义，用苦尽甘来的甜蜜让我学会不后悔，用每一次意外的遇见告诉我惊喜总是蕴藏。</p>
+<p>西郊的密林看似荆棘重重，但是鼓起勇气选择直面重重困境，又何尝不能让我们杀出重围。</p>
+<p>新年快乐。</p>
 
                 
             </div>
@@ -453,7 +422,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://tukwhy.github.io/acc1/">https://tukwhy.github.io/acc1/</a>
+                    <a href="https://tukwhy.github.io/26newyear/">https://tukwhy.github.io/26newyear/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -491,20 +460,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/ACC/">
-                                    <span class="chip bg-color">ACC</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%A4%A7%E5%88%9B/">
-                                    <span class="chip bg-color">大创</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%8A%97%E4%B8%B2%E6%89%B0%E7%BC%96%E7%A0%81%E4%B8%8E%E5%8E%8B%E7%BC%A9%E7%BC%96%E7%A0%81%E5%86%97%E4%BD%99%E5%B9%B3%E8%A1%A1/">
-                                    <span class="chip bg-color">抗串扰编码与压缩编码冗余平衡</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/">
-                                    <span class="chip bg-color">计算机架构</span>
+                                <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
+                                    <span class="chip bg-color">碎碎念</span>
                                 </a>
                             
                         </div>
@@ -550,46 +507,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/dse1/">
+                <a href="/26newyear/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="数字系统I实验生存指南">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="西郊有密林，助君出重围">
                         
-                        <span class="card-title">数字系统I实验生存指南</span>
+                        <span class="card-title">西郊有密林，助君出重围</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如何在NJUEE数字系统I实验课程中生存
+                            2026新年快乐
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-12-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-12-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/NJUEE-Lessons/" class="post-category">
-                                    NJUEE-Lessons
+                            <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" class="post-category">
+                                    碎碎念
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/NJUEE/">
-                        <span class="chip bg-color">NJUEE</span>
+                    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
+                        <span class="chip bg-color">碎碎念</span>
                     </a>
                     
                 </div>
@@ -603,31 +562,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/fixing-computer-1/">
+                <a href="/25midterm/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="装机，装机">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="菜根日记期中版">
                         
-                        <span class="card-title">装机，装机</span>
+                        <span class="card-title">菜根日记期中版</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在IT侠接装机单必有幺蛾子
+                            菜根日记期中版
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-10-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-12-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%BF%AE%E7%94%B5%E8%84%91%E6%97%A5%E8%AE%B0/" class="post-category">
-                                    修电脑日记
+                            <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" class="post-category">
+                                    碎碎念
                                 </a>
                             
                             
@@ -641,16 +600,8 @@
                         <span class="chip bg-color">碎碎念</span>
                     </a>
                     
-                    <a href="/tags/%E7%83%82/">
-                        <span class="chip bg-color">烂</span>
-                    </a>
-                    
-                    <a href="/tags/IT%E4%BE%A0/">
-                        <span class="chip bg-color">IT侠</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%88%AB%E8%B7%9F%E6%88%91%E5%AD%A6/">
-                        <span class="chip bg-color">别跟我学</span>
+                    <a href="/tags/%E5%8F%91%E7%99%AB/">
+                        <span class="chip bg-color">发癫</span>
                     </a>
                     
                 </div>
