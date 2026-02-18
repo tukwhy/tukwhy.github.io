@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: 计算机架构, Can U C it?">
+    <meta name="keywords" content="QSL-LOG, Can U C it?">
     <meta name="description" content="tukwhy&#39;s blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签: 计算机架构 | Can U C it?</title>
+    <title>QSL-LOG | Can U C it?</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -361,155 +361,661 @@
     </div>
 </div>
 
+<link rel="stylesheet" href="/css/qsl-custom.css">
+
 <main class="content">
-
+    <div class="container qsl-page-container">
+        <div class="card">
+            <div class="card-content">
+                <div class="qsl-container">
+  <h2>QSL-LOG 通联记录</h2>
+  
+  <div class="station-info">
+    <h3>本台信息</h3>
+    <div class="info-row">
+      <div class="info-item">
+        <span class="info-label">呼号</span>
+        <span class="info-value"><a id="station-callsign" href="https://www.qrz.com/db/BA4UHT" target="_blank">BA4UHT</a></span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">设备</span>
+        <span class="info-value" id="station-equipment">泉盛UV-K6</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">天线</span>
+        <span class="info-value" id="station-antenna">原装天线/775拉杆</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">功率</span>
+        <span class="info-value" id="station-power">5W</span>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-item">
+        <span class="info-label">位置</span>
+        <span class="info-value" id="station-location">中国南京市栖霞区/中国无锡市梁溪区</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">网格坐标</span>
+        <span class="info-value" id="station-grid">OM92LC/PM01DN</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">CQ分区 / ITU分区</span>
+        <span class="info-value"><span id="station-cq">24</span> / <span id="station-itu">44</span></span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">QSL申请</span>
+        <span class="info-value"><a id="station-qsl-link" href="https://table.nju.edu.cn/dtable/forms/custom/BA4UHT-QSL/" target="_blank">点击申请</a></span>
+      </div>
+    </div>
+    <div class="stats-panel">
+      <div class="stat-item">
+        <div class="stat-value" id="station-total">1</div>
+        <div class="stat-label">总通联数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="unique-callsigns">--</div>
+        <div class="stat-label">不同呼号</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="unique-frequencies">--</div>
+        <div class="stat-label">频率数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">最后更新</div>
+        <div id="station-update" style="font-size: 14px; margin-top: 8px;">2026-02-13</div>
+      </div>
+    </div>
     
+  </div>
 
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" title="碎碎念: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="碎碎念" style="background-color: #F9EBEA;">碎碎念
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%8F%91%E7%99%AB/" title="发癫: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="发癫" style="background-color: #F5EEF8;">发癫
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/ACC/" title="ACC: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="ACC" style="background-color: #D5F5E3;">ACC
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%A4%A7%E5%88%9B/" title="大创: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="大创" style="background-color: #E8F8F5;">大创
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%8A%97%E4%B8%B2%E6%89%B0%E7%BC%96%E7%A0%81%E4%B8%8E%E5%8E%8B%E7%BC%A9%E7%BC%96%E7%A0%81%E5%86%97%E4%BD%99%E5%B9%B3%E8%A1%A1/" title="抗串扰编码与压缩编码冗余平衡: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="抗串扰编码与压缩编码冗余平衡" style="background-color: #FEF9E7;">抗串扰编码与压缩编码冗余平衡
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9E%B6%E6%9E%84/" title="计算机架构: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="计算机架构" style="background-color: #F8F9F9;">计算机架构
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%83%82/" title="烂: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="烂" style="background-color: #82E0AA;">烂
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/IT%E4%BE%A0/" title="IT侠: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="IT侠" style="background-color: #D7BDE2;">IT侠
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%88%AB%E8%B7%9F%E6%88%91%E5%AD%A6/" title="别跟我学: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="别跟我学" style="background-color: #A3E4D7;">别跟我学
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/NJUEE/" title="NJUEE: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="NJUEE" style="background-color: #85C1E9;">NJUEE
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
+  <div class="filter-section">
+    <div class="filter-group">
+      <label class="filter-label">搜索呼号</label>
+      <input type="text" id="callsign-filter" class="filter-input" placeholder="输入呼号，实时搜索" style="display: block; width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box;">
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">频率筛选</label>
+      <select id="frequency-filter" class="filter-select" style="display: block; width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box; background-color: white; color: #333; cursor: pointer; min-height: 40px;">
+        <option value="">所有频率</option>
+        <option value="430.610">430.610</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">模式筛选</label>
+      <select id="mode-filter" class="filter-select" style="display: block; width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box; background-color: white; color: #333; cursor: pointer; min-height: 40px;">
+        <option value="">所有模式</option>
+        <option value="FM">FM</option>
+      </select>
+    </div>
+    <button class="filter-button reset" onclick="resetFilters()">重置</button>
+  </div>
+
+  <div class="table-container">
+    <table class="qsl-table">
+      <thead>
+        <tr>
+          <th class="sortable" onclick="sortTable('date')">日期</th>
+          <th class="sortable" onclick="sortTable('time')">时间</th>
+          <th class="sortable" onclick="sortTable('callsign')">呼号</th>
+          <th class="sortable" onclick="sortTable('frequency')">频率</th>
+          <th class="sortable" onclick="sortTable('mode')">模式</th>
+          <th onclick="sortTable('report')">信号</th>
+          <th class="sortable" onclick="sortTable('location')">位置</th>
+          <th>设备</th>
+          <th>天线</th>
+          <th class="sortable" onclick="sortTable('power')">功率</th>
+          <th>备注</th>
+        </tr>
+      </thead>
+      <tbody id="qsl-table-body">
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="stats-footer">
+    <span>显示 <strong id="displayed-count">0</strong> / <strong id="total-count">0</strong> 条记录</span>
+    <span id="filter-status" style="color: #667eea; font-weight: 600;"></span>
+  </div>
+</div>
+
+<script>
+// 数据直接嵌入
+const stationInfo = {
+  callsign: "BA4UHT",
+  qrzLink: "https://www.qrz.com/db/BA4UHT",
+  equipment: "泉盛UV-K6",
+  antenna: "原装天线/775拉杆",
+  power: "5W",
+  location: "中国南京市栖霞区",
+  qslLink: "https://table.nju.edu.cn/dtable/forms/custom/BA4UHT-QSL/",
+  gridSquare: "OM92lc",
+  cqZone: 24,
+  ituZone: 44,
+  lastUpdate: "2026-02-13",
+  totalRecords: 1
+};
+
+const qslLogs = [
+  { date: "2025-11-28", time: "12:55", callsign: "BA4QMP", frequency: "430.610", mode: "FM", report: "-", location: "马群", equipment: "森海塞尔8800", antenna: "钻石AZ504", power: "5W", remarks: "-" },
+  { date: "2025-12-02", time: "22:00", callsign: "BA4TMR", frequency: "430.610", mode: "FM", report: "-", location: "河海大学江宁校区", equipment: "UV-K6", antenna: "-", power: "5W", remarks: "-" },
+  { date: "2025-12-06", time: "21:54", callsign: "BA4TAQ", frequency: "430.610", mode: "FM", report: "-", location: "扬州市邗江区", equipment: "UV-K6", antenna: "770拉杆", power: "5W", remarks: "-" },
+  { date: "2026-01-04", time: "18:45", callsign: "BG7KEE", frequency: "430.610", mode: "FM", report: "-", location: "深圳市南山区", equipment: "如意通6900DMR", antenna: "NR盒子", power: "L", remarks: "-" },
+];
+
+let allData = [...qslLogs];
+let filteredData = [...qslLogs];
+let currentSort = { column: null, direction: 'asc' };
+
+// 初始化
+function init() {
+  populateFilterOptions();
+  calculateStats();
+  updateLastModified();
+  displayTable();
+  setupEventListeners();
+}
+
+// 更新最后修改时间
+function updateLastModified() {
+  const metaTag = document.querySelector('meta[property="article:modified_time"]');
+  let updateTime = '2026-02-13';
+  
+  if (metaTag && metaTag.getAttribute('content')) {
+    const dateStr = metaTag.getAttribute('content');
+    updateTime = new Date(dateStr).toLocaleDateString('zh-CN');
+  } else {
+    // 如果没有meta标签，尝试用当前日期
+    updateTime = new Date().toLocaleDateString('zh-CN');
+  }
+  
+  document.getElementById('station-update').textContent = updateTime;
+}
+
+// 统计信息
+function calculateStats() {
+  const totalCounts = allData.length;
+  const uniqueCallsigns = new Set(allData.map(log => log.callsign)).size;
+  const uniqueFrequencies = new Set(allData.map(log => log.frequency)).size;
+  
+  document.getElementById('station-total').textContent = totalCounts;
+  document.getElementById('unique-callsigns').textContent = uniqueCallsigns;
+  document.getElementById('unique-frequencies').textContent = uniqueFrequencies;
+}
+
+// 填充筛选选项
+function populateFilterOptions() {
+  const frequencies = [...new Set(allData.map(log => log.frequency))].sort();
+  const modes = [...new Set(allData.map(log => log.mode))].sort();
+  
+  const freqSelect = document.getElementById('frequency-filter');
+  if (freqSelect) {
+    // 清除已有的选项（除了第一个默认选项）
+    while (freqSelect.options.length > 1) {
+      freqSelect.remove(1);
+    }
+    // 添加新选项
+    frequencies.forEach(freq => {
+      const option = document.createElement('option');
+      option.value = freq;
+      option.textContent = freq;
+      freqSelect.appendChild(option);
+    });
+  }
+  
+  const modeSelect = document.getElementById('mode-filter');
+  if (modeSelect) {
+    // 清除已有的选项（除了第一个默认选项）
+    while (modeSelect.options.length > 1) {
+      modeSelect.remove(1);
+    }
+    // 添加新选项
+    modes.forEach(mode => {
+      const option = document.createElement('option');
+      option.value = mode;
+      option.textContent = mode;
+      modeSelect.appendChild(option);
+    });
+  }
+}
+
+// 事件监听
+function setupEventListeners() {
+  const callsignFilter = document.getElementById('callsign-filter');
+  const frequencyFilter = document.getElementById('frequency-filter');
+  const modeFilter = document.getElementById('mode-filter');
+  
+  if (callsignFilter) {
+    callsignFilter.addEventListener('input', applyFilters);
+  }
+  if (frequencyFilter) {
+    frequencyFilter.addEventListener('change', applyFilters);
+  }
+  if (modeFilter) {
+    modeFilter.addEventListener('change', applyFilters);
+  }
+}
+
+// 应用筛选
+function applyFilters() {
+  const callsign = document.getElementById('callsign-filter').value.toUpperCase();
+  const frequency = document.getElementById('frequency-filter').value;
+  const mode = document.getElementById('mode-filter').value;
+  
+  filteredData = allData.filter(log => {
+    return (!callsign || log.callsign.toUpperCase().includes(callsign)) &&
+           (!frequency || log.frequency === frequency) &&
+           (!mode || log.mode === mode);
+  });
+  
+  displayTable();
+  updateFilterStatus();
+}
+
+// 更新筛选状态
+function updateFilterStatus() {
+  const callsign = document.getElementById('callsign-filter').value;
+  const frequency = document.getElementById('frequency-filter').value;
+  const mode = document.getElementById('mode-filter').value;
+  
+  const filters = [
+    callsign && `呼号: ${callsign}`,
+    frequency && `频率: ${frequency}`,
+    mode && `模式: ${mode}`
+  ].filter(f => f);
+  
+  const status = document.getElementById('filter-status');
+  if (filters.length > 0) {
+    status.textContent = `筛选: ${filters.join(' | ')}`;
+  } else {
+    status.textContent = '';
+  }
+}
+
+// 重置筛选
+function resetFilters() {
+  document.getElementById('callsign-filter').value = '';
+  document.getElementById('frequency-filter').value = '';
+  document.getElementById('mode-filter').value = '';
+  filteredData = [...allData];
+  currentSort = { column: null, direction: 'asc' };
+  document.querySelectorAll('.qsl-table th').forEach(th => {
+    th.classList.remove('sort-asc', 'sort-desc');
+  });
+  displayTable();
+  updateFilterStatus();
+}
+
+// 排序
+function sortTable(column) {
+  if (currentSort.column === column) {
+    currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+  } else {
+    currentSort.column = column;
+    currentSort.direction = 'asc';
+  }
+  
+  filteredData.sort((a, b) => {
+    let aVal = a[column];
+    let bVal = b[column];
+    
+    if (!isNaN(aVal) && !isNaN(bVal)) {
+      aVal = parseFloat(aVal);
+      bVal = parseFloat(bVal);
+    }
+    
+    if (currentSort.direction === 'asc') {
+      return aVal > bVal ? 1 : -1;
+    } else {
+      return aVal < bVal ? 1 : -1;
+    }
+  });
+  
+  document.querySelectorAll('.qsl-table th').forEach(th => {
+    th.classList.remove('sort-asc', 'sort-desc');
+  });
+  
+  const th = document.querySelector(`.qsl-table th[onclick*="sortTable('${column}')"]`);
+  if (th) {
+    th.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
+  }
+  
+  displayTable();
+}
+
+// 显示表格
+function displayTable() {
+  const tbody = document.getElementById('qsl-table-body');
+  tbody.innerHTML = '';
+  
+  if (filteredData.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="11" class="no-data">未找到匹配的记录</td></tr>';
+  } else {
+    filteredData.forEach(log => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${log.date}</td>
+        <td>${log.time}</td>
+        <td><strong>${log.callsign}</strong></td>
+        <td>${log.frequency}</td>
+        <td>${log.mode}</td>
+        <td>${log.report}</td>
+        <td>${log.location}</td>
+        <td>${log.equipment}</td>
+        <td>${log.antenna}</td>
+        <td>${log.power}</td>
+        <td>${log.remarks}</td>
+      `;
+      tbody.appendChild(row);
+    });
+  }
+  
+  document.getElementById('displayed-count').textContent = filteredData.length;
+  document.getElementById('total-count').textContent = allData.length;
+}
+
+// 页面加载
+document.addEventListener('DOMContentLoaded', init);
+</script>
+
             </div>
         </div>
     </div>
-</div>
-
-    
-
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="ACC, 大创, 抗串扰编码与压缩编码冗余平衡, 计算机架构" data-aos="fade-up">
-                <div class="card">
-                    <a href="/acc1/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="CPU内存数据传输协议">
-                            
-                            <span class="card-title">CPU内存数据传输协议</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-12-25
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/ee-research/" class="post-category">
-                                ee-research
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </article>
 </main>
 
+<style>
+/* QSL页面额外样式 */
+.qsl-page-container {
+    max-width: 1400px !important;
+}
 
+.qsl-page-container .card {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.qsl-page-container .card-content {
+    padding: 0;
+}
+
+/* 确保qsl-container内容正确显示 */
+.qsl-container {
+    padding: 20px !important;
+}
+
+/* 强制应用station-info样式 */
+.station-info {
+    background: linear-gradient(135deg, #4b68e9 0%, #4bb66f 100%) !important;
+    color: white !important;
+    border-radius: 12px !important;
+    padding: 30px !important;
+    margin-bottom: 30px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+}
+
+.station-info h3 {
+    margin-top: 0 !important;
+    font-size: 24px !important;
+    margin-bottom: 20px !important;
+    border-bottom: 2px solid rgba(255,255,255,0.3) !important;
+    padding-bottom: 10px !important;
+    color: white !important;
+}
+
+/* 强制info-row使用grid */
+.info-row {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 20px !important;
+    margin-bottom: 10px !important;
+}
+
+.info-item {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.info-label {
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    opacity: 0.9 !important;
+    letter-spacing: 0.5px !important;
+}
+
+.info-value {
+    font-size: 15px !important;
+    word-break: break-word !important;
+}
+
+.info-value a {
+    color: #fff !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.5) !important;
+}
+
+/* 强制stats-panel使用grid */
+.stats-panel {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+.stat-item {
+    text-align: center !important;
+}
+
+.stat-value {
+    font-size: 28px !important;
+    font-weight: bold !important;
+    margin-bottom: 5px !important;
+}
+
+.stat-label {
+    font-size: 12px !important;
+    opacity: 0.85 !important;
+}
+
+/* 筛选区域样式 */
+.filter-section {
+    background: white !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr auto auto !important;
+    gap: 15px !important;
+    align-items: flex-end !important;
+}
+
+.filter-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+.filter-label {
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    color: #333 !important;
+}
+
+.filter-input,
+.filter-select {
+    padding: 10px 12px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    transition: all 0.3s !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background-color: white !important;
+    color: #333 !important;
+    display: block !important;
+    min-height: 40px !important;
+    cursor: pointer !important;
+    appearance: auto !important;
+    -webkit-appearance: auto !important;
+    -moz-appearance: auto !important;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+    outline: none !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102,126,234,0.1) !important;
+}
+
+.filter-button {
+    padding: 10px 20px !important;
+    background: #667eea !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    transition: all 0.3s !important;
+    font-size: 14px !important;
+    height: 40px !important;
+    white-space: nowrap !important;
+}
+
+.filter-button:hover {
+    background: #5568d3 !important;
+    box-shadow: 0 4px 12px rgba(102,126,234,0.4) !important;
+}
+
+.filter-button.reset {
+    background: #999 !important;
+}
+
+.filter-button.reset:hover {
+    background: #777 !important;
+}
+
+.filter-button.export {
+    background: #48bb78 !important;
+}
+
+.filter-button.export:hover {
+    background: #38a169 !important;
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .qsl-page-container {
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-row {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .stats-panel {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .filter-section {
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+    }
+    
+    .filter-group {
+        width: 100% !important;
+    }
+    
+    .filter-button {
+        width: 100% !important;
+    }
+}
+</style>
+
+<script>
+// 立即阻止Materialize处理QSL页面的select框 - 在jQuery加载后立即执行
+(function() {
+    // 保存原始的Materialize FormSelect构造函数
+    var originalFormSelect = null;
+    
+    // 钩子到jQuery的ready中
+    var $document = $(document);
+    var oldReady = $.ready.promise;
+    
+    // 在Materialize初始化前移除select框的特殊类
+    function cleanupSelects() {
+        const selects = document.querySelectorAll('#frequency-filter, #mode-filter');
+        selects.forEach(select => {
+            // 移除任何Materialize添加的类
+            select.classList.remove('initialized');
+            select.classList.remove('select-wrapper');
+            
+            // 移除相邻的Materialize元素
+            let sibling = select.nextElementSibling;
+            while (sibling) {
+                if (sibling.classList && (
+                    sibling.classList.contains('caret') || 
+                    sibling.classList.contains('select-wrapper') || 
+                    sibling.classList.contains('dropdown-trigger') ||
+                    sibling.classList.contains('select-dropdown')
+                )) {
+                    sibling.remove();
+                    sibling = select.nextElementSibling;
+                } else {
+                    break;
+                }
+            }
+            
+            // 确保select框本身可见
+            select.style.display = 'block';
+            select.style.visibility = 'visible';
+            select.style.opacity = '1';
+            select.style.position = 'relative';
+            select.style.zIndex = '200';
+        });
+    }
+    
+    // 在document ready时运行
+    $(document).ready(function() {
+        cleanupSelects();
+        
+        // 每100ms检查一次，防止Materialize重新处理
+        setInterval(cleanupSelects, 100);
+    });
+    
+    // 也在load事件时运行
+    window.addEventListener('load', function() {
+        setTimeout(cleanupSelects, 100);
+    });
+    
+    // 对MutationObserver的支持，监听DOM变化
+    if (window.MutationObserver) {
+        var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList') {
+                    cleanupSelects();
+                }
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true,
+                attributes: false
+            });
+        });
+    }
+})();
+</script>
 
 
     <footer class="page-footer bg-color">
