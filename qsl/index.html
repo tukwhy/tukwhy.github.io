@@ -526,7 +526,7 @@ function updateLastModified() {
     updateTime = new Date(dateStr).toLocaleDateString('zh-CN');
   } else {
     // 如果没有meta标签，尝试用当前日期
-    updateTime = new Date().toLocaleDateString('zh-CN');
+    updateTime = lastUpdate;
   }
   
   document.getElementById('station-update').textContent = updateTime;
