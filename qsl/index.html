@@ -501,17 +501,25 @@ const qslLogs = [
   { date: "2025-12-02", time: "22:00", callsign: "BA4TMR", frequency: "430.610", mode: "FM", report: "-", location: "河海大学江宁校区", equipment: "UV-K6", antenna: "-", power: "5W", remarks: "-" },
   { date: "2025-12-06", time: "21:54", callsign: "BA4TAQ", frequency: "430.610", mode: "FM", report: "-", location: "扬州市邗江区", equipment: "UV-K6", antenna: "770拉杆", power: "5W", remarks: "-" },
   { date: "2026-01-04", time: "18:45", callsign: "BG7KEE", frequency: "430.610", mode: "FM", report: "-", location: "深圳市南山区", equipment: "如意通6900DMR", antenna: "NR盒子", power: "L", remarks: "-" },
+  { date: "2026-02-23", time: "14:33", callsign: "BG4ERI", frequency: "438.550", mode: "FM", report: "59", location: "无锡市滨湖区", equipment: "ICOM7300", antenna: "-", power: "0.1W", remarks: "-" }
 ];
 
 let allData = [...qslLogs];
 let filteredData = [...qslLogs];
 let currentSort = { column: null, direction: 'asc' };
 
+function compareLogDateTimeDesc(a, b) {
+  const aKey = `${a.date || ''} ${a.time || ''}`.trim();
+  const bKey = `${b.date || ''} ${b.time || ''}`.trim();
+  return aKey === bKey ? 0 : aKey < bKey ? 1 : -1;
+}
+
 // 初始化
 function init() {
   populateFilterOptions();
   calculateStats();
   updateLastModified();
+  filteredData.sort(compareLogDateTimeDesc);
   displayTable();
   setupEventListeners();
 }
@@ -520,15 +528,19 @@ function init() {
 function updateLastModified() {
   const metaTag = document.querySelector('meta[property="article:modified_time"]');
   let updateTime = '2026-02-13';
-  
+
   if (metaTag && metaTag.getAttribute('content')) {
     const dateStr = metaTag.getAttribute('content');
     updateTime = new Date(dateStr).toLocaleDateString('zh-CN');
   } else {
-    // 如果没有meta标签，尝试用当前日期
-    updateTime = lastUpdate;
+    if (allData.length > 0) {
+      const latest = [...allData].sort(compareLogDateTimeDesc)[0];
+      updateTime = latest.date || stationInfo.lastUpdate || updateTime;
+    } else if (stationInfo.lastUpdate) {
+      updateTime = stationInfo.lastUpdate;
+    }
   }
-  
+
   document.getElementById('station-update').textContent = updateTime;
 }
 
@@ -607,6 +619,8 @@ function applyFilters() {
            (!frequency || log.frequency === frequency) &&
            (!mode || log.mode === mode);
   });
+
+  filteredData.sort(compareLogDateTimeDesc);
   
   displayTable();
   updateFilterStatus();
