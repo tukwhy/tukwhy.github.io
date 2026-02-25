@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="QSL模块简介, Can U C it?">
-    <meta name="description" content="简要介绍博客网站QSL页面配置思路">
+    <meta name="keywords" content="QSL-LOG, Can U C it?">
+    <meta name="description" content="tukwhy&#39;s blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>QSL模块简介 | Can U C it?</title>
+    <title>QSL-LOG | Can U C it?</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -308,479 +308,729 @@
 
 </header>
 
-    
-
-
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://images.pexels.com/photos/5690912/pexels-photo-5690912.jpeg?auto=compress&cs=tinysrgb&h=650&w=940')">
-    <div class="container" style="right: 0px;left: 0px;">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <h1 class="description center-align post-title">QSL模块简介</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<main class="post-container content">
-
-    
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
     <div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
-<div id="artDetail">
-    <div class="card">
-        <div class="card-content article-info">
-            <div class="row tag-cate">
-                <div class="col s7">
-                    
-                    <div class="article-tag">
-                        
-                            <a href="/tags/blog/">
-                                <span class="chip bg-color">blog</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%97%A0%E7%BA%BF%E7%94%B5/">
-                                <span class="chip bg-color">无线电</span>
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-                <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%8A%98%E8%85%BE/" class="post-category">
-                                折腾
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="post-info">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-02-25
-                </div>
-                
-
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2026-02-25
-                </div>
-                
-
-                
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    292
-                </div>
-                
-
-                
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
-                </div>
-                
-
+                tukwhy&#39;s blog
                 
             </div>
-        </div>
-        <hr class="clearfix">
 
-        
-
-        
-
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>因为想要收听ATC通话，所以准备考个电台执照合法设个台。开始学习理论发现，合法设立的电台是不可以收听业余无线电以外的内容的。既然学了那就把证考了呗，至于收听ATC嘛，只听不发（不敢吱声）就行。玩无线电还是非常帅的。</p>
-<p>此页面灵感来自<a target="_blank" rel="noopener" href="https://loveapple.icu/QSL-LOG/">BA4UHI</a>，大概就是qrz.com太难用了，不如自己开个页面写通联记录。</p>
-<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>几乎全程vibe coding，ai写代码还是太好使了。</p>
-<p>在hexo的模板下，页面主页需要写成markdown文件。因此需要自定义页面的话就只能在markdown当中内嵌html代码，并单独编写模板匹配markdown中的html代码。因此额外写了一个qsl.ejs。既然是可以内嵌html代码，那么就可以为所欲为了（）</p>
-<p>另外加了频率筛选和通联方式筛选。</p>
-<p>此页面已链接到qrz.com和本人的qsl卡上，大概就是qrz.com只作为一个门户，其他和无线电相关的功能全部在这里实现。</p>
-
+            <div class="description center-align">
                 
-            </div>
-            <hr/>
-
-            
-
-    <div class="reprint" id="reprint-statement">
-        
-            <div class="reprint__author">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-user">
-                        文章作者:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">tukwhy</a>
-                </span>
-            </div>
-            <div class="reprint__type">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-link">
-                        文章链接:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="https://tukwhy.top/qsl/">https://tukwhy.top/qsl/</a>
-                </span>
-            </div>
-            <div class="reprint__notice">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-copyright">
-                        版权声明:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="/about" target="_blank">tukwhy</a>
-                    !
-                </span>
-            </div>
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
-
-
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
+                <span id="subtitle"></span>
+                <script src="/libs/typed/typed.js"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
                             
-                                <a href="/tags/blog/">
-                                    <span class="chip bg-color">blog</span>
-                                </a>
+                                "西郊有密林，助君出重围",
                             
-                                <a href="/tags/%E6%97%A0%E7%BA%BF%E7%94%B5/">
-                                    <span class="chip bg-color">无线电</span>
-                                </a>
-                            
-                        </div>
-                    
-                </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-<div id="article-share">
-
-    
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
-</div>
-
-                </div>
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
             </div>
-            
         </div>
     </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/qsl/">
-                    <div class="card-image">
-                        
-                        <img src="https://images.pexels.com/photos/5690912/pexels-photo-5690912.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="responsive-img" alt="QSL模块简介">
-                        
-                        <span class="card-title">QSL模块简介</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            简要介绍博客网站QSL页面配置思路
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-02-25
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%8A%98%E8%85%BE/" class="post-category">
-                                    折腾
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/blog/">
-                        <span class="chip bg-color">blog</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%97%A0%E7%BA%BF%E7%94%B5/">
-                        <span class="chip bg-color">无线电</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/26newyear/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="西郊有密林，助君出重围">
-                        
-                        <span class="card-title">西郊有密林，助君出重围</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            2026新年快乐
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-12-30
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" class="post-category">
-                                    碎碎念
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
-                        <span class="chip bg-color">碎碎念</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-    </div>
-</article>
-
 </div>
 
 
 <script>
-    $('#articleContent').on('copy', function (e) {
-        // IE8 or earlier browser is 'undefined'
-        if (typeof window.getSelection === 'undefined') return;
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
+<script>
+    
+      var bannerUrl = "/medias/featureimages/" + Math.floor(Math.random() * 24) + '.jpg';
+    
+    $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
 
-        var selection = window.getSelection();
-        // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
-            return;
-        }
-
-        // create a div outside of the visible area and fill it with the selected text.
-        var bodyElement = document.getElementsByTagName('body')[0];
-        var newdiv = document.createElement('div');
-        newdiv.style.position = 'absolute';
-        newdiv.style.left = '-99999px';
-        bodyElement.appendChild(newdiv);
-        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
-
-        // we need a <pre> tag workaround.
-        // otherwise the text inside "pre" loses all the line breaks!
-        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
-            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
-        }
-
-        var url = document.location.href;
-        newdiv.innerHTML += '<br />'
-            + '来源: Can U C it?<br />'
-            + '文章作者: tukwhy<br />'
-            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
-
-        selection.selectAllChildren(newdiv);
-        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
-    });
 </script>
 
 
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
-
-
-<!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
-
-
-
     </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
+</div>
+
+<link rel="stylesheet" href="/css/qsl-custom.css">
+
+<main class="content">
+    <div class="container qsl-page-container">
+        <div class="card">
+            <div class="card-content">
+                <div class="qsl-container">
+  <h2>QSL-LOG 通联记录</h2>
+  
+  <div class="station-info">
+    <h3>本台信息</h3>
+    <div class="info-row">
+      <div class="info-item">
+        <span class="info-label">呼号</span>
+        <span class="info-value"><a id="station-callsign" href="https://www.qrz.com/db/BA4UHT" target="_blank">BA4UHT</a></span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">设备</span>
+        <span class="info-value" id="station-equipment">泉盛UV-K6</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">天线</span>
+        <span class="info-value" id="station-antenna">原装天线/775拉杆</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">功率</span>
+        <span class="info-value" id="station-power">5W</span>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-item">
+        <span class="info-label">位置</span>
+        <span class="info-value" id="station-location">中国南京市栖霞区/中国无锡市梁溪区</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">网格坐标</span>
+        <span class="info-value" id="station-grid">OM92LC/PM01DN</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">CQ分区 / ITU分区</span>
+        <span class="info-value"><span id="station-cq">24</span> / <span id="station-itu">44</span></span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">QSL申请</span>
+        <span class="info-value"><a id="station-qsl-link" href="https://table.nju.edu.cn/dtable/forms/custom/BA4UHT-QSL/" target="_blank">点击申请</a></span>
+      </div>
+    </div>
+    <div class="stats-panel">
+      <div class="stat-item">
+        <div class="stat-value" id="station-total">1</div>
+        <div class="stat-label">总通联数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="unique-callsigns">--</div>
+        <div class="stat-label">不同呼号</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="unique-frequencies">--</div>
+        <div class="stat-label">频率数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">最后更新</div>
+        <div id="station-update" style="font-size: 14px; margin-top: 8px;">2026-02-13</div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="filter-section">
+    <div class="filter-group">
+      <label class="filter-label">搜索呼号</label>
+      <input type="text" id="callsign-filter" class="filter-input" placeholder="输入呼号，实时搜索" style="display: block; width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box;">
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">频率筛选</label>
+      <select id="frequency-filter" class="filter-select" style="display: block; width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box; background-color: white; color: #333; cursor: pointer; min-height: 40px;">
+        <option value="">所有频率</option>
+        <option value="430.610">430.610</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">模式筛选</label>
+      <select id="mode-filter" class="filter-select" style="display: block; width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box; background-color: white; color: #333; cursor: pointer; min-height: 40px;">
+        <option value="">所有模式</option>
+        <option value="FM">FM</option>
+      </select>
+    </div>
+    <button class="filter-button reset" onclick="resetFilters()">重置</button>
+  </div>
+
+  <div class="table-container">
+    <table class="qsl-table">
+      <thead>
+        <tr>
+          <th class="sortable" onclick="sortTable('date')">日期</th>
+          <th class="sortable" onclick="sortTable('time')">时间</th>
+          <th class="sortable" onclick="sortTable('callsign')">呼号</th>
+          <th class="sortable" onclick="sortTable('frequency')">频率</th>
+          <th class="sortable" onclick="sortTable('mode')">模式</th>
+          <th onclick="sortTable('report')">信号</th>
+          <th class="sortable" onclick="sortTable('location')">位置</th>
+          <th>设备</th>
+          <th>天线</th>
+          <th class="sortable" onclick="sortTable('power')">功率</th>
+          <th>备注</th>
+        </tr>
+      </thead>
+      <tbody id="qsl-table-body">
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="stats-footer">
+    <span>显示 <strong id="displayed-count">0</strong> / <strong id="total-count">0</strong> 条记录</span>
+    <span id="filter-status" style="color: #667eea; font-weight: 600;"></span>
+  </div>
+</div>
+
+<script>
+// 数据直接嵌入
+const stationInfo = {
+  callsign: "BA4UHT",
+  qrzLink: "https://www.qrz.com/db/BA4UHT",
+  equipment: "泉盛UV-K6",
+  antenna: "原装天线/775拉杆",
+  power: "5W",
+  location: "中国南京市栖霞区",
+  qslLink: "https://table.nju.edu.cn/dtable/forms/custom/BA4UHT-QSL/",
+  gridSquare: "OM92lc",
+  cqZone: 24,
+  ituZone: 44,
+  lastUpdate: "2026-02-13",
+  totalRecords: 1
+};
+
+const qslLogs = [
+  { date: "2025-11-28", time: "12:55", callsign: "BA4QMP", frequency: "430.610MHz", mode: "FM", report: "-", location: "马群", equipment: "森海塞尔8800", antenna: "钻石AZ504", power: "5W", remarks: "-" },
+  { date: "2025-12-02", time: "22:00", callsign: "BA4TMR", frequency: "430.610MHz", mode: "FM", report: "-", location: "河海大学江宁校区", equipment: "UV-K6", antenna: "-", power: "5W", remarks: "-" },
+  { date: "2025-12-06", time: "21:54", callsign: "BA4TAQ", frequency: "430.610MHz", mode: "FM", report: "-", location: "扬州市邗江区", equipment: "UV-K6", antenna: "770拉杆", power: "5W", remarks: "-" },
+  { date: "2025-12-21", time: "15:59", callsign: "BY2HIT", frequency: "14.09MHz", mode: "FT8", report: "-14", location: "哈尔滨工程大学", equipment: "-", antenna: "-", power: "15W", remarks: "哈工大无线电俱乐部30周年生日快乐" },
+  { date: "2026-01-04", time: "18:45", callsign: "BG7KEE", frequency: "430.610MHz", mode: "FM", report: "-", location: "深圳市南山区", equipment: "如意通6900DMR", antenna: "NR盒子", power: "L", remarks: "-" },
+  { date: "2026-02-23", time: "14:33", callsign: "BG4ERI", frequency: "438.550MHz", mode: "FM", report: "59", location: "无锡市滨湖区", equipment: "ICOM7300", antenna: "-", power: "0.1W", remarks: "-" }
+];
+
+let allData = [...qslLogs];
+let filteredData = [...qslLogs];
+let currentSort = { column: null, direction: 'asc' };
+
+function compareLogDateTimeDesc(a, b) {
+  const aKey = `${a.date || ''} ${a.time || ''}`.trim();
+  const bKey = `${b.date || ''} ${b.time || ''}`.trim();
+  return aKey === bKey ? 0 : aKey < bKey ? 1 : -1;
+}
+
+// 初始化
+function init() {
+  populateFilterOptions();
+  calculateStats();
+  updateLastModified();
+  filteredData.sort(compareLogDateTimeDesc);
+  displayTable();
+  setupEventListeners();
+}
+
+// 更新最后修改时间
+function updateLastModified() {
+  const metaTag = document.querySelector('meta[property="article:modified_time"]');
+  let updateTime = '2026-02-23';
+
+  if (metaTag && metaTag.getAttribute('content')) {
+    const dateStr = metaTag.getAttribute('content');
+    updateTime = new Date(dateStr).toLocaleDateString('zh-CN');
+  } else {
+    if (allData.length > 0) {
+      const latest = [...allData].sort(compareLogDateTimeDesc)[0];
+      updateTime = latest.date || stationInfo.lastUpdate || updateTime;
+    } else if (stationInfo.lastUpdate) {
+      updateTime = stationInfo.lastUpdate;
+    }
+  }
+
+  document.getElementById('station-update').textContent = updateTime;
+}
+
+// 统计信息
+function calculateStats() {
+  const totalCounts = allData.length;
+  const uniqueCallsigns = new Set(allData.map(log => log.callsign)).size;
+  const uniqueFrequencies = new Set(allData.map(log => log.frequency)).size;
+  
+  document.getElementById('station-total').textContent = totalCounts;
+  document.getElementById('unique-callsigns').textContent = uniqueCallsigns;
+  document.getElementById('unique-frequencies').textContent = uniqueFrequencies;
+}
+
+// 填充筛选选项
+function populateFilterOptions() {
+  const frequencies = [...new Set(allData.map(log => log.frequency))].sort();
+  const modes = [...new Set(allData.map(log => log.mode))].sort();
+  
+  const freqSelect = document.getElementById('frequency-filter');
+  if (freqSelect) {
+    // 清除已有的选项（除了第一个默认选项）
+    while (freqSelect.options.length > 1) {
+      freqSelect.remove(1);
+    }
+    // 添加新选项
+    frequencies.forEach(freq => {
+      const option = document.createElement('option');
+      option.value = freq;
+      option.textContent = freq;
+      freqSelect.appendChild(option);
+    });
+  }
+  
+  const modeSelect = document.getElementById('mode-filter');
+  if (modeSelect) {
+    // 清除已有的选项（除了第一个默认选项）
+    while (modeSelect.options.length > 1) {
+      modeSelect.remove(1);
+    }
+    // 添加新选项
+    modes.forEach(mode => {
+      const option = document.createElement('option');
+      option.value = mode;
+      option.textContent = mode;
+      modeSelect.appendChild(option);
+    });
+  }
+}
+
+// 事件监听
+function setupEventListeners() {
+  const callsignFilter = document.getElementById('callsign-filter');
+  const frequencyFilter = document.getElementById('frequency-filter');
+  const modeFilter = document.getElementById('mode-filter');
+  
+  if (callsignFilter) {
+    callsignFilter.addEventListener('input', applyFilters);
+  }
+  if (frequencyFilter) {
+    frequencyFilter.addEventListener('change', applyFilters);
+  }
+  if (modeFilter) {
+    modeFilter.addEventListener('change', applyFilters);
+  }
+}
+
+// 应用筛选
+function applyFilters() {
+  const callsign = document.getElementById('callsign-filter').value.toUpperCase();
+  const frequency = document.getElementById('frequency-filter').value;
+  const mode = document.getElementById('mode-filter').value;
+  
+  filteredData = allData.filter(log => {
+    return (!callsign || log.callsign.toUpperCase().includes(callsign)) &&
+           (!frequency || log.frequency === frequency) &&
+           (!mode || log.mode === mode);
+  });
+
+  filteredData.sort(compareLogDateTimeDesc);
+  
+  displayTable();
+  updateFilterStatus();
+}
+
+// 更新筛选状态
+function updateFilterStatus() {
+  const callsign = document.getElementById('callsign-filter').value;
+  const frequency = document.getElementById('frequency-filter').value;
+  const mode = document.getElementById('mode-filter').value;
+  
+  const filters = [
+    callsign && `呼号: ${callsign}`,
+    frequency && `频率: ${frequency}`,
+    mode && `模式: ${mode}`
+  ].filter(f => f);
+  
+  const status = document.getElementById('filter-status');
+  if (filters.length > 0) {
+    status.textContent = `筛选: ${filters.join(' | ')}`;
+  } else {
+    status.textContent = '';
+  }
+}
+
+// 重置筛选
+function resetFilters() {
+  document.getElementById('callsign-filter').value = '';
+  document.getElementById('frequency-filter').value = '';
+  document.getElementById('mode-filter').value = '';
+  filteredData = [...allData];
+  currentSort = { column: null, direction: 'asc' };
+  document.querySelectorAll('.qsl-table th').forEach(th => {
+    th.classList.remove('sort-asc', 'sort-desc');
+  });
+  displayTable();
+  updateFilterStatus();
+}
+
+// 排序
+function sortTable(column) {
+  if (currentSort.column === column) {
+    currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+  } else {
+    currentSort.column = column;
+    currentSort.direction = 'asc';
+  }
+  
+  filteredData.sort((a, b) => {
+    let aVal = a[column];
+    let bVal = b[column];
+    
+    if (!isNaN(aVal) && !isNaN(bVal)) {
+      aVal = parseFloat(aVal);
+      bVal = parseFloat(bVal);
+    }
+    
+    if (currentSort.direction === 'asc') {
+      return aVal > bVal ? 1 : -1;
+    } else {
+      return aVal < bVal ? 1 : -1;
+    }
+  });
+  
+  document.querySelectorAll('.qsl-table th').forEach(th => {
+    th.classList.remove('sort-asc', 'sort-desc');
+  });
+  
+  const th = document.querySelector(`.qsl-table th[onclick*="sortTable('${column}')"]`);
+  if (th) {
+    th.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
+  }
+  
+  displayTable();
+}
+
+// 显示表格
+function displayTable() {
+  const tbody = document.getElementById('qsl-table-body');
+  tbody.innerHTML = '';
+  
+  if (filteredData.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="11" class="no-data">未找到匹配的记录</td></tr>';
+  } else {
+    filteredData.forEach(log => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${log.date}</td>
+        <td>${log.time}</td>
+        <td><strong>${log.callsign}</strong></td>
+        <td>${log.frequency}</td>
+        <td>${log.mode}</td>
+        <td>${log.report}</td>
+        <td>${log.location}</td>
+        <td>${log.equipment}</td>
+        <td>${log.antenna}</td>
+        <td>${log.power}</td>
+        <td>${log.remarks}</td>
+      `;
+      tbody.appendChild(row);
+    });
+  }
+  
+  document.getElementById('displayed-count').textContent = filteredData.length;
+  document.getElementById('total-count').textContent = allData.length;
+}
+
+// 页面加载
+document.addEventListener('DOMContentLoaded', init);
+</script>
+
+            </div>
         </div>
     </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
-
-    
-
 </main>
 
+<style>
+/* QSL页面额外样式 */
+.qsl-page-container {
+    max-width: 1400px !important;
+}
 
+.qsl-page-container .card {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.qsl-page-container .card-content {
+    padding: 0;
+}
+
+/* 确保qsl-container内容正确显示 */
+.qsl-container {
+    padding: 20px !important;
+}
+
+/* 强制应用station-info样式 */
+.station-info {
+    background: linear-gradient(135deg, #4b68e9 0%, #4bb66f 100%) !important;
+    color: white !important;
+    border-radius: 12px !important;
+    padding: 30px !important;
+    margin-bottom: 30px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+}
+
+.station-info h3 {
+    margin-top: 0 !important;
+    font-size: 24px !important;
+    margin-bottom: 20px !important;
+    border-bottom: 2px solid rgba(255,255,255,0.3) !important;
+    padding-bottom: 10px !important;
+    color: white !important;
+}
+
+/* 强制info-row使用grid */
+.info-row {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 20px !important;
+    margin-bottom: 10px !important;
+}
+
+.info-item {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.info-label {
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    opacity: 0.9 !important;
+    letter-spacing: 0.5px !important;
+}
+
+.info-value {
+    font-size: 15px !important;
+    word-break: break-word !important;
+}
+
+.info-value a {
+    color: #fff !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.5) !important;
+}
+
+/* 强制stats-panel使用grid */
+.stats-panel {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+.stat-item {
+    text-align: center !important;
+}
+
+.stat-value {
+    font-size: 28px !important;
+    font-weight: bold !important;
+    margin-bottom: 5px !important;
+}
+
+.stat-label {
+    font-size: 12px !important;
+    opacity: 0.85 !important;
+}
+
+/* 筛选区域样式 */
+.filter-section {
+    background: white !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr auto auto !important;
+    gap: 15px !important;
+    align-items: flex-end !important;
+}
+
+.filter-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+.filter-label {
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    color: #333 !important;
+}
+
+.filter-input,
+.filter-select {
+    padding: 10px 12px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    transition: all 0.3s !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background-color: white !important;
+    color: #333 !important;
+    display: block !important;
+    min-height: 40px !important;
+    cursor: pointer !important;
+    appearance: auto !important;
+    -webkit-appearance: auto !important;
+    -moz-appearance: auto !important;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+    outline: none !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102,126,234,0.1) !important;
+}
+
+.filter-button {
+    padding: 10px 20px !important;
+    background: #667eea !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    transition: all 0.3s !important;
+    font-size: 14px !important;
+    height: 40px !important;
+    white-space: nowrap !important;
+}
+
+.filter-button:hover {
+    background: #5568d3 !important;
+    box-shadow: 0 4px 12px rgba(102,126,234,0.4) !important;
+}
+
+.filter-button.reset {
+    background: #999 !important;
+}
+
+.filter-button.reset:hover {
+    background: #777 !important;
+}
+
+.filter-button.export {
+    background: #48bb78 !important;
+}
+
+.filter-button.export:hover {
+    background: #38a169 !important;
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .qsl-page-container {
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-row {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .stats-panel {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .filter-section {
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+    }
+    
+    .filter-group {
+        width: 100% !important;
+    }
+    
+    .filter-button {
+        width: 100% !important;
+    }
+}
+</style>
+
+<script>
+// 立即阻止Materialize处理QSL页面的select框 - 在jQuery加载后立即执行
+(function() {
+    // 保存原始的Materialize FormSelect构造函数
+    var originalFormSelect = null;
+    
+    // 钩子到jQuery的ready中
+    var $document = $(document);
+    var oldReady = $.ready.promise;
+    
+    // 在Materialize初始化前移除select框的特殊类
+    function cleanupSelects() {
+        const selects = document.querySelectorAll('#frequency-filter, #mode-filter');
+        selects.forEach(select => {
+            // 移除任何Materialize添加的类
+            select.classList.remove('initialized');
+            select.classList.remove('select-wrapper');
+            
+            // 移除相邻的Materialize元素
+            let sibling = select.nextElementSibling;
+            while (sibling) {
+                if (sibling.classList && (
+                    sibling.classList.contains('caret') || 
+                    sibling.classList.contains('select-wrapper') || 
+                    sibling.classList.contains('dropdown-trigger') ||
+                    sibling.classList.contains('select-dropdown')
+                )) {
+                    sibling.remove();
+                    sibling = select.nextElementSibling;
+                } else {
+                    break;
+                }
+            }
+            
+            // 确保select框本身可见
+            select.style.display = 'block';
+            select.style.visibility = 'visible';
+            select.style.opacity = '1';
+            select.style.position = 'relative';
+            select.style.zIndex = '200';
+        });
+    }
+    
+    // 在document ready时运行
+    $(document).ready(function() {
+        cleanupSelects();
+        
+        // 每100ms检查一次，防止Materialize重新处理
+        setInterval(cleanupSelects, 100);
+    });
+    
+    // 也在load事件时运行
+    window.addEventListener('load', function() {
+        setTimeout(cleanupSelects, 100);
+    });
+    
+    // 对MutationObserver的支持，监听DOM变化
+    if (window.MutationObserver) {
+        var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList') {
+                    cleanupSelects();
+                }
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true,
+                attributes: false
+            });
+        });
+    }
+})();
+</script>
 
 
     <footer class="page-footer bg-color">
