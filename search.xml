@@ -31,6 +31,33 @@
     
     
     <entry>
+      <title>依托云服务的NAS配置</title>
+      <link href="/cloud-service/"/>
+      <url>/cloud-service/</url>
+      
+        <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>原来的NAS放家里，是退役台式机改的，并且享有尊贵的公网IP。由于近几年公网IP逐渐限制，即是现在仍然拥有公网IP，但是很多端口已经封死，原先的ftp端口稳定性极差。加之Windows系统与台式机的组合功耗巨大，系统盘也达到了接近报废的健康度，于是下了二百大洋血本，从海鲜市场严肃购入双盘位J3160NAS小主机，并继承了原来的16t企业盘。并且为了尽可能利用学校<del>免费</del>（大概是吧）的高上行带宽，于是选择把NAS部署在网络环境较为稳定的社团工作室。</p><h2 id="NAS配置"><a href="#NAS配置" class="headerlink" title="NAS配置"></a>NAS配置</h2><p>非常简单啊，就是一个飞牛OS。但是呢，预装的系统用一整个盘作为系统分区，因此没有地方开存储空间放应用了（飞牛严格的文件安全要求应用数据必须存放于存储空间），于是就这样水灵灵的重开了。</p><p>另外飞牛仅支持挂载NTFS分区磁盘，不支持在上面创建存储空间。所以企业盘也重开了。。。</p><p>其他的就非常简单了，该开的端口打开，就可以内网访问了。</p><h2 id="外网访问"><a href="#外网访问" class="headerlink" title="外网访问"></a>外网访问</h2><p>显然绝大多数时候都是外网访问的场景，那么必须要做一些外网访问的工作了。把要用的端口在路由器防火墙上库库一通放行。</p><h3 id="总体结构"><a href="#总体结构" class="headerlink" title="总体结构"></a>总体结构</h3><p><img src="/cloud-service/cloud-service-1.png"></p><h3 id="校外访问"><a href="#校外访问" class="headerlink" title="校外访问"></a>校外访问</h3><p>理论上是可以直接zerotier或者tailscale打洞，但是网速实在是感人。所以这次直接借用云服务较大的带宽做了frp反代。用了一个子域名作为区分，加上指定端口就可以反代到NAS主机上了。由于主站是基于1panel的openresty插件搭的，里面的nginx配置文件过于沟槽（大概是套了三层），导致stream模块没有办法在主站的conf下面运行，所以不得已只能放弃对于子域名的强制限制。</p><h3 id="校内访问"><a href="#校内访问" class="headerlink" title="校内访问"></a>校内访问</h3><p>理论上是可以通过内网IP直接访问的，但是为了<del>保证访问的优雅性</del>（其实是IP分流做不了了），所以另外开了一个子域名。通过增加nginx配置内容，就可以实现使用子域名加指定端口访问http协议的内容就可以直接被重定向到校内IP。</p><h3 id="沟槽的校园网"><a href="#沟槽的校园网" class="headerlink" title="沟槽的校园网"></a>沟槽的校园网</h3><p>为什么做不了IP分流？因为校园网是BGP，说不定就走移动的端口就出去了，这样的话就不像教育网一样可以走固定的IP范围出来了，分流就白做了。另外，校内部分IP地址之间由于沟槽的内网/dockerIP与校园网IP冲突导致回包被截胡因此并不互通，这种场景下与其自动分流不如手动选择直连还是frp。最后还预留了类似ddns的功能，在NAS校内IP变化之后可以自动上传云服务并修改重定向的目标IP。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 折腾 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nas </tag>
+            
+            <tag> 云服务 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>西郊有密林，助君出重围</title>
       <link href="/26newyear/"/>
       <url>/26newyear/</url>
