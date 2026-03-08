@@ -4,33 +4,6 @@
   
     
     <entry>
-      <title>QSL模块简介</title>
-      <link href="/qsl-page/"/>
-      <url>/qsl-page/</url>
-      
-        <content type="html"><![CDATA[<h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>因为想要收听ATC通话，所以准备考个电台执照合法设个台。开始学习理论发现，合法设立的电台是不可以收听业余无线电以外的内容的。既然学了那就把证考了呗，至于收听ATC嘛，只听不发（不敢吱声）就行。玩无线电还是非常帅的。</p><p>此页面灵感来自<a href="https://loveapple.icu/QSL-LOG/">BA4UHI</a>，大概就是qrz.com太难用了，不如自己开个页面写通联记录。</p><h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>几乎全程vibe coding，ai写代码还是太好使了。</p><p>在hexo的模板下，页面主页需要写成markdown文件。因此需要自定义页面的话就只能在markdown当中内嵌html代码，并单独编写模板匹配markdown中的html代码。因此额外写了一个qsl.ejs。既然是可以内嵌html代码，那么就可以为所欲为了（）</p><p>另外加了频率筛选和通联方式筛选。</p><p>此页面已链接到qrz.com和本人的qsl卡上，大概就是qrz.com只作为一个门户，其他和无线电相关的功能全部在这里实现。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 折腾 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> blog </tag>
-            
-            <tag> 无线电 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>依托云服务的NAS配置</title>
       <link href="/cloud-service/"/>
       <url>/cloud-service/</url>
@@ -50,6 +23,33 @@
             <tag> nas </tag>
             
             <tag> 云服务 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>QSL模块简介</title>
+      <link href="/qsl-page/"/>
+      <url>/qsl-page/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>因为想要收听ATC通话，所以准备考个电台执照合法设个台。开始学习理论发现，合法设立的电台是不可以收听业余无线电以外的内容的。既然学了那就把证考了呗，至于收听ATC嘛，只听不发（不敢吱声）就行。玩无线电还是非常帅的。</p><p>此页面灵感来自<a href="https://loveapple.icu/QSL-LOG/">BA4UHI</a>，大概就是qrz.com太难用了，不如自己开个页面写通联记录。</p><h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>几乎全程vibe coding，ai写代码还是太好使了。</p><p>在hexo的模板下，页面主页需要写成markdown文件。因此需要自定义页面的话就只能在markdown当中内嵌html代码，并单独编写模板匹配markdown中的html代码。因此额外写了一个qsl.ejs。既然是可以内嵌html代码，那么就可以为所欲为了（）</p><p>另外加了频率筛选和通联方式筛选。</p><p>此页面已链接到qrz.com和本人的qsl卡上，大概就是qrz.com只作为一个门户，其他和无线电相关的功能全部在这里实现。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 折腾 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> blog </tag>
+            
+            <tag> 无线电 </tag>
             
         </tags>
       
