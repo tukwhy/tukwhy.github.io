@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>关于校园网的一点解释</title>
+      <link href="/campus-network1/"/>
+      <url>/campus-network1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>上一个post提到我挂载在路由器下的NAS在校园网分配到10.0.0.0/8时无法访问，由于路由器下内网IP也是10.0.0.0/8，所以我怀疑IP冲突，于是将路由器内部IP改为了10.0.0.0/16，依然无法访问，但是已经可以ping通路由器。因此展开了大调查。</p><h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>在10.22.48.172/8下访问了路由器上的其他服务，运行正常，因此将问题定位到NAS本身。</p><p>在NAS上可以顺利ping通10.0.0.0/8，这其实是比较迷惑的，这说明NAS本身的路由策略没有问题。</p><p>对来自10.0.0.0/8源IP的数据进行抓包</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20:13:54.806773 enp1s0 Out ARP, Request who-has 10.22.48.172 tell 10.10.2.200, length 28</span><br></pre></td></tr></tbody></table></figure><p>这说明系统试图ARP查询10.22.48.172的MAC，显然这是不可能有回复的，因此回包丢失，访问失败。这其实是说明Linux在做neighbour解析时判断目标在本地链路。</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>使用策略路由</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip rule add from 10.10.2.200 lookup 100</span><br><span class="line">ip route add default via 10.10.0.1 dev enp1s0 table 100</span><br></pre></td></tr></tbody></table></figure><p>并强制10/8走网关</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip route replace 10.0.0.0/8 via 10.10.0.1 dev enp1s0 metric 10</span><br><span class="line">ip route flush cache</span><br></pre></td></tr></tbody></table></figure><p>单纯开启ARP Filter是没有用的。</p><h2 id="一点疑惑"><a href="#一点疑惑" class="headerlink" title="一点疑惑"></a>一点疑惑</h2><p>为什么在NAS上可以顺利ping通10.0.0.0/8？我不知道。</p><p>AI：核心原因在于 Linux 在不同协议路径上的邻居解析行为不同。</p><p>好。ok。</p><h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><p>校园网下172网段的能ping通10的，但是反之不行，但是10网段仍可以访问172网段架设的访问。疑似是10的出口路由丢弃了ICMP包。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 折腾 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 校园网 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>依托云服务的NAS配置</title>
       <link href="/cloud-service/"/>
       <url>/cloud-service/</url>
