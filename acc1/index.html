@@ -409,15 +409,27 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在物理层面我们看到的数据传输只是高低电平的交替，并不知道每一部分对应什么内容。因此在SerDes层面加入的抗串扰编码是直接作用于物理层的。然而大模型的压缩编码仅仅针对于被传输的实际数据本身，并不会作用于其他一些控制位地址位。要研究两者的平衡我们必须知道这些数据是如何被封装传输的。</p>
 <h2 id="研究的物理背景"><a href="#研究的物理背景" class="headerlink" title="研究的物理背景"></a>研究的物理背景</h2><p>CPU直接读取DRAM当中的数据，假设这一部分数据全部没有被读取过，因此在三级缓存查询中均miss，直接从内存读取。</p>
-<h2 id="Cache-Line"><a href="#Cache-Line" class="headerlink" title="Cache Line"></a>Cache Line</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+--------------------------------------------------+</span><br><span class="line">| Tag | State | Dirty | Valid | (其它控制位) | Data |</span><br><span class="line">+--------------------------------------------------+</span><br><span class="line">                                               ↑</span><br><span class="line">                                            64 Bytes</span><br></pre></td></tr></tbody></table></figure>
-
+<h2 id="Cache-Line"><a href="#Cache-Line" class="headerlink" title="Cache Line"></a>Cache Line</h2><pre><code>+--------------------------------------------------+
+| Tag | State | Dirty | Valid | (其它控制位) | Data |
++--------------------------------------------------+
+                                               ↑
+                                            64 Bytes
+</code></pre>
 <p>数据都是被封装在cache line中被传输的，一个cache line的数据部分典型大小（英特尔x86）是64字节，前部还附加了控制位。控制位包含标记位，有效位，一致性状态位，脏位，以及一些其他自定义的位。</p>
 <h3 id="Data-Block（数据块）"><a href="#Data-Block（数据块）" class="headerlink" title="Data Block（数据块）"></a>Data Block（数据块）</h3><p>这是cache line的主体：</p>
 <p>大小：通常64字节</p>
@@ -425,8 +437,8 @@
 <p>这是唯一会从内存读入，被写回内存，且经由DDR burst传输的部分。</p>
 <h3 id="Tag（标记）"><a href="#Tag（标记）" class="headerlink" title="Tag（标记）"></a>Tag（标记）</h3><p>Tag记录这64B数据对应内存中的哪一段地址。</p>
 <p>地址拆分（以64B line为例）：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">| Tag | Index | Offset |</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>| Tag | Index | Offset |
+</code></pre>
 <p>Offset：6 bit（2⁶ = 64B）</p>
 <p>Index：决定落在哪一组（set）</p>
 <p>Tag：剩余高位地址</p>
@@ -729,6 +741,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

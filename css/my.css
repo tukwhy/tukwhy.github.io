@@ -1,1 +1,27 @@
 /* Here is your custom css styles. */
+
+/* 强制在非暗色模式下使用浅色代码块背景，覆盖主题暗色或 Prism 主题 */
+body:not(.DarkMode) pre[class*="language-"],
+body:not(.DarkMode) code[class*="language-"] {
+	background-color: #f5f7fa !important;
+	color: #2d2d2d !important;
+}
+
+/* 保持暗色模式下的代码块样式不变 */
+body.DarkMode pre[class*="language-"],
+body.DarkMode code[class*="language-"] {
+	background-color: #2d2d2d !important;
+	color: #f8f8f2 !important;
+	border-radius: 4px;
+	box-shadow: none !important;
+	/* 支持表格/figure 高亮的旧渲染形式 */
+}
+
+/* 兼容旧的服务器端渲染表格高亮结构 */
+body.DarkMode figure.highlight,
+body.DarkMode figure.highlight table,
+body.DarkMode .highlight table,
+body.DarkMode .highlight {
+	background-color: #2d2d2d !important;
+	color: #f8f8f2 !important;
+}

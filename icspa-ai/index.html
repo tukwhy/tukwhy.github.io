@@ -401,7 +401,15 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
         
 
         <div class="card-content article-card-content">
@@ -422,7 +430,25 @@
 <p>这里的工作可以参考前人代码写一个函数，剩下的tab是没有问题的。</p>
 <h2 id="PA2-程序的执行"><a href="#PA2-程序的执行" class="headerlink" title="PA2 程序的执行"></a>PA2 程序的执行</h2><h3 id="2-1-指令集"><a href="#2-1-指令集" class="headerlink" title="2-1 指令集"></a>2-1 指令集</h3><p>个人认为工作量最大的一部分。大致需要实现一整张opcode表（当然最简单的办法是抄opcode_ref.c，注意这个ref里面是缺了几条指令的，暂时不影响这一部分实验的完成，后续留给大家debug了），实现每一个基础指令，修改条件跳转宏。</p>
 <p>实现指令部分依旧可以参考前人代码写一个函数，然后剩下的工作敲tab是可取的（因为重复性工作比较多，当然可以通过带参数的宏解决），但是不一定是可行的。下面我举一个例子。</p>
-<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">make_instr_func(add_r2rm_v)</span><br><span class="line">{</span><br><span class="line">    OPERAND rm, r;</span><br><span class="line">    </span><br><span class="line">    rm.data_size = data_size;</span><br><span class="line">    r.data_size = data_size;</span><br><span class="line">    <span class="type">int</span> len = <span class="number">1</span>;</span><br><span class="line">    len += modrm_r_rm(eip + <span class="number">1</span>, &amp;r, &amp;rm);</span><br><span class="line">    </span><br><span class="line">    operand_read(&amp;rm);</span><br><span class="line">    operand_read(&amp;r);</span><br><span class="line">    </span><br><span class="line">    rm.val = alu_add(r.val, rm.val, data_size);</span><br><span class="line">    </span><br><span class="line">    operand_write(&amp;rm);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> len;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre><code class="language-c">make_instr_func(add_r2rm_v)
+{
+    OPERAND rm, r;
+    
+    rm.data_size = data_size;
+    r.data_size = data_size;
+    int len = 1;
+    len += modrm_r_rm(eip + 1, &amp;r, &amp;rm);
+    
+    operand_read(&amp;rm);
+    operand_read(&amp;r);
+    
+    rm.val = alu_add(r.val, rm.val, data_size);
+    
+    operand_write(&amp;rm);
+    
+    return len;
+}
+</code></pre>
 <p>AI在读取了这一个函数作为模板之后，你去让他写<code>add_r2rm_b</code>指令，然后他就会非常天真的继续给你写<code>rm.val = alu_add(r.val, rm.val, data_size)</code>。</p>
 <p>这其实就说明了我们完成这部分内容最需要关注的东西，操作数类型，操作数大小，操作数读取方式（相应的指令长度大小）。</p>
 <p>如果这一部分出错其实还好办，运行<code>make test_pa-2-1</code>之后会告诉你<code>HIT BAD TRAP at 0x0003004b</code>（举例），然后通过反汇编回去看这个地址对应的指令是什么（比如lea）就可以了。如果每个测试用例都在同一个指令处dump，那么回去好好研究一下这个指令就行。</p>
@@ -432,8 +458,19 @@
 <h2 id="PA3-存储管理"><a href="#PA3-存储管理" class="headerlink" title="PA3 存储管理"></a>PA3 存储管理</h2><p>这一大部分的流程就是依次实现从虚拟地址到线性地址再到物理地址的三步转换，我们会按照从后往前的顺序分别接触到，对应的就是Cache，Page和Segment的加入。</p>
 <p>同样地，AI在这里的工作是可取但不一定可行的。</p>
 <p>举一个例子，AI根本不会关注到跨Page读写的问题。</p>
-<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(wordAddr + len &lt;= <span class="number">64</span>) {</span><br><span class="line">		<span class="type">int</span> line = find_hit_line(<span class="built_in">set</span>, targetTag);</span><br><span class="line">		<span class="keyword">if</span>(line == <span class="number">-1</span>) {</span><br><span class="line">			line = select_fill_line(<span class="built_in">set</span>);</span><br><span class="line">			fill_line_from_mem(line, targetTag, <span class="built_in">set</span>);</span><br><span class="line">		}</span><br><span class="line">		<span class="type">uint32_t</span> ret = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">memcpy</span>(&amp;ret, &amp;(cache[line].data[wordAddr]), len);</span><br><span class="line">		<span class="keyword">return</span> ret;</span><br><span class="line">        <span class="comment">//AI只会帮你写这部分内容，如果你也没有意识到跨页读写问题的话，恭喜你将喜提kernel dump</span></span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">else</span> {}</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code class="language-c">if(wordAddr + len &lt;= 64) {
+		int line = find_hit_line(set, targetTag);
+		if(line == -1) {
+			line = select_fill_line(set);
+			fill_line_from_mem(line, targetTag, set);
+		}
+		uint32_t ret = 0;
+		memcpy(&amp;ret, &amp;(cache[line].data[wordAddr]), len);
+		return ret;
+        //AI只会帮你写这部分内容，如果你也没有意识到跨页读写问题的话，恭喜你将喜提kernel dump
+	}
+	else {}
+</code></pre>
 <p>所以如果在这里纯粹地使用AI一定要小心，但是在这里让AI帮你找bug还是非常可行的。</p>
 <h2 id="PA4-异常、中断与I-O"><a href="#PA4-异常、中断与I-O" class="headerlink" title="PA4 异常、中断与I/O"></a>PA4 异常、中断与I/O</h2><h3 id="PA4-1-PA4-2"><a href="#PA4-1-PA4-2" class="headerlink" title="PA4-1 &amp; PA4-2"></a>PA4-1 &amp; PA4-2</h3><p>请记得先做PA4-0！！！后面带图形的测试用例都需要使用图形转发，否则会kernel dump。</p>
 <p>讲真梦回PA2-1，补充了一些先前没有实现的指令，但是除此之外中断部分涉及复杂的函数调用过程，我觉得这一部分非常适合使用AI来理清整个逻辑链。</p>
@@ -705,6 +742,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

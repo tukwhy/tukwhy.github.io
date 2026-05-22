@@ -397,7 +397,15 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
         
 
         <div class="card-content article-card-content">
@@ -427,7 +435,8 @@
 <p>由于课程资源已经给出了详细的安装教程，这里只对部分内容进行说明。</p>
 </blockquote>
 <h3 id="Multisim软件版本"><a href="#Multisim软件版本" class="headerlink" title="Multisim软件版本"></a>Multisim软件版本</h3><p>请务必安装Multisim14.2或者更新版本。电子学基础I实验安装的14.0版本不能正常使用PLD功能。直接使用安装包升级即可，无需卸载重装。</p>
-<p>特别特别注意，安装时如有要求填写用户名，务必填写英文，否则将导致生成的VHDL代码中author项为中文，后续不能编译。<br>如果你不幸使用了中文用户名（简单判别方法就是在软件的启动界面右下角会显示注册的用户名），那么请使用注册表编辑器修改“计算机\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\National Instruments\Circuit Design Suite\14.3\Common”路径（将其中的14.3替换为你使用的Multisim版本）下的RegisteredOwner注册表项为英文。</p>
+<p>特别特别注意，安装时如有要求填写用户名，务必填写英文，否则将导致生成的VHDL代码中author项为中文，后续不能编译。
+如果你不幸使用了中文用户名（简单判别方法就是在软件的启动界面右下角会显示注册的用户名），那么请使用注册表编辑器修改“计算机\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\National Instruments\Circuit Design Suite\14.3\Common”路径（将其中的14.3替换为你使用的Multisim版本）下的RegisteredOwner注册表项为英文。</p>
 <h3 id="打开软件提示找不到主数据库（以及其他两个数据库）"><a href="#打开软件提示找不到主数据库（以及其他两个数据库）" class="headerlink" title="打开软件提示找不到主数据库（以及其他两个数据库）"></a>打开软件提示找不到主数据库（以及其他两个数据库）</h3><p>Windows背锅。一开始在2025年8月win11 24H2某个累积更新之后出现，卸载能解决。后发现未安装该更新的电脑也出现了相关问题，安装后卸载该更新的电脑也不能解决。因此具体原因不得而知。根本原因应该还是windows加强了对于三方软件访问权限的管理，但是没有明确的解决方案我们也无从求证。最简单粗暴的办法：关掉之后重开若干次Multisim。能彻底解决的办法：使用Windows10系统（或者虚拟机）。<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ZQp9zdEy3/?vd_source=c14b20d00832d1ad0bb89b62335219ab">这个视频</a>评论区中给出了各种解决方案，有兴趣的可以试试。</p>
 <h3 id="用户数据库中没有器件"><a href="#用户数据库中没有器件" class="headerlink" title="用户数据库中没有器件"></a>用户数据库中没有器件</h3><p>两种情况，第一种是上述找不到数据库的情况，参照上面的方法解决。第二种情况是没有创建PLD子电路，由于用户数据库中全部都是PLD器件，因此只有在PLD子电路中才能正常显示。</p>
 <h3 id="初次使用通用编程器报错"><a href="#初次使用通用编程器报错" class="headerlink" title="初次使用通用编程器报错"></a>初次使用通用编程器报错</h3><p>检查安装路径中是否包含中文和特殊字符，尽量控制路径下各个文件夹名称不超过八个字符。</p>
@@ -730,6 +739,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->
