@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>依托云服务的NAS配置2</title>
+      <link href="/cloud-service2/"/>
+      <url>/cloud-service2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>上家云服务因为宁波区大手收紧，FRP的对等流量业务被发现了，因此服务器就4了。由于没有办法完整迁移服务器到阿里云的新服务器上，因此选择了重开。</p><h2 id="结构改变"><a href="#结构改变" class="headerlink" title="结构改变"></a>结构改变</h2><p>总体结构和实现思路完全没有变化，区别在于这次三个子域名的访问全部接入1Panel，然后创建三个独立的站点（静态页面），然后通过编写不同的配置文件实现不同的跳转功能。</p><p><img src="/cloud-service2/image.png" alt="结构拓扑图"></p><p>至于这次为什么这么设计……因为我换了一个AI（）</p><p>这么做的好处是彻底隔离了三个子域名的访问，并且全部同时支持了http和https协议，并且对于FRP的端口有了更严格的阻断，全部经过配置文件的转发流入FRPS的虚拟隧道，阻断不许可的端口和协议。非http/https协议的FRP依旧是直接暴露在公网。</p><p>这个做法和之前拥有同样的缺点，一个端口不能同时被两个nginx进程监听，因此使用i和o子域名访问nas的同一个端口时必须在外部使用不同的端口。</p><h2 id="神秘小bug"><a href="#神秘小bug" class="headerlink" title="神秘小bug"></a>神秘小bug</h2><p>由于webdav和管理页面全部走的是http协议，如果frpc直接连接frps，在直接指定外网域名的情况下，进入内部虚拟隧道的转发流量会被全部裁切掉端口号信息，转发出来之后的流量自动匹配的端口号优先匹配了管理页面的http，因此即使外部访问了webdav的端口仍会跳转出管理页面。</p><p>解决办法是在frp的连接中定义虚拟的域名作为区分。</p><p>frpc</p><pre><code class="language-toml">[[proxies]]name = "admin"type = "http"localIP = "127.0.0.1"localPort = 1145customDomains = ["admin.fnos"][[proxies]]name = "webdav"type = "http"localIP = "127.0.0.1"localPort = 1919customDomains = ["webdav.fnos"]</code></pre><p>nginx</p><pre><code class="language-nginx">location / {        # 默认阻断        set $frp_host "block";                # 1. 如果是控制台端口进来的流量，把 Host 改写为 admin.fnos        if ($server_port ~* "^(1145)$") {            set $frp_host "admin.fnos";        }                # 2. 如果是 WebDAV 端口进来的流量，把 Host 改写为 webdav.fnos        if ($server_port ~* "^(1919)$") {            set $frp_host "webdav.fnos";        }        # 安全防空机制：如果有人敲 80/443，直接挂断        if ($frp_host = "block") {            return 444;        }        proxy_pass http://127.0.0.1:8080; # 虚拟隧道        proxy_set_header Host $frp_host;                proxy_ssl_verify off; # 防止网站ssl证书和fnos管理页自签证书不匹配被阻断连接    }</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 折腾 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nas </tag>
+            
+            <tag> 云服务 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一生一芯f6 debug艰难历程</title>
       <link href="/ysyx-f6/"/>
       <url>/ysyx-f6/</url>
