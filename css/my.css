@@ -1,27 +1,400 @@
-/* Here is your custom css styles. */
+/* ==========================================================================
+   Custom Global Style & Aesthetic Enhancements
+   - Modern Neutral Leaning Blue Theme
+   - High Space-Efficiency 2-Column Horizontal Cards
+   - Film Tint Banner Overlay (No Purple Rainbow)
+   - Typography & Dark Mode Polishing
+   ========================================================================== */
 
-/* 强制在非暗色模式下使用浅色代码块背景，覆盖主题暗色或 Prism 主题 */
+:root {
+    --primary-blue: #2563eb;
+    --primary-blue-hover: #1d4ed8;
+    --primary-blue-light: #eff6ff;
+    --primary-blue-border: #bfdbfe;
+    --accent-blue: #38bdf8;
+    
+    --bg-main: #f1f4f8;
+    --card-bg-light: #ffffff;
+    --card-border-light: rgba(203, 213, 225, 0.75);
+    
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    
+    --radius-card: 12px;
+    --radius-pill: 9999px;
+    --radius-tag: 6px;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+    --shadow-card: 0 4px 16px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+    --shadow-card-hover: 0 16px 28px -4px rgba(37, 99, 235, 0.10), 0 6px 12px -2px rgba(15, 23, 42, 0.04);
+}
+
+/* Base Body & Global Background */
+body:not(.DarkMode) {
+    background-color: var(--bg-main) !important;
+    color: var(--text-primary);
+}
+
+/* Primary Color Gradient Overrides */
+.bg-color {
+    background-image: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%) !important;
+}
+
+.text-color {
+    color: var(--primary-blue) !important;
+}
+
+/* ==========================================================================
+   Banner Overlay (Option A: Deep Film Mask, No Purple Rainbow)
+   ========================================================================== */
+.bg-cover:after {
+    animation: none !important;
+    -webkit-animation: none !important;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.40) 0%, rgba(15, 23, 42, 0.72) 100%) !important;
+}
+
+.bg-cover:before {
+    background: rgba(15, 23, 42, 0.20) !important;
+}
+
+/* Modern Header & Glassmorphism */
+header nav {
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08) !important;
+    transition: all 0.3s ease;
+}
+
+header #headNav:not(.nav-transparent) {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-image: linear-gradient(135deg, rgba(30, 58, 95, 0.92) 0%, rgba(37, 99, 235, 0.92) 100%) !important;
+}
+
+/* ==========================================================================
+   Article Grid & 2-Column Horizontal Cards (High Space Utilization)
+   ========================================================================== */
+
+.articles.container {
+    width: 92% !important;
+    max-width: 1280px !important;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.article-row,
+.tags-posts {
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+}
+
+.article-row .article,
+.tags-posts .article {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    margin-bottom: 24px !important;
+}
+
+/* Horizontal Card Structure */
+.horizontal-article-card {
+    display: flex !important;
+    flex-direction: row !important;
+    height: 180px !important;
+    border-radius: var(--radius-card) !important;
+    background-color: var(--card-bg-light);
+    border: 1px solid var(--card-border-light);
+    box-shadow: var(--shadow-card) !important;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-color 0.28s ease !important;
+    overflow: hidden;
+    margin: 0 !important;
+}
+
+.horizontal-article-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(59, 130, 246, 0.40) !important;
+    box-shadow: var(--shadow-card-hover) !important;
+}
+
+/* Left Image Section */
+.horizontal-article-card .card-image-wrapper {
+    display: block;
+    width: 210px;
+    min-width: 210px;
+    max-width: 210px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #0f172a;
+}
+
+.horizontal-article-card .card-image {
+    width: 100%;
+    height: 100% !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.horizontal-article-card .card-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    opacity: 0.92;
+    transition: transform 0.4s ease, opacity 0.3s ease !important;
+}
+
+.horizontal-article-card:hover .card-image img {
+    transform: scale(1.06);
+    opacity: 1;
+}
+
+/* Right Content Stack */
+.horizontal-article-card .card-stacked {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 14px 18px 12px 18px;
+}
+
+.horizontal-article-card .card-content {
+    padding: 0 !important;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.horizontal-article-card .article-title-link {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 6px;
+}
+
+.horizontal-article-card .article-title {
+    font-size: 1.08rem !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+    color: var(--text-primary) !important;
+    margin: 0 !important;
+    letter-spacing: -0.01em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.horizontal-article-card:hover .article-title {
+    color: var(--primary-blue) !important;
+}
+
+.horizontal-article-card .article-card-summary,
+.horizontal-article-card .summary {
+    font-size: 0.84rem !important;
+    line-height: 1.55 !important;
+    color: var(--text-secondary) !important;
+    margin: 0 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    word-break: break-word;
+}
+
+.block-with-text:before,
+.block-with-text:after {
+    display: none !important;
+}
+
+/* Footer of Horizontal Card */
+.horizontal-article-card .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 6px;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+}
+
+.horizontal-article-card .publish-meta,
+.horizontal-article-card .publish-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.horizontal-article-card .publish-date {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-muted);
+}
+
+.horizontal-article-card .publish-date .icon-date {
+    margin-right: 3px;
+    font-size: 0.74rem;
+}
+
+.horizontal-article-card .publish-category .post-category {
+    color: var(--primary-blue) !important;
+    font-weight: 500;
+    margin-left: 3px;
+    transition: color 0.2s ease;
+}
+
+.horizontal-article-card .publish-category .post-category:hover {
+    color: var(--primary-blue-hover) !important;
+}
+
+.horizontal-article-card .article-tags {
+    display: inline-flex;
+    align-items: center;
+}
+
+.horizontal-article-card .article-tags .chip {
+    background-color: var(--primary-blue-light) !important;
+    color: var(--primary-blue) !important;
+    border: 1px solid #dbeafe !important;
+    font-size: 0.70rem !important;
+    font-weight: 500 !important;
+    height: 20px !important;
+    line-height: 18px !important;
+    padding: 0 8px !important;
+    border-radius: var(--radius-tag) !important;
+    margin: 0 0 0 4px !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.horizontal-article-card .article-tags .chip:hover {
+    background-color: var(--primary-blue) !important;
+    color: #ffffff !important;
+    border-color: var(--primary-blue) !important;
+    transform: translateY(-1px);
+}
+
+/* Responsive adjustments for mobile (< 600px) */
+@media only screen and (max-width: 600px) {
+    .articles.container {
+        width: 100% !important;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .horizontal-article-card {
+        height: 135px !important;
+    }
+    
+    .horizontal-article-card .card-image-wrapper {
+        width: 120px;
+        min-width: 120px;
+        max-width: 120px;
+    }
+    
+    .horizontal-article-card .card-stacked {
+        padding: 10px 12px 8px 12px;
+    }
+    
+    .horizontal-article-card .article-title {
+        font-size: 0.95rem !important;
+    }
+    
+    .horizontal-article-card .article-card-summary,
+    .horizontal-article-card .summary {
+        font-size: 0.78rem !important;
+        -webkit-line-clamp: 2 !important;
+    }
+
+    .horizontal-article-card .article-tags {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   Dark Mode Styling & Harmonization
+   ========================================================================== */
+
+body.DarkMode {
+    background-color: #0e131f !important;
+    color: #e2e8f0;
+}
+
+body.DarkMode .bg-color {
+    background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    opacity: 0.95 !important;
+}
+
+body.DarkMode .bg-cover:after {
+    background: linear-gradient(180deg, rgba(11, 15, 23, 0.55) 0%, rgba(11, 15, 23, 0.88) 100%) !important;
+}
+
+body.DarkMode .horizontal-article-card {
+    background-color: #161e2e !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+}
+
+body.DarkMode .horizontal-article-card:hover {
+    border-color: rgba(59, 130, 246, 0.45) !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 12px rgba(37, 99, 235, 0.15) !important;
+}
+
+body.DarkMode .horizontal-article-card .article-title {
+    color: #f1f5f9 !important;
+}
+
+body.DarkMode .horizontal-article-card .article-card-summary,
+body.DarkMode .horizontal-article-card .summary {
+    color: #94a3b8 !important;
+}
+
+body.DarkMode .horizontal-article-card .card-footer {
+    border-top-color: rgba(255, 255, 255, 0.06) !important;
+    color: #64748b !important;
+}
+
+body.DarkMode .horizontal-article-card .publish-category .post-category {
+    color: #60a5fa !important;
+}
+
+body.DarkMode .horizontal-article-card .article-tags .chip {
+    background-color: rgba(59, 130, 246, 0.12) !important;
+    color: #93c5fd !important;
+    border-color: rgba(59, 130, 246, 0.25) !important;
+}
+
+body.DarkMode .horizontal-article-card .article-tags .chip:hover {
+    background-color: var(--primary-blue) !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   Code Blocks & Highlighting (Preserved)
+   ========================================================================== */
+
 body:not(.DarkMode) pre[class*="language-"],
 body:not(.DarkMode) code[class*="language-"] {
-	background-color: #f5f7fa !important;
-	color: #2d2d2d !important;
+    background-color: #f8fafc !important;
+    color: #1e293b !important;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
 }
 
-/* 保持暗色模式下的代码块样式不变 */
 body.DarkMode pre[class*="language-"],
 body.DarkMode code[class*="language-"] {
-	background-color: #2d2d2d !important;
-	color: #f8f8f2 !important;
-	border-radius: 4px;
-	box-shadow: none !important;
-	/* 支持表格/figure 高亮的旧渲染形式 */
+    background-color: #111827 !important;
+    color: #f8f8f2 !important;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: none !important;
 }
 
-/* 兼容旧的服务器端渲染表格高亮结构 */
 body.DarkMode figure.highlight,
 body.DarkMode figure.highlight table,
 body.DarkMode .highlight table,
 body.DarkMode .highlight {
-	background-color: #2d2d2d !important;
-	color: #f8f8f2 !important;
+    background-color: #111827 !important;
+    color: #f8f8f2 !important;
 }
