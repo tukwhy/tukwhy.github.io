@@ -535,6 +535,112 @@
     
 
     
+        <style>
+    .giscus-card {
+        margin: 1.5rem auto;
+        border-radius: var(--radius-card, 12px) !important;
+        background-color: var(--card-bg-light, #ffffff);
+        border: 1px solid var(--card-border-light, rgba(203, 213, 225, 0.75));
+        box-shadow: var(--shadow-card, 0 4px 16px -2px rgba(15, 23, 42, 0.04)) !important;
+        overflow: hidden;
+    }
+
+    body.DarkMode .giscus-card {
+        background-color: #161e2e !important;
+        border-color: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .giscus-card .comment_headling {
+        font-size: 18px;
+        font-weight: 700;
+        padding: 18px 24px 8px;
+        color: var(--text-primary, #0f172a);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    body.DarkMode .giscus-card .comment_headling {
+        color: #f1f5f9;
+    }
+
+    .giscus-card .card-content {
+        padding: 10px 24px 24px !important;
+    }
+
+    .giscus, .giscus-frame {
+        width: 100%;
+        border: none;
+    }
+
+    .giscus-frame {
+        min-height: 150px;
+    }
+</style>
+
+<div class="card giscus-card" data-aos="fade-up">
+    <div class="comment_headling">
+        <i class="fas fa-comments fa-fw" style="color: var(--primary-blue, #2563eb);"></i>
+        <span>评论</span>
+    </div>
+    <div class="card-content">
+        <div id="giscus-container"></div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        var isDark = localStorage.getItem('isDark') === '1' || document.body.classList.contains('DarkMode');
+        var defaultTheme = isDark ? 'dark' : 'light';
+        var giscusTheme = 'preferred_color_scheme' === 'preferred_color_scheme' ? defaultTheme : 'preferred_color_scheme';
+
+        var script = document.createElement('script');
+        script.src = 'https://giscus.app/client.js';
+        script.setAttribute('data-repo', 'tukwhy/tukwhy.github.io');
+        script.setAttribute('data-repo-id', 'R_kgDOSfTJVw');
+        script.setAttribute('data-category', 'Announcements');
+        script.setAttribute('data-category-id', 'DIC_kwDOSfTJV84DEs_G');
+        script.setAttribute('data-mapping', 'pathname');
+        script.setAttribute('data-strict', '0');
+        script.setAttribute('data-reactions-enabled', '1');
+        script.setAttribute('data-emit-metadata', '0');
+        script.setAttribute('data-input-position', 'top');
+        script.setAttribute('data-theme', giscusTheme);
+        script.setAttribute('data-lang', 'zh-CN');
+        script.setAttribute('crossorigin', 'anonymous');
+        script.async = true;
+
+        var container = document.getElementById('giscus-container');
+        if (container) {
+            container.appendChild(script);
+        }
+
+        // 监听深色/浅色模式切换，向 Giscus iframe 发送更新消息
+        var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+                if (mutation.attributeName === 'class') {
+                    var dark = document.body.classList.contains('DarkMode');
+                    updateGiscusTheme(dark ? 'dark' : 'light');
+                }
+            });
+        });
+        observer.observe(document.body, { attributes: true });
+
+        function updateGiscusTheme(theme) {
+            var iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe) return;
+            iframe.contentWindow.postMessage({
+                giscus: {
+                    setConfig: {
+                        theme: theme
+                    }
+                }
+            }, 'https://giscus.app');
+        }
+    })();
+</script>
+
+    
 
     
 </div>
