@@ -398,3 +398,48 @@ body.DarkMode .highlight {
     background-color: #111827 !important;
     color: #f8f8f2 !important;
 }
+
+/* ==========================================================================
+   Article Detail Page Tags & Navigation
+   ========================================================================== */
+#artDetail .tag_share .article-tag .chip {
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    height: 28px !important;
+    line-height: 28px !important;
+    padding: 0 14px !important;
+    border-radius: 6px !important;
+    margin-right: 8px !important;
+    margin-bottom: 6px !important;
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #2563eb, #3b82f6) !important;
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2) !important;
+    transition: all 0.25s ease !important;
+    display: inline-block !important;
+    cursor: pointer !important;
+}
+
+#artDetail .tag_share .article-tag .chip:hover,
+#artDetail .tag_share .article-tag .chip:active {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #1d4ed8, #2563eb) !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35) !important;
+    transform: translateY(-2px) !important;
+}
+
+body.DarkMode #artDetail .tag_share .article-tag .chip {
+    background: #1e293b !important;
+    color: #93c5fd !important;
+    border: 1px solid rgba(59, 130, 246, 0.3) !important;
+    box-shadow: none !important;
+}
+
+body.DarkMode #artDetail .tag_share .article-tag .chip:hover,
+body.DarkMode #artDetail .tag_share .article-tag .chip:active {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4) !important;
+}
+
