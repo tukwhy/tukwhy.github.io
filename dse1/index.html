@@ -439,7 +439,7 @@
 如果你不幸使用了中文用户名（简单判别方法就是在软件的启动界面右下角会显示注册的用户名），那么请使用注册表编辑器修改“计算机\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\National Instruments\Circuit Design Suite\14.3\Common”路径（将其中的14.3替换为你使用的Multisim版本）下的RegisteredOwner注册表项为英文。</p>
 <h3 id="打开软件提示找不到主数据库（以及其他两个数据库）"><a href="#打开软件提示找不到主数据库（以及其他两个数据库）" class="headerlink" title="打开软件提示找不到主数据库（以及其他两个数据库）"></a>打开软件提示找不到主数据库（以及其他两个数据库）</h3><p>Windows背锅。一开始在2025年8月win11 24H2某个累积更新之后出现，卸载能解决。后发现未安装该更新的电脑也出现了相关问题，安装后卸载该更新的电脑也不能解决。因此具体原因不得而知。根本原因应该还是windows加强了对于三方软件访问权限的管理，但是没有明确的解决方案我们也无从求证。最简单粗暴的办法：关掉之后重开若干次Multisim。能彻底解决的办法：使用Windows10系统（或者虚拟机）。<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ZQp9zdEy3/?vd_source=c14b20d00832d1ad0bb89b62335219ab">这个视频</a>评论区中给出了各种解决方案，有兴趣的可以试试。</p>
 <blockquote>
-<p>更新：multisim 14.3.3版本已经修复该问题，并且修复了可能导致的安装后蓝屏问题，详见<a target="_blank" rel="noopener" href="https://www.ni.com/en/support/documentation/supplemental/26/circuit-design-suite-14-3-patch-3-details.html">此处</a>，因此<em>非常建议使用全新的版本</em>，避免这些问题。
+<p>更新：multisim 14.3.3版本已经修复该问题，并且修复了可能导致的安装后蓝屏问题，详见<a target="_blank" rel="noopener" href="https://www.ni.com/en/support/documentation/supplemental/26/circuit-design-suite-14-3-patch-3-details.html">此处</a>，因此<strong>非常建议使用全新的版本</strong>，避免这些问题。
 新版的multisim可以使用NI Package Manager直接更新（先在软件中更新NI Package Manager本身），如果更新后出现没有激活的情况请按老师给的教程中的方法重新激活。
 如果不幸出现了安装后导致的蓝屏，可以尝试在BIOS当中关闭硬件虚拟化解决，但是我绝对推荐你使用新版本彻底杜绝这些问题以及可能带来的重装系统的风险。</p>
 </blockquote>
