@@ -1,0 +1,291 @@
+/* QSL shares the homepage's palette and surfaces; every rule stays within this page. */
+.qsl-page,
+.qsl-hero {
+    --qsl-blue: var(--primary-blue, #2563eb);
+    --qsl-ink: var(--text-primary, #0f172a);
+    --qsl-secondary: var(--text-secondary, #475569);
+    --qsl-muted: #64748b;
+    --qsl-surface: #fff;
+    --qsl-soft: #f8fafc;
+    --qsl-tint: #eff6ff;
+    --qsl-line: #e2e8f0;
+    --qsl-radius: var(--radius-card, 12px);
+    color: var(--qsl-ink);
+}
+
+body.DarkMode .qsl-page,
+body.DarkMode .qsl-hero {
+    --qsl-ink: #e2e8f0;
+    --qsl-secondary: #b0bfd2;
+    --qsl-muted: #94a3b8;
+    --qsl-surface: #161e2e;
+    --qsl-soft: #121a28;
+    --qsl-tint: #1b2b47;
+    --qsl-line: #2a374b;
+    --qsl-blue: #8db8ff;
+}
+
+.qsl-page *,
+.qsl-hero * { box-sizing: border-box; }
+.qsl-page [hidden] { display: none !important; }
+.qsl-page .qsl-shell,
+.qsl-hero .qsl-shell { width: 92%; max-width: 1280px; }
+.qsl-page p,
+.qsl-hero p { margin: 0; color: inherit; }
+.qsl-page h2,
+.qsl-page h3 { margin: 0; color: var(--qsl-ink); }
+.qsl-page button,
+.qsl-page input,
+.qsl-page select { font: inherit; }
+.qsl-page button { cursor: pointer; }
+.qsl-page button:focus-visible,
+.qsl-page a:focus-visible,
+.qsl-page summary:focus-visible { outline: 3px solid var(--qsl-blue); outline-offset: 4px; }
+.qsl-page .qsl-mono { font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace; font-variant-numeric: tabular-nums; }
+.qsl-page .qsl-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+.bg-cover.qsl-hero {
+    height: 260px;
+    margin-top: -64px;
+    padding: 94px 0 42px;
+    background-position: center 48%;
+}
+.qsl-hero .qsl-eyebrow { color: #c8ddff; }
+.qsl-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .18em; line-height: 1.6; }
+.qsl-eyebrow span { padding: 0 9px; opacity: .6; }
+.qsl-hero h1 { margin: 12px 0 10px; color: #fff; font-size: clamp(32px, 3.5vw, 44px); line-height: 1.2; font-weight: 650; letter-spacing: .04em; }
+.qsl-hero-period { color: #93c5fd; }
+.qsl-hero .qsl-hero-description { color: #dbe4f0; font-size: 14px; letter-spacing: .08em; }
+.qsl-page { position: relative; z-index: 2; margin-top: -28px; padding-bottom: 48px; font-size: 14px; line-height: 1.6; }
+.qsl-surface { background: var(--qsl-surface); border: 1px solid var(--qsl-line); border-radius: var(--qsl-radius); box-shadow: var(--shadow-card, 0 4px 16px rgba(15,23,42,.05)); }
+
+.qsl-station { margin-bottom: 24px; padding: 20px 28px 0; }
+.qsl-station-main { display: flex; align-items: center; gap: 28px; padding-bottom: 16px; }
+.qsl-station-identity { display: flex; align-items: center; gap: 15px; min-width: 0; flex: 1; }
+.qsl-station-icon { display: flex; flex: 0 0 48px; width: 48px; height: 48px; justify-content: center; align-items: center; border-radius: 12px; background: var(--qsl-tint); color: var(--qsl-blue); font-size: 22px; }
+.qsl-page .qsl-station-icon i { color: inherit; }
+.qsl-station h2 { font-size: 24px; font-weight: 650; letter-spacing: .03em; line-height: 1.3; }
+.qsl-page .qsl-station-location { margin-top: 5px; color: var(--qsl-secondary); font-size: 12px; }
+.qsl-station-location i { margin-right: 4px; color: var(--qsl-muted); }
+.qsl-station-equipment { display: flex; flex-direction: column; gap: 5px; padding-right: 12px; color: var(--qsl-secondary); }
+.qsl-caption { color: var(--qsl-muted); font-size: 11px; }
+.qsl-separator { margin: 0 8px; color: var(--qsl-line); }
+.qsl-station-actions { display: flex; align-items: center; gap: 12px; }
+.qsl-page .qsl-button { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-height: 40px; padding: 9px 15px; border: 1px solid transparent; border-radius: 7px; background: transparent; color: var(--qsl-secondary); text-decoration: none; font-size: 13px; font-weight: 500; line-height: 20px; white-space: nowrap; transition: background-color .18s ease, border-color .18s ease; }
+.qsl-page .qsl-button i { color: inherit; font-size: 12px; }
+.qsl-page .qsl-button-primary { background: #2563eb; color: #fff; }
+.qsl-page .qsl-button-primary:hover { background: #1d4ed8; }
+.qsl-page .qsl-button-quiet:hover { background: var(--qsl-tint); color: var(--qsl-blue); }
+.qsl-station-footer { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; border-top: 1px solid var(--qsl-line); padding: 12px 0; }
+.qsl-station-stats { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; color: var(--qsl-muted); font-size: 12px; }
+.qsl-station-stats strong { margin-right: 3px; color: var(--qsl-ink); font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.qsl-station-more { min-width: 0; max-width: 52%; text-align: right; }
+.qsl-station-more summary { display: inline-flex; align-items: center; gap: 10px; min-height: 28px; color: var(--qsl-muted); font-size: 12px; cursor: pointer; list-style: none; }
+.qsl-station-more summary::-webkit-details-marker { display: none; }
+.qsl-station-more summary i { font-size: 9px; transition: transform .15s; }
+.qsl-station-more[open] summary i { transform: rotate(180deg); }
+.qsl-station-more dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; margin: 14px 0 4px; text-align: left; }
+.qsl-station-more dt { margin-bottom: 4px; color: var(--qsl-muted); font-size: 11px; font-weight: 400; }
+.qsl-station-more dd { margin: 0; color: var(--qsl-secondary); overflow-wrap: anywhere; font-size: 12px; }
+
+.qsl-logbook { overflow: hidden; }
+.qsl-logbook-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 28px 18px; }
+.qsl-logbook h2 { font-size: 22px; font-weight: 600; line-height: 1.4; scroll-margin-top: 86px; }
+.qsl-page .qsl-logbook-description { margin-top: 5px; color: var(--qsl-muted); font-size: 12px; }
+.qsl-latest { display: flex; align-items: flex-end; flex-direction: column; gap: 5px; white-space: nowrap; }
+.qsl-latest time { color: var(--qsl-secondary); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 14px; letter-spacing: .02em; }
+.qsl-filters { margin: 0 28px; padding-bottom: 22px; border-bottom: 1px solid var(--qsl-line); }
+.qsl-filter-primary { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr) minmax(0, .8fr); gap: 16px; }
+.qsl-field { display: flex; min-width: 0; flex-direction: column; gap: 6px; color: var(--qsl-secondary); font-size: 12px; }
+.qsl-page .qsl-control { display: block; box-sizing: border-box; width: 100%; min-width: 0; height: 42px; margin: 0; padding: 9px 12px; border: 1px solid var(--qsl-line); border-radius: 7px; background: var(--qsl-surface); color: var(--qsl-ink); box-shadow: none; font-size: 13px; line-height: 22px; transition: border-color .18s, box-shadow .18s; }
+.qsl-page select.qsl-control { padding-right: 25px; cursor: pointer; }
+.qsl-page .qsl-control:focus { outline: none; border-color: var(--qsl-blue); box-shadow: 0 0 0 3px var(--qsl-tint); }
+.qsl-page input.qsl-control::placeholder { color: var(--qsl-muted); opacity: .8; }
+.qsl-search-control { position: relative; display: block; }
+.qsl-search-control > i { position: absolute; top: 15px; left: 13px; color: var(--qsl-muted); font-size: 12px; pointer-events: none; }
+.qsl-page .qsl-search-control input { padding-left: 35px; }
+.qsl-filter-secondary { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-top: 14px; }
+.qsl-date-range { display: grid; grid-template-columns: minmax(0, 172px) auto minmax(0, 172px); align-items: end; gap: 10px; min-width: 0; }
+.qsl-date-range input { font-variant-numeric: tabular-nums; }
+.qsl-date-separator { padding-bottom: 12px; color: var(--qsl-muted); }
+.qsl-page .qsl-form-error { margin-top: 10px; color: #b42318; font-size: 12px; }
+.qsl-page .qsl-control[aria-invalid="true"] { border-color: #b42318; }
+.qsl-results-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 15px 28px; }
+.qsl-result-count { color: var(--qsl-secondary); font-size: 12px; }
+.qsl-result-count strong { margin: 0 3px; color: var(--qsl-ink); font-size: 14px; font-weight: 600; }
+.qsl-result-context { color: var(--qsl-muted); }
+.qsl-page .qsl-history-caption { margin-top: 5px; color: var(--qsl-muted); font-size: 11px; }
+.qsl-sort-control { flex-shrink: 0; width: 144px; }
+.qsl-page .qsl-sort-control select { height: 34px; padding-top: 5px; padding-bottom: 5px; border-color: transparent; background-color: var(--qsl-soft); color: var(--qsl-secondary); font-size: 12px; }
+.qsl-page .qsl-active-filters { margin: -4px 28px 14px; color: var(--qsl-blue); font-size: 11px; overflow-wrap: anywhere; }
+
+.qsl-table { width: 100%; border-collapse: collapse; table-layout: fixed; background: var(--qsl-surface); }
+.qsl-col-datetime { width: 13%; }
+.qsl-col-callsign { width: 10%; }
+.qsl-col-frequency { width: 15%; }
+.qsl-col-report { width: 6%; }
+.qsl-col-location { width: 14%; }
+.qsl-col-equipment { width: 13%; }
+.qsl-col-antenna { width: 10%; }
+.qsl-col-power { width: 6%; }
+.qsl-col-remarks { width: 13%; }
+.qsl-page .qsl-table th { padding: 13px 14px; border-radius: 0; border-bottom: 1px solid var(--qsl-line); background: var(--qsl-soft); color: var(--qsl-muted); text-align: left; font-size: 11px; font-weight: 500; }
+.qsl-table th:first-child,
+.qsl-table td:first-child { padding-left: 28px; }
+.qsl-table th:last-child,
+.qsl-table td:last-child { padding-right: 28px; }
+.qsl-sort-button { display: inline-flex; align-items: center; gap: 9px; padding: 0; border: 0; background: transparent; color: inherit; font-size: 11px; white-space: nowrap; }
+.qsl-sort-button i { font-size: 9px; opacity: .6; }
+.qsl-table th[aria-sort="ascending"] .qsl-sort-button,
+.qsl-table th[aria-sort="descending"] .qsl-sort-button { color: var(--qsl-blue); }
+.qsl-page .qsl-table td { padding: 17px 14px; border-bottom: 1px solid var(--qsl-line); border-radius: 0; color: var(--qsl-secondary); font-size: 13px; vertical-align: middle; overflow-wrap: anywhere; }
+.qsl-page .qsl-table tr:nth-child(even) { background: transparent; }
+.qsl-page .qsl-data-row:hover { background: var(--qsl-soft); }
+.qsl-cell-datetime time { display: block; color: var(--qsl-ink); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.qsl-time { display: block; margin-top: 2px; color: var(--qsl-muted); font-size: 11px; }
+.qsl-callsign { display: inline-block; min-height: 30px; padding: 3px 0; border: 0; background: transparent; color: var(--qsl-blue); font-size: 14px; font-weight: 600; text-align: left; }
+.qsl-callsign:hover { text-decoration: underline; text-underline-offset: 4px; }
+.qsl-frequency { display: inline-block; margin-right: 10px; color: var(--qsl-ink); font-size: 12px; white-space: nowrap; }
+.qsl-unit { color: var(--qsl-muted); font-size: 10px; }
+.qsl-mode { display: inline-block; padding: 1px 6px; border: 1px solid var(--qsl-line); border-radius: 4px; background: var(--qsl-soft); color: var(--qsl-secondary); font-size: 10px; line-height: 18px; }
+.qsl-page .qsl-table .qsl-cell-equipment,
+.qsl-page .qsl-table .qsl-cell-antenna,
+.qsl-page .qsl-table .qsl-cell-power,
+.qsl-page .qsl-table .qsl-cell-remarks { font-size: 12px; }
+.qsl-mobile-label { display: none; }
+.qsl-logbook-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 17px 28px; color: var(--qsl-muted); font-size: 11px; }
+.qsl-logbook-footer i { margin-right: 5px; }
+.qsl-empty { padding: 44px 20px 48px; text-align: center; }
+.qsl-empty > i { margin-bottom: 14px; color: var(--qsl-muted); font-size: 22px; }
+.qsl-empty h3 { font-size: 16px; font-weight: 500; }
+.qsl-page .qsl-empty p { margin: 8px 0 12px; color: var(--qsl-muted); font-size: 12px; }
+.qsl-page .qsl-noscript { margin: 0; padding: 0 28px 20px; color: var(--qsl-muted); font-size: 12px; }
+
+body.DarkMode .qsl-page .qsl-table th { background: var(--qsl-soft) !important; color: var(--qsl-muted); }
+body.DarkMode .qsl-page h2,
+body.DarkMode .qsl-page h3 { color: var(--qsl-ink); }
+body.DarkMode .qsl-hero h1 { color: #fff; }
+body.DarkMode .qsl-page .qsl-sort-button i,
+body.DarkMode .qsl-page .qsl-search-control i { color: inherit; }
+body.DarkMode .qsl-page .qsl-form-error { color: #fda4af; }
+body.DarkMode .qsl-page .qsl-control[aria-invalid="true"] { border-color: #fda4af; }
+body.DarkMode .qsl-page input[type="date"] { color-scheme: dark; }
+
+@media (max-width: 1000px) {
+    .qsl-station-equipment { display: none; }
+    .qsl-table,
+    .qsl-table tbody { display: block; }
+    .qsl-table colgroup { display: none; }
+    .qsl-table thead { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); }
+    .qsl-page .qsl-data-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'callsign datetime' 'frequency report' 'location location' 'equipment power' 'antenna antenna' 'remarks remarks'; gap: 10px 12px; margin: 0 12px 12px; padding: 16px; border: 1px solid var(--qsl-line); border-radius: 9px; }
+    .qsl-page .qsl-data-row td { display: block; padding: 0; border: 0; font-size: 12px; }
+    .qsl-cell-datetime { grid-area: datetime; text-align: right; }
+    .qsl-cell-callsign { grid-area: callsign; }
+    .qsl-cell-frequency { grid-area: frequency; align-self: center; }
+    .qsl-cell-report { grid-area: report; text-align: right; align-self: center; }
+    .qsl-cell-location { grid-area: location; align-self: center; }
+    .qsl-cell-equipment { grid-area: equipment; }
+    .qsl-cell-antenna { grid-area: antenna; }
+    .qsl-cell-power { grid-area: power; text-align: right; }
+    .qsl-cell-remarks { grid-area: remarks; }
+    .qsl-page .qsl-data-row .qsl-cell-equipment,
+    .qsl-page .qsl-data-row .qsl-cell-power { border-top: 1px solid var(--qsl-line); padding-top: 10px; }
+    .qsl-cell-datetime time { font-size: 11px; }
+    .qsl-time { font-size: 11px; }
+    .qsl-callsign { font-size: 17px; padding-top: 0; min-height: 27px; }
+    .qsl-frequency { display: inline-block; margin: 0 8px 0 0; font-size: 12px; }
+    .qsl-mobile-label { display: inline; color: var(--qsl-muted); font-size: 11px; margin-right: 5px; }
+}
+
+@media (min-width: 681px) and (max-width: 1000px) {
+    .qsl-table tbody { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; padding: 0 16px; }
+    .qsl-page .qsl-data-row { margin: 0; align-content: start; }
+}
+
+@media (min-width: 1100px) {
+    .qsl-filters { display: grid; grid-template-columns: minmax(190px, 1.6fr) minmax(126px, 1fr) minmax(80px, .7fr) minmax(138px, 1fr) minmax(138px, 1fr) auto; align-items: end; gap: 12px; }
+    .qsl-filter-primary, .qsl-filter-secondary, .qsl-date-range { display: contents; }
+    .qsl-date-separator { display: none; }
+    .qsl-page .qsl-filter-secondary .qsl-button { padding-right: 0; padding-left: 4px; font-size: 12px; }
+    .qsl-page .qsl-form-error { grid-column: 1 / -1; margin-top: 0; }
+}
+
+@media (max-width: 680px) {
+    .qsl-page .qsl-shell,
+    .qsl-hero .qsl-shell { width: calc(100% - 24px); }
+    .bg-cover.qsl-hero { height: 210px; padding: 86px 0 33px; }
+    .qsl-hero .qsl-shell { padding-left: 8px; }
+    .qsl-hero .qsl-eyebrow { font-size: 10px; letter-spacing: .14em; }
+    .qsl-hero h1 { margin: 10px 0 8px; font-size: 32px; }
+    .qsl-hero .qsl-hero-description { font-size: 12px; }
+    .qsl-page { margin-top: -18px; padding-bottom: 28px; }
+    .qsl-station { margin-bottom: 16px; padding: 18px 18px 0; }
+    .qsl-station-main { flex-wrap: wrap; justify-content: space-between; gap: 14px; padding-bottom: 14px; }
+    .qsl-station-identity { flex-basis: 100%; gap: 12px; }
+    .qsl-station-icon { flex-basis: 40px; width: 40px; height: 40px; font-size: 19px; border-radius: 10px; }
+    .qsl-station h2 { font-size: 21px; }
+    .qsl-page .qsl-station-location { font-size: 11px; }
+    .qsl-station-actions { width: 100%; gap: 8px; }
+    .qsl-page .qsl-station-actions .qsl-button { min-height: 36px; padding: 7px 12px; font-size: 12px; }
+    .qsl-station-actions .qsl-button-primary { order: -1; }
+    .qsl-station-footer { flex-wrap: wrap; gap: 10px; padding: 12px 0; }
+    .qsl-station-stats { flex: 1; gap: 12px; font-size: 10px; white-space: nowrap; }
+    .qsl-station-stats strong { font-size: 15px; }
+    .qsl-station-more { max-width: 100%; }
+    .qsl-station-more summary { font-size: 10px; gap: 6px; min-height: 25px; }
+    .qsl-station-more[open] { flex-basis: 100%; text-align: left; }
+    .qsl-station-more dl { gap: 12px 18px; }
+    .qsl-logbook-heading { align-items: flex-start; gap: 12px; padding: 20px 18px 16px; }
+    .qsl-logbook h2 { font-size: 20px; }
+    .qsl-page .qsl-logbook-description { font-size: 11px; max-width: 205px; }
+    .qsl-description-divider { display: none; }
+    .qsl-timezone { display: block; margin-top: 2px; }
+    .qsl-latest { gap: 3px; padding-top: 2px; }
+    .qsl-latest .qsl-caption { font-size: 10px; }
+    .qsl-latest time { font-size: 11px; }
+    .qsl-filters { margin: 0 18px; padding-bottom: 14px; }
+    .qsl-filter-primary { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 11px 10px; }
+    .qsl-filter-primary .qsl-field:first-child { grid-column: 1 / -1; }
+    .qsl-field { gap: 4px; font-size: 11px; }
+    .qsl-page .qsl-control { height: 40px; padding: 8px 10px; font-size: 14px; }
+    .qsl-search-control > i { top: 14px; }
+    .qsl-filter-secondary { flex-wrap: wrap; justify-content: flex-end; gap: 5px; margin-top: 11px; }
+    .qsl-date-range { width: 100%; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 7px; }
+    .qsl-date-range input { padding-right: 4px; font-size: 12px; }
+    .qsl-page .qsl-filter-secondary .qsl-button { min-height: 30px; padding: 4px 0 2px 10px; font-size: 11px; }
+    .qsl-results-toolbar { padding: 13px 18px; gap: 10px; }
+    .qsl-sort-control { width: 125px; }
+    .qsl-page .qsl-sort-control select { font-size: 11px; }
+    .qsl-result-count { font-size: 11px; }
+    .qsl-result-count strong { font-size: 13px; }
+    .qsl-result-context { display: block; }
+    .qsl-page .qsl-active-filters { margin: -3px 18px 13px; }
+    .qsl-page .qsl-data-row { padding: 15px 13px; }
+    .qsl-logbook-footer { justify-content: center; gap: 3px 12px; padding: 10px 18px 18px; font-size: 10px; }
+}
+
+@media (max-width: 360px) {
+    .qsl-station-stats { gap: 9px; }
+    .qsl-station-stats strong { margin-right: 0; font-size: 14px; }
+    .qsl-station-more summary { gap: 4px; }
+    .qsl-latest { display: none; }
+    .qsl-page .qsl-logbook-description { max-width: none; }
+    .qsl-page .qsl-date-range input { font-size: 11px; }
+}
+
+@media (pointer: coarse) {
+    .qsl-page .qsl-control { font-size: 16px; }
+    .qsl-page .qsl-date-range input { font-size: 12px; }
+    .qsl-callsign { min-height: 38px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .qsl-page *, .qsl-hero * { transition: none; }
+}
+
+@media print {
+    .qsl-hero, .qsl-station-actions, .qsl-station-more, .qsl-filters, .qsl-sort-control { display: none !important; }
+    .qsl-page { margin-top: 0; }
+    .qsl-surface { border: 0; box-shadow: none; }
+    .qsl-page .qsl-shell { width: 100%; }
+}

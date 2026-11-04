@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="QSL-LOG, Can U C it?">
-    <meta name="description" content="tukwhy&#39;s blog">
+    <meta name="keywords" content="BA4UHT · 通联日志, Can U C it?">
+    <meta name="description" content="BA4UHT 的业余无线电通联记录。按呼号、日期、频率和模式，寻找电波中的相遇。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>QSL-LOG | Can U C it?</title>
+    <title>BA4UHT · 通联日志 | Can U C it?</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -308,746 +308,423 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
+    
+<link rel="stylesheet" href="/css/qsl.css">
+
+<section class="bg-cover qsl-hero" aria-labelledby="qsl-title" style="background-image: url('/medias/banner/0.jpg')">
+    <div class="container qsl-shell">
+        <p class="qsl-eyebrow">BA4UHT <span aria-hidden="true">/</span> AMATEUR RADIO</p>
+        <h1 id="qsl-title">通联日志<span class="qsl-hero-period">.</span></h1>
+        <p class="qsl-hero-description">记录每一次电波中的相遇。</p>
+    </div>
+</section>
+
+<main id="qsl-page" class="qsl-page">
+    <div class="container qsl-shell">
+        <section class="qsl-surface qsl-station" aria-labelledby="qsl-station-title">
+            <div class="qsl-station-main">
+                <div class="qsl-station-identity">
+                    <span class="qsl-station-icon" aria-hidden="true"><i class="fas fa-broadcast-tower"></i></span>
+                    <div>
+                        <h2 id="qsl-station-title">BA4UHT</h2>
+                        <p class="qsl-station-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 南京市栖霞区 / 无锡市梁溪区</p>
+                    </div>
+                </div>
+                <div class="qsl-station-equipment">
+                    <span class="qsl-caption">我的电台</span>
+                    <span>泉盛 UV-K6 <span class="qsl-separator">/</span> 5W</span>
+                </div>
+                <div class="qsl-station-actions">
+                    <a class="qsl-button qsl-button-quiet" href="https://www.qrz.com/db/BA4UHT" target="_blank" rel="noopener noreferrer">QRZ <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+                    <a class="qsl-button qsl-button-primary" href="https://table.nju.edu.cn/dtable/forms/custom/BA4UHT-QSL/" target="_blank" rel="noopener noreferrer"><i class="far fa-envelope" aria-hidden="true"></i> 申请 QSL</a>
+                </div>
+            </div>
+            <div class="qsl-station-footer">
+                <div class="qsl-station-stats" aria-label="通联统计">
+                    <span><strong>23</strong> 次通联</span>
+                    <span><strong>21</strong> 个呼号</span>
+                    <span><strong>2</strong> 种模式</span>
+                </div>
+                <details class="qsl-station-more">
+                    <summary>电台资料 <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                    <dl>
+                        <div><dt>设备 / 功率</dt><dd>泉盛 UV-K6 / 5W</dd></div>
+                        <div><dt>天线</dt><dd>原装天线 / RH775S</dd></div>
+                        <div><dt>网格坐标</dt><dd class="qsl-mono">OM92lc / PM01dn</dd></div>
+                        <div><dt>CQ / ITU 分区</dt><dd>24 / 44</dd></div>
+                    </dl>
+                </details>
+            </div>
+        </section>
+
+        <section class="qsl-surface qsl-logbook" aria-labelledby="qsl-logbook-title">
+            <div class="qsl-logbook-heading">
+                <div>
+                    <h2 id="qsl-logbook-title">电波足迹</h2>
+                    <p class="qsl-logbook-description"><span>点击呼号，查看全部通联</span><span class="qsl-description-divider"> · </span><span class="qsl-timezone">北京时间（UTC+8）</span></p>
+                </div>
                 
-                tukwhy&#39;s blog
+                <p class="qsl-latest"><span class="qsl-caption">最近通联</span><time datetime="2026-10-24">2026.10.24</time></p>
                 
             </div>
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "西郊有密林，助君出重围",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+            <form id="qsl-filters" class="qsl-filters" aria-label="筛选通联记录">
+                <div class="qsl-filter-primary">
+                    <label class="qsl-field" for="callsign-filter">
+                        <span>搜索呼号</span>
+                        <span class="qsl-search-control"><i class="fas fa-search" aria-hidden="true"></i><input id="callsign-filter" class="browser-default qsl-control" type="search" placeholder="输入呼号，例如 BG5UUL" autocomplete="off" autocapitalize="characters" spellcheck="false"></span>
+                    </label>
+                    <label class="qsl-field" for="frequency-filter">
+                        <span>频率</span>
+                        <select id="frequency-filter" class="browser-default qsl-control" aria-label="频率">
+                            <option value="">所有频率</option>
+                            <option value="14.09MHz">14.09MHz</option><option value="430.610MHz">430.610MHz</option><option value="438.500MHz">438.500MHz</option><option value="438.550MHz">438.550MHz</option><option value="439.800MHz">439.800MHz</option>
+                        </select>
+                    </label>
+                    <label class="qsl-field" for="mode-filter">
+                        <span>模式</span>
+                        <select id="mode-filter" class="browser-default qsl-control" aria-label="模式">
+                            <option value="">所有模式</option>
+                            <option value="FM">FM</option><option value="FT8">FT8</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="qsl-filter-secondary">
+                    <div class="qsl-date-range">
+                        <label class="qsl-field" for="date-start"><span>开始日期</span><input id="date-start" class="browser-default qsl-control" type="date" aria-describedby="qsl-date-error"></label>
+                        <span class="qsl-date-separator" aria-hidden="true">—</span>
+                        <label class="qsl-field" for="date-end"><span>结束日期</span><input id="date-end" class="browser-default qsl-control" type="date" aria-describedby="qsl-date-error"></label>
+                    </div>
+                    <button type="reset" class="qsl-button qsl-button-quiet"><i class="fas fa-undo-alt" aria-hidden="true"></i> 重置筛选</button>
+                </div>
+                <p id="qsl-date-error" class="qsl-form-error" role="alert" hidden>开始日期不能晚于结束日期。</p>
+            </form>
+
+            <div class="qsl-results-toolbar">
+                <div id="qsl-results-summary" aria-live="polite" aria-atomic="true">
+                    <p class="qsl-result-count">共 <strong id="displayed-count">23</strong> 条记录<span id="qsl-result-context" class="qsl-result-context"></span></p>
+                    <p id="qsl-history-caption" class="qsl-history-caption" hidden></p>
+                </div>
+                <label class="qsl-sort-control" for="qsl-sort"><span class="qsl-sr-only">排序方式</span><select id="qsl-sort" class="browser-default qsl-control" aria-label="排序方式">
+                    <option value="datetime-desc">最新在前</option>
+                    <option value="datetime-asc">最早在前</option>
+                    <option value="callsign-asc">呼号 A–Z</option>
+                    <option value="callsign-desc">呼号 Z–A</option>
+                    <option value="frequency-asc">频率从低到高</option>
+                    <option value="frequency-desc">频率从高到低</option>
+                </select></label>
             </div>
-        </div>
-    </div>
-</div>
+            <p id="qsl-active-filters" class="qsl-active-filters" hidden></p>
 
-
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
-<script>
-    
-      var bannerUrl = "/medias/featureimages/" + Math.floor(Math.random() * 24) + '.jpg';
-    
-    $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
-
-</script>
-
-
-    </div>
-</div>
-
-<link rel="stylesheet" href="/css/qsl-custom.css">
-
-<main class="content">
-    <div class="container qsl-page-container">
-        <div class="card">
-            <div class="card-content">
-                <div class="qsl-container">
-  <h2>QSL-LOG 通联记录</h2>
-  
-  <div class="station-info">
-    <h3>本台信息</h3>
-    <div class="info-row">
-      <div class="info-item">
-        <span class="info-label">呼号</span>
-        <span class="info-value"><a id="station-callsign" href="https://www.qrz.com/db/BA4UHT" target="_blank">BA4UHT</a></span>
-      </div>
-      <div class="info-item">
-        <span class="info-label">设备</span>
-        <span class="info-value" id="station-equipment">泉盛UV-K6</span>
-      </div>
-      <div class="info-item">
-        <span class="info-label">天线</span>
-        <span class="info-value" id="station-antenna">原装天线/RH775S</span>
-      </div>
-      <div class="info-item">
-        <span class="info-label">功率</span>
-        <span class="info-value" id="station-power">5W</span>
-      </div>
-    </div>
-    <div class="info-row">
-      <div class="info-item">
-        <span class="info-label">位置</span>
-        <span class="info-value" id="station-location">中国南京市栖霞区/中国无锡市梁溪区</span>
-      </div>
-      <div class="info-item">
-        <span class="info-label">网格坐标</span>
-        <span class="info-value" id="station-grid">OM92lc/PM01dn</span>
-      </div>
-      <div class="info-item">
-        <span class="info-label">CQ分区 / ITU分区</span>
-        <span class="info-value"><span id="station-cq">24</span> / <span id="station-itu">44</span></span>
-      </div>
-      <div class="info-item">
-        <span class="info-label">QSL申请</span>
-        <span class="info-value"><a id="station-qsl-link" href="https://table.nju.edu.cn/dtable/forms/custom/BA4UHT-QSL/" target="_blank">点击申请</a></span>
-      </div>
-    </div>
-    <div class="stats-panel">
-      <div class="stat-item">
-        <div class="stat-value" id="station-total">1</div>
-        <div class="stat-label">总通联数</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value" id="unique-callsigns">--</div>
-        <div class="stat-label">不同呼号</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value" id="unique-frequencies">--</div>
-        <div class="stat-label">频率数</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-label">最后更新</div>
-        <div id="station-update" style="font-size: 14px; margin-top: 8px;">2026-02-13</div>
-      </div>
-    </div>
-    
-  </div>
-
-  <div class="filter-section">
-    <div class="filter-group">
-      <label class="filter-label">搜索呼号</label>
-      <input type="text" id="callsign-filter" class="filter-input" placeholder="输入呼号，实时搜索" style="display: block; width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box;">
-    </div>
-    <div class="filter-group">
-      <label class="filter-label">频率筛选</label>
-      <select id="frequency-filter" class="filter-select" style="display: block; width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box; background-color: white; color: #333; cursor: pointer; min-height: 40px;">
-        <option value="">所有频率</option>
-        <option value="430.610">430.610</option>
-      </select>
-    </div>
-    <div class="filter-group">
-      <label class="filter-label">模式筛选</label>
-      <select id="mode-filter" class="filter-select" style="display: block; width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box; background-color: white; color: #333; cursor: pointer; min-height: 40px;">
-        <option value="">所有模式</option>
-        <option value="FM">FM</option>
-      </select>
-    </div>
-    <button class="filter-button reset" onclick="resetFilters()">重置</button>
-  </div>
-
-  <div class="table-container">
-    <table class="qsl-table">
-      <thead>
-        <tr>
-          <th class="sortable" onclick="sortTable('date')">日期</th>
-          <th class="sortable" onclick="sortTable('time')">时间</th>
-          <th class="sortable" onclick="sortTable('callsign')">呼号</th>
-          <th class="sortable" onclick="sortTable('frequency')">频率</th>
-          <th class="sortable" onclick="sortTable('mode')">模式</th>
-          <th onclick="sortTable('report')">信号</th>
-          <th class="sortable" onclick="sortTable('location')">位置</th>
-          <th>设备</th>
-          <th>天线</th>
-          <th class="sortable" onclick="sortTable('power')">功率</th>
-          <th>备注</th>
-        </tr>
-      </thead>
-      <tbody id="qsl-table-body">
-      </tbody>
-    </table>
-  </div>
-  
-  <div class="stats-footer">
-    <span>显示 <strong id="displayed-count">0</strong> / <strong id="total-count">0</strong> 条记录</span>
-    <span id="filter-status" style="color: #667eea; font-weight: 600;"></span>
-  </div>
-</div>
-
-<script>
-// 数据直接嵌入
-const stationInfo = {
-  callsign: "BA4UHT",
-  qrzLink: "https://www.qrz.com/db/BA4UHT",
-  equipment: "泉盛UV-K6",
-  antenna: "原装天线/775拉杆",
-  power: "5W",
-  location: "中国南京市栖霞区",
-  qslLink: "https://table.nju.edu.cn/dtable/forms/custom/BA4UHT-QSL/",
-  gridSquare: "OM92lc",
-  cqZone: 24,
-  ituZone: 44,
-  lastUpdate: "2026-02-13",
-  totalRecords: 1
-};
-
-const qslLogs = [
-  { date: "2025-11-28", time: "12:55", callsign: "BA4QMP", frequency: "430.610MHz", mode: "FM", report: "-", location: "马群", equipment: "森海塞尔8800", antenna: "钻石AZ504", power: "5W", remarks: "-" },
-  { date: "2025-12-02", time: "22:00", callsign: "BA4TMR", frequency: "430.610MHz", mode: "FM", report: "-", location: "河海大学江宁校区", equipment: "UV-K6", antenna: "-", power: "5W", remarks: "-" },
-  { date: "2025-12-06", time: "21:54", callsign: "BA4TAQ", frequency: "430.610MHz", mode: "FM", report: "-", location: "扬州市邗江区", equipment: "UV-K6", antenna: "770拉杆", power: "5W", remarks: "-" },
-  { date: "2025-12-21", time: "15:59", callsign: "BY2HIT", frequency: "14.09MHz", mode: "FT8", report: "-14", location: "哈尔滨工程大学", equipment: "-", antenna: "-", power: "15W", remarks: "哈工大无线电俱乐部30周年生日快乐" },
-  { date: "2026-01-04", time: "18:45", callsign: "BG7KEE", frequency: "430.610MHz", mode: "FM", report: "-", location: "深圳市南山区", equipment: "如意通6900DMR", antenna: "NR盒子", power: "L", remarks: "-" },
-  { date: "2026-02-23", time: "14:33", callsign: "BG4ERI", frequency: "438.550MHz", mode: "FM", report: "59", location: "无锡市滨湖区", equipment: "ICOM7300", antenna: "-", power: "0.1W", remarks: "-" },
-  { date: "2026-03-02", time: "20:05", callsign: "BA4UGF", frequency: "430.610MHz", mode: "FM", report: "59", location: "南京市玄武区", equipment: "摩托罗拉P8260", antenna: "原装天线", power: "H", remarks: "-" },
-  { date: "2026-03-02", time: "20:12", callsign: "BA4TMX", frequency: "430.610MHz", mode: "FM", report: "59", location: "南京市鼓楼区", equipment: "摩托罗拉P8668", antenna: "原装天线", power: "4W", remarks: "-" },
-  { date: "2026-03-03", time: "22:21", callsign: "BA4TLC", frequency: "430.610MHz", mode: "FM", report: "59", location: "玄武湖", equipment: "如意通6900", antenna: "原装天线", power: "2.5W", remarks: "-" },
-  { date: "2026-03-10", time: "21:34", callsign: "BH6SUC", frequency: "430.610MHz", mode: "FM", report: "58", location: "湖北省黄石市", equipment: "-", antenna: "NR盒子", power: "-", remarks: "-" },
-  { date: "2026-03-20", time: "15:10", callsign: "BG7KEE", frequency: "430.610MHz", mode: "FM", report: "59", location: "广东省珠海市", equipment: "HT链路", antenna: "-", power: "-", remarks: "-" },
-  { date: "2026-05-16", time: "12:22", callsign: "BA4TJP", frequency: "438.500MHz", mode: "FM", report: "59", location: "南京市江宁区", equipment: "UV32R", antenna: "五单元八木", power: "10W", remarks: "-" },
-  { date: "2026-05-16", time: "12:24", callsign: "BA4RET", frequency: "430.610MHz", mode: "FM", report: "58", location: "水游城", equipment: "-", antenna: "-", power: "-", remarks: "-" },
-  { date: "2026-06-14", time: "15:49", callsign: "BA4UHI", frequency: "430.610MHz", mode: "FM", report: "59", location: "宝华镇", equipment: "UV5R", antenna: "原装天线", power: "L", remarks: "-" },
-  { date: "2026-07-17", time: "18:32", callsign: "BA4VUU", frequency: "430.610MHz", mode: "FM", report: "59", location: "江东北路三岔河路口", equipment: "即时通D500", antenna: "钻石506", power: "25W", remarks: "-" },
-  { date: "2026-07-20", time: "19:24", callsign: "BA4VEX", frequency: "430.610MHz", mode: "FM", report: "59", location: "江宁区", equipment: "UV-K6", antenna: "自制775拉杆", power: "5W", remarks: "-" },
-  { date: "2026-07-20", time: "19:26", callsign: "BG5GKM", frequency: "430.610MHz", mode: "FM", report: "59", location: "宁波", equipment: "HT链路", antenna: "-", power: "-", remarks: "-" },
-  { date: "2026-07-20", time: "19:30", callsign: "BA4VUD", frequency: "430.610MHz", mode: "FM", report: "59", location: "汉中门", equipment: "UV5R HAM", antenna: "805s", power: "10W", remarks: "-" },
-  { date: "2026-07-21", time: "-", callsign: "BG5WFD", frequency: "439.800MHz", mode: "FM", report: "59", location: "-", equipment: "-", antenna: "-", power: "-", remarks: "-" },
-  { date: "2026-07-22", time: "16:xx", callsign: "BG5VUQ", frequency: "439.800MHz", mode: "FM", report: "59", location: "海沧湾公园", equipment: "UVK1", antenna: "原装天线", power: "5W", remarks: "-" },
-  { date: "2026-07-25", time: "15:41", callsign: "BG5UUL", frequency: "439.800MHz", mode: "FM", report: "59", location: "厦门市海沧区", equipment: "摩托罗拉GP338", antenna: "原装天线", power: "H", remarks: "-" },
-  { date: "2026-07-26", time: "11:24", callsign: "BG5UUL", frequency: "439.800MHz", mode: "FM", report: "58", location: "厦门市海沧区", equipment: "摩托罗拉GP338", antenna: "原装天线", power: "H", remarks: "-" },
-  { date: "2026-10-24", time: "16:22", callsign: "BA4VTJ", frequency: "438.500MHz", mode: "FM", report: "59", location: "如意湖", equipment: "TK118", antenna: "770拉杆", power: "10W", remarks: "-" },
-];
-
-let allData = [...qslLogs];
-let filteredData = [...qslLogs];
-let currentSort = { column: null, direction: 'asc' };
-
-function compareLogDateTimeDesc(a, b) {
-  const aKey = `${a.date || ''} ${a.time || ''}`.trim();
-  const bKey = `${b.date || ''} ${b.time || ''}`.trim();
-  return aKey === bKey ? 0 : aKey < bKey ? 1 : -1;
-}
-
-// 初始化
-function init() {
-  populateFilterOptions();
-  calculateStats();
-  updateLastModified();
-  filteredData.sort(compareLogDateTimeDesc);
-  displayTable();
-  setupEventListeners();
-}
-
-// 更新最后修改时间
-function updateLastModified() {
-  const metaTag = document.querySelector('meta[property="article:modified_time"]');
-  let updateTime = '2026-02-23';
-
-  if (metaTag && metaTag.getAttribute('content')) {
-    const dateStr = metaTag.getAttribute('content');
-    updateTime = new Date(dateStr).toLocaleDateString('zh-CN');
-  } else {
-    if (allData.length > 0) {
-      const latest = [...allData].sort(compareLogDateTimeDesc)[0];
-      updateTime = latest.date || stationInfo.lastUpdate || updateTime;
-    } else if (stationInfo.lastUpdate) {
-      updateTime = stationInfo.lastUpdate;
-    }
-  }
-
-  document.getElementById('station-update').textContent = updateTime;
-}
-
-// 统计信息
-function calculateStats() {
-  const totalCounts = allData.length;
-  const uniqueCallsigns = new Set(allData.map(log => log.callsign)).size;
-  const uniqueFrequencies = new Set(allData.map(log => log.frequency)).size;
-  
-  document.getElementById('station-total').textContent = totalCounts;
-  document.getElementById('unique-callsigns').textContent = uniqueCallsigns;
-  document.getElementById('unique-frequencies').textContent = uniqueFrequencies;
-}
-
-// 填充筛选选项
-function populateFilterOptions() {
-  const frequencies = [...new Set(allData.map(log => log.frequency))].sort();
-  const modes = [...new Set(allData.map(log => log.mode))].sort();
-  
-  const freqSelect = document.getElementById('frequency-filter');
-  if (freqSelect) {
-    // 清除已有的选项（除了第一个默认选项）
-    while (freqSelect.options.length > 1) {
-      freqSelect.remove(1);
-    }
-    // 添加新选项
-    frequencies.forEach(freq => {
-      const option = document.createElement('option');
-      option.value = freq;
-      option.textContent = freq;
-      freqSelect.appendChild(option);
-    });
-  }
-  
-  const modeSelect = document.getElementById('mode-filter');
-  if (modeSelect) {
-    // 清除已有的选项（除了第一个默认选项）
-    while (modeSelect.options.length > 1) {
-      modeSelect.remove(1);
-    }
-    // 添加新选项
-    modes.forEach(mode => {
-      const option = document.createElement('option');
-      option.value = mode;
-      option.textContent = mode;
-      modeSelect.appendChild(option);
-    });
-  }
-}
-
-// 事件监听
-function setupEventListeners() {
-  const callsignFilter = document.getElementById('callsign-filter');
-  const frequencyFilter = document.getElementById('frequency-filter');
-  const modeFilter = document.getElementById('mode-filter');
-  
-  if (callsignFilter) {
-    callsignFilter.addEventListener('input', applyFilters);
-  }
-  if (frequencyFilter) {
-    frequencyFilter.addEventListener('change', applyFilters);
-  }
-  if (modeFilter) {
-    modeFilter.addEventListener('change', applyFilters);
-  }
-}
-
-// 应用筛选
-function applyFilters() {
-  const callsign = document.getElementById('callsign-filter').value.toUpperCase();
-  const frequency = document.getElementById('frequency-filter').value;
-  const mode = document.getElementById('mode-filter').value;
-  
-  filteredData = allData.filter(log => {
-    return (!callsign || log.callsign.toUpperCase().includes(callsign)) &&
-           (!frequency || log.frequency === frequency) &&
-           (!mode || log.mode === mode);
-  });
-
-  filteredData.sort(compareLogDateTimeDesc);
-  
-  displayTable();
-  updateFilterStatus();
-}
-
-// 更新筛选状态
-function updateFilterStatus() {
-  const callsign = document.getElementById('callsign-filter').value;
-  const frequency = document.getElementById('frequency-filter').value;
-  const mode = document.getElementById('mode-filter').value;
-  
-  const filters = [
-    callsign && `呼号: ${callsign}`,
-    frequency && `频率: ${frequency}`,
-    mode && `模式: ${mode}`
-  ].filter(f => f);
-  
-  const status = document.getElementById('filter-status');
-  if (filters.length > 0) {
-    status.textContent = `筛选: ${filters.join(' | ')}`;
-  } else {
-    status.textContent = '';
-  }
-}
-
-// 重置筛选
-function resetFilters() {
-  document.getElementById('callsign-filter').value = '';
-  document.getElementById('frequency-filter').value = '';
-  document.getElementById('mode-filter').value = '';
-  filteredData = [...allData];
-  currentSort = { column: null, direction: 'asc' };
-  document.querySelectorAll('.qsl-table th').forEach(th => {
-    th.classList.remove('sort-asc', 'sort-desc');
-  });
-  displayTable();
-  updateFilterStatus();
-}
-
-// 排序
-function sortTable(column) {
-  if (currentSort.column === column) {
-    currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
-  } else {
-    currentSort.column = column;
-    currentSort.direction = 'asc';
-  }
-  
-  filteredData.sort((a, b) => {
-    let aVal = a[column];
-    let bVal = b[column];
-    
-    if (!isNaN(aVal) && !isNaN(bVal)) {
-      aVal = parseFloat(aVal);
-      bVal = parseFloat(bVal);
-    }
-    
-    if (currentSort.direction === 'asc') {
-      return aVal > bVal ? 1 : -1;
-    } else {
-      return aVal < bVal ? 1 : -1;
-    }
-  });
-  
-  document.querySelectorAll('.qsl-table th').forEach(th => {
-    th.classList.remove('sort-asc', 'sort-desc');
-  });
-  
-  const th = document.querySelector(`.qsl-table th[onclick*="sortTable('${column}')"]`);
-  if (th) {
-    th.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
-  }
-  
-  displayTable();
-}
-
-// 显示表格
-function displayTable() {
-  const tbody = document.getElementById('qsl-table-body');
-  tbody.innerHTML = '';
-  
-  if (filteredData.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="11" class="no-data">未找到匹配的记录</td></tr>';
-  } else {
-    filteredData.forEach(log => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${log.date}</td>
-        <td>${log.time}</td>
-        <td><strong>${log.callsign}</strong></td>
-        <td>${log.frequency}</td>
-        <td>${log.mode}</td>
-        <td>${log.report}</td>
-        <td>${log.location}</td>
-        <td>${log.equipment}</td>
-        <td>${log.antenna}</td>
-        <td>${log.power}</td>
-        <td>${log.remarks}</td>
-      `;
-      tbody.appendChild(row);
-    });
-  }
-  
-  document.getElementById('displayed-count').textContent = filteredData.length;
-  document.getElementById('total-count').textContent = allData.length;
-}
-
-// 页面加载
-document.addEventListener('DOMContentLoaded', init);
-</script>
-
+            <table class="qsl-table">
+                <caption class="qsl-sr-only">BA4UHT 完整通联记录，时间均为北京时间（UTC+8）。点击呼号查看全部历史。每条记录直接显示设备、天线、功率和备注。</caption>
+                <colgroup><col class="qsl-col-datetime"><col class="qsl-col-callsign"><col class="qsl-col-frequency"><col class="qsl-col-report"><col class="qsl-col-location"><col class="qsl-col-equipment"><col class="qsl-col-antenna"><col class="qsl-col-power"><col class="qsl-col-remarks"></colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col" data-sort-column="datetime" aria-sort="descending"><button type="button" class="qsl-sort-button" data-sort="datetime">日期 / 时间 <i class="fas fa-arrow-down" aria-hidden="true"></i></button></th>
+                        <th scope="col" data-sort-column="callsign" aria-sort="none"><button type="button" class="qsl-sort-button" data-sort="callsign">呼号 <i class="fas fa-sort" aria-hidden="true"></i></button></th>
+                        <th scope="col" data-sort-column="frequency" aria-sort="none"><button type="button" class="qsl-sort-button" data-sort="frequency">频率 / 模式 <i class="fas fa-sort" aria-hidden="true"></i></button></th>
+                        <th scope="col">信号</th>
+                        <th scope="col">位置</th>
+                        <th scope="col">设备</th>
+                        <th scope="col">天线</th>
+                        <th scope="col">功率</th>
+                        <th scope="col">备注</th>
+                    </tr>
+                </thead>
+                <tbody id="qsl-table-body">
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-10-24">2026-10-24</time><span class="qsl-time qsl-mono">16:22</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BA4VTJ" aria-label="查看 BA4VTJ 的全部通联">BA4VTJ</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">438.500<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>如意湖</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>TK118</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>770拉杆</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">10W</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-07-26">2026-07-26</time><span class="qsl-time qsl-mono">11:24</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BG5UUL" aria-label="查看 BG5UUL 的全部通联">BG5UUL</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">439.800<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">58</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>厦门市海沧区</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>摩托罗拉GP338</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>原装天线</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">H</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-07-25">2026-07-25</time><span class="qsl-time qsl-mono">15:41</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BG5UUL" aria-label="查看 BG5UUL 的全部通联">BG5UUL</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">439.800<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>厦门市海沧区</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>摩托罗拉GP338</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>原装天线</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">H</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-07-22">2026-07-22</time><span class="qsl-time qsl-mono">16:xx</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BG5VUQ" aria-label="查看 BG5VUQ 的全部通联">BG5VUQ</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">439.800<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>海沧湾公园</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>UVK1</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>原装天线</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">5W</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-07-21">2026-07-21</time><span class="qsl-time qsl-mono">时间未记录</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BG5WFD" aria-label="查看 BG5WFD 的全部通联">BG5WFD</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">439.800<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>未记录</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>—</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>—</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">—</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-07-20">2026-07-20</time><span class="qsl-time qsl-mono">19:30</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BA4VUD" aria-label="查看 BA4VUD 的全部通联">BA4VUD</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>汉中门</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>UV5R HAM</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>805s</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">10W</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-07-20">2026-07-20</time><span class="qsl-time qsl-mono">19:26</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BG5GKM" aria-label="查看 BG5GKM 的全部通联">BG5GKM</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>宁波</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>HT链路</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>—</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">—</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-07-20">2026-07-20</time><span class="qsl-time qsl-mono">19:24</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BA4VEX" aria-label="查看 BA4VEX 的全部通联">BA4VEX</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>江宁区</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>UV-K6</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>自制775拉杆</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">5W</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-07-17">2026-07-17</time><span class="qsl-time qsl-mono">18:32</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BA4VUU" aria-label="查看 BA4VUU 的全部通联">BA4VUU</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>江东北路三岔河路口</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>即时通D500</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>钻石506</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">25W</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-06-14">2026-06-14</time><span class="qsl-time qsl-mono">15:49</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BA4UHI" aria-label="查看 BA4UHI 的全部通联">BA4UHI</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>宝华镇</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>UV5R</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>原装天线</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">L</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-05-16">2026-05-16</time><span class="qsl-time qsl-mono">12:24</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BA4RET" aria-label="查看 BA4RET 的全部通联">BA4RET</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">58</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>水游城</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>—</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>—</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">—</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-05-16">2026-05-16</time><span class="qsl-time qsl-mono">12:22</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BA4TJP" aria-label="查看 BA4TJP 的全部通联">BA4TJP</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">438.500<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>南京市江宁区</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>UV32R</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>五单元八木</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">10W</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-03-20">2026-03-20</time><span class="qsl-time qsl-mono">15:10</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BG7KEE" aria-label="查看 BG7KEE 的全部通联">BG7KEE</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>广东省珠海市</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>HT链路</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>—</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">—</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-03-10">2026-03-10</time><span class="qsl-time qsl-mono">21:34</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BH6SUC" aria-label="查看 BH6SUC 的全部通联">BH6SUC</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">58</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>湖北省黄石市</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>—</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>NR盒子</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">—</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-03-03">2026-03-03</time><span class="qsl-time qsl-mono">22:21</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BA4TLC" aria-label="查看 BA4TLC 的全部通联">BA4TLC</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>玄武湖</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>如意通6900</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>原装天线</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">2.5W</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-03-02">2026-03-02</time><span class="qsl-time qsl-mono">20:12</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BA4TMX" aria-label="查看 BA4TMX 的全部通联">BA4TMX</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>南京市鼓楼区</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>摩托罗拉P8668</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>原装天线</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">4W</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-03-02">2026-03-02</time><span class="qsl-time qsl-mono">20:05</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BA4UGF" aria-label="查看 BA4UGF 的全部通联">BA4UGF</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>南京市玄武区</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>摩托罗拉P8260</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>原装天线</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">H</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-02-23">2026-02-23</time><span class="qsl-time qsl-mono">14:33</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BG4ERI" aria-label="查看 BG4ERI 的全部通联">BG4ERI</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">438.550<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">59</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>无锡市滨湖区</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>ICOM7300</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>—</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">0.1W</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2026-01-04">2026-01-04</time><span class="qsl-time qsl-mono">18:45</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BG7KEE" aria-label="查看 BG7KEE 的全部通联">BG7KEE</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">—</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>深圳市南山区</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>如意通6900DMR</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>NR盒子</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">L</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2025-12-21">2025-12-21</time><span class="qsl-time qsl-mono">15:59</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BY2HIT" aria-label="查看 BY2HIT 的全部通联">BY2HIT</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">14.09<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FT8</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">-14</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>哈尔滨工程大学</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>—</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>—</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">15W</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>哈工大无线电俱乐部30周年生日快乐</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2025-12-06">2025-12-06</time><span class="qsl-time qsl-mono">21:54</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BA4TAQ" aria-label="查看 BA4TAQ 的全部通联">BA4TAQ</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">—</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>扬州市邗江区</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>UV-K6</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>770拉杆</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">5W</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2025-12-02">2025-12-02</time><span class="qsl-time qsl-mono">22:00</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BA4TMR" aria-label="查看 BA4TMR 的全部通联">BA4TMR</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">—</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>河海大学江宁校区</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>UV-K6</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>—</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">5W</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                    <tr class="qsl-data-row">
+                        <td class="qsl-cell-datetime"><time datetime="2025-11-28">2025-11-28</time><span class="qsl-time qsl-mono">12:55</span></td>
+                        <td class="qsl-cell-callsign"><button type="button" class="qsl-callsign qsl-mono" data-callsign="BA4QMP" aria-label="查看 BA4QMP 的全部通联">BA4QMP</button></td>
+                        <td class="qsl-cell-frequency"><span class="qsl-frequency qsl-mono">430.610<span class="qsl-unit"> MHz</span></span><span class="qsl-mode">FM</span></td>
+                        <td class="qsl-cell-report"><span class="qsl-mobile-label">信号 </span><span class="qsl-mono">—</span></td>
+                        <td class="qsl-cell-location"><span class="qsl-mobile-label">位置 </span>马群</td>
+                        <td class="qsl-cell-equipment"><span class="qsl-mobile-label">设备 </span>森海塞尔8800</td>
+                        <td class="qsl-cell-antenna"><span class="qsl-mobile-label">天线 </span>钻石AZ504</td>
+                        <td class="qsl-cell-power"><span class="qsl-mobile-label">功率 </span><span class="qsl-mono">5W</span></td>
+                        <td class="qsl-cell-remarks"><span class="qsl-mobile-label">备注 </span>—</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <div id="qsl-empty" class="qsl-empty" hidden>
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <h3>没有找到匹配的通联</h3>
+                <p id="qsl-empty-description">试试其他呼号，或放宽日期、频率和模式条件。</p>
+                <button type="button" class="qsl-button qsl-button-quiet" data-reset>清除筛选</button>
             </div>
-        </div>
+            <div class="qsl-logbook-footer"><span><i class="far fa-clock" aria-hidden="true"></i> 北京时间（UTC+8）</span><span>共 23 次电波中的相遇</span></div>
+            <noscript><p class="qsl-noscript">以上为完整通联记录。启用 JavaScript 后可使用筛选、排序和呼号历史查询。</p></noscript>
+        </section>
     </div>
+    <script id="qsl-log-data" type="application/json">[{"date":"2026-10-24","time":"16:22","callsign":"BA4VTJ","frequency":"438.500MHz","mode":"FM","report":"59","location":"如意湖","equipment":"TK118","antenna":"770拉杆","power":"10W","remarks":"-"},{"date":"2026-07-26","time":"11:24","callsign":"BG5UUL","frequency":"439.800MHz","mode":"FM","report":"58","location":"厦门市海沧区","equipment":"摩托罗拉GP338","antenna":"原装天线","power":"H","remarks":"-"},{"date":"2026-07-25","time":"15:41","callsign":"BG5UUL","frequency":"439.800MHz","mode":"FM","report":"59","location":"厦门市海沧区","equipment":"摩托罗拉GP338","antenna":"原装天线","power":"H","remarks":"-"},{"date":"2026-07-22","time":"16:xx","callsign":"BG5VUQ","frequency":"439.800MHz","mode":"FM","report":"59","location":"海沧湾公园","equipment":"UVK1","antenna":"原装天线","power":"5W","remarks":"-"},{"date":"2026-07-21","time":"-","callsign":"BG5WFD","frequency":"439.800MHz","mode":"FM","report":"59","location":"-","equipment":"-","antenna":"-","power":"-","remarks":"-"},{"date":"2026-07-20","time":"19:30","callsign":"BA4VUD","frequency":"430.610MHz","mode":"FM","report":"59","location":"汉中门","equipment":"UV5R HAM","antenna":"805s","power":"10W","remarks":"-"},{"date":"2026-07-20","time":"19:26","callsign":"BG5GKM","frequency":"430.610MHz","mode":"FM","report":"59","location":"宁波","equipment":"HT链路","antenna":"-","power":"-","remarks":"-"},{"date":"2026-07-20","time":"19:24","callsign":"BA4VEX","frequency":"430.610MHz","mode":"FM","report":"59","location":"江宁区","equipment":"UV-K6","antenna":"自制775拉杆","power":"5W","remarks":"-"},{"date":"2026-07-17","time":"18:32","callsign":"BA4VUU","frequency":"430.610MHz","mode":"FM","report":"59","location":"江东北路三岔河路口","equipment":"即时通D500","antenna":"钻石506","power":"25W","remarks":"-"},{"date":"2026-06-14","time":"15:49","callsign":"BA4UHI","frequency":"430.610MHz","mode":"FM","report":"59","location":"宝华镇","equipment":"UV5R","antenna":"原装天线","power":"L","remarks":"-"},{"date":"2026-05-16","time":"12:24","callsign":"BA4RET","frequency":"430.610MHz","mode":"FM","report":"58","location":"水游城","equipment":"-","antenna":"-","power":"-","remarks":"-"},{"date":"2026-05-16","time":"12:22","callsign":"BA4TJP","frequency":"438.500MHz","mode":"FM","report":"59","location":"南京市江宁区","equipment":"UV32R","antenna":"五单元八木","power":"10W","remarks":"-"},{"date":"2026-03-20","time":"15:10","callsign":"BG7KEE","frequency":"430.610MHz","mode":"FM","report":"59","location":"广东省珠海市","equipment":"HT链路","antenna":"-","power":"-","remarks":"-"},{"date":"2026-03-10","time":"21:34","callsign":"BH6SUC","frequency":"430.610MHz","mode":"FM","report":"58","location":"湖北省黄石市","equipment":"-","antenna":"NR盒子","power":"-","remarks":"-"},{"date":"2026-03-03","time":"22:21","callsign":"BA4TLC","frequency":"430.610MHz","mode":"FM","report":"59","location":"玄武湖","equipment":"如意通6900","antenna":"原装天线","power":"2.5W","remarks":"-"},{"date":"2026-03-02","time":"20:12","callsign":"BA4TMX","frequency":"430.610MHz","mode":"FM","report":"59","location":"南京市鼓楼区","equipment":"摩托罗拉P8668","antenna":"原装天线","power":"4W","remarks":"-"},{"date":"2026-03-02","time":"20:05","callsign":"BA4UGF","frequency":"430.610MHz","mode":"FM","report":"59","location":"南京市玄武区","equipment":"摩托罗拉P8260","antenna":"原装天线","power":"H","remarks":"-"},{"date":"2026-02-23","time":"14:33","callsign":"BG4ERI","frequency":"438.550MHz","mode":"FM","report":"59","location":"无锡市滨湖区","equipment":"ICOM7300","antenna":"-","power":"0.1W","remarks":"-"},{"date":"2026-01-04","time":"18:45","callsign":"BG7KEE","frequency":"430.610MHz","mode":"FM","report":"-","location":"深圳市南山区","equipment":"如意通6900DMR","antenna":"NR盒子","power":"L","remarks":"-"},{"date":"2025-12-21","time":"15:59","callsign":"BY2HIT","frequency":"14.09MHz","mode":"FT8","report":"-14","location":"哈尔滨工程大学","equipment":"-","antenna":"-","power":"15W","remarks":"哈工大无线电俱乐部30周年生日快乐"},{"date":"2025-12-06","time":"21:54","callsign":"BA4TAQ","frequency":"430.610MHz","mode":"FM","report":"-","location":"扬州市邗江区","equipment":"UV-K6","antenna":"770拉杆","power":"5W","remarks":"-"},{"date":"2025-12-02","time":"22:00","callsign":"BA4TMR","frequency":"430.610MHz","mode":"FM","report":"-","location":"河海大学江宁校区","equipment":"UV-K6","antenna":"-","power":"5W","remarks":"-"},{"date":"2025-11-28","time":"12:55","callsign":"BA4QMP","frequency":"430.610MHz","mode":"FM","report":"-","location":"马群","equipment":"森海塞尔8800","antenna":"钻石AZ504","power":"5W","remarks":"-"}]</script>
 </main>
-
-<style>
-/* QSL页面额外样式 */
-.qsl-page-container {
-    max-width: 1400px !important;
-}
-
-.qsl-page-container .card {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-radius: 4px;
-}
-
-.qsl-page-container .card-content {
-    padding: 0;
-}
-
-/* 确保qsl-container内容正确显示 */
-.qsl-container {
-    padding: 20px !important;
-}
-
-/* 强制应用station-info样式 */
-.station-info {
-    background: linear-gradient(135deg, #4b68e9 0%, #4bb66f 100%) !important;
-    color: white !important;
-    border-radius: 12px !important;
-    padding: 30px !important;
-    margin-bottom: 30px !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
-}
-
-.station-info h3 {
-    margin-top: 0 !important;
-    font-size: 24px !important;
-    margin-bottom: 20px !important;
-    border-bottom: 2px solid rgba(255,255,255,0.3) !important;
-    padding-bottom: 10px !important;
-    color: white !important;
-}
-
-/* 强制info-row使用grid */
-.info-row {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-    gap: 20px !important;
-    margin-bottom: 10px !important;
-}
-
-.info-item {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 4px !important;
-}
-
-.info-label {
-    font-weight: 600 !important;
-    font-size: 12px !important;
-    text-transform: uppercase !important;
-    opacity: 0.9 !important;
-    letter-spacing: 0.5px !important;
-}
-
-.info-value {
-    font-size: 15px !important;
-    word-break: break-word !important;
-}
-
-.info-value a {
-    color: #fff !important;
-    text-decoration: none !important;
-    border-bottom: 1px solid rgba(255,255,255,0.5) !important;
-}
-
-/* 强制stats-panel使用grid */
-.stats-panel {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
-    gap: 15px !important;
-    margin-top: 20px !important;
-    padding-top: 20px !important;
-    border-top: 1px solid rgba(255,255,255,0.2) !important;
-}
-
-.stat-item {
-    text-align: center !important;
-}
-
-.stat-value {
-    font-size: 28px !important;
-    font-weight: bold !important;
-    margin-bottom: 5px !important;
-}
-
-.stat-label {
-    font-size: 12px !important;
-    opacity: 0.85 !important;
-}
-
-/* 筛选区域样式 */
-.filter-section {
-    background: white !important;
-    border: 1px solid #e0e0e0 !important;
-    border-radius: 12px !important;
-    padding: 20px !important;
-    margin-bottom: 20px !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr auto auto !important;
-    gap: 15px !important;
-    align-items: flex-end !important;
-}
-
-.filter-group {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    width: 100% !important;
-    min-width: 0 !important;
-}
-
-.filter-label {
-    font-weight: 600 !important;
-    font-size: 13px !important;
-    color: #333 !important;
-}
-
-.filter-input,
-.filter-select {
-    padding: 10px 12px !important;
-    border: 1px solid #ddd !important;
-    border-radius: 6px !important;
-    font-size: 14px !important;
-    transition: all 0.3s !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    background-color: white !important;
-    color: #333 !important;
-    display: block !important;
-    min-height: 40px !important;
-    cursor: pointer !important;
-    appearance: auto !important;
-    -webkit-appearance: auto !important;
-    -moz-appearance: auto !important;
-}
-
-.filter-input:focus,
-.filter-select:focus {
-    outline: none !important;
-    border-color: #667eea !important;
-    box-shadow: 0 0 0 3px rgba(102,126,234,0.1) !important;
-}
-
-.filter-button {
-    padding: 10px 20px !important;
-    background: #667eea !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 6px !important;
-    cursor: pointer !important;
-    font-weight: 600 !important;
-    transition: all 0.3s !important;
-    font-size: 14px !important;
-    height: 40px !important;
-    white-space: nowrap !important;
-}
-
-.filter-button:hover {
-    background: #5568d3 !important;
-    box-shadow: 0 4px 12px rgba(102,126,234,0.4) !important;
-}
-
-.filter-button.reset {
-    background: #999 !important;
-}
-
-.filter-button.reset:hover {
-    background: #777 !important;
-}
-
-.filter-button.export {
-    background: #48bb78 !important;
-}
-
-.filter-button.export:hover {
-    background: #38a169 !important;
-}
-
-/* 响应式调整 */
-@media (max-width: 992px) {
-    .qsl-page-container {
-        max-width: 100% !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .info-row {
-        grid-template-columns: 1fr !important;
-    }
-    
-    .stats-panel {
-        grid-template-columns: 1fr !important;
-    }
-    
-    .filter-section {
-        flex-direction: column !important;
-        grid-template-columns: 1fr !important;
-    }
-    
-    .filter-group {
-        width: 100% !important;
-    }
-    
-    .filter-button {
-        width: 100% !important;
-    }
-}
-</style>
-
-<script>
-// 立即阻止Materialize处理QSL页面的select框 - 在jQuery加载后立即执行
-(function() {
-    // 保存原始的Materialize FormSelect构造函数
-    var originalFormSelect = null;
-    
-    // 钩子到jQuery的ready中
-    var $document = $(document);
-    var oldReady = $.ready.promise;
-    
-    // 在Materialize初始化前移除select框的特殊类
-    function cleanupSelects() {
-        const selects = document.querySelectorAll('#frequency-filter, #mode-filter');
-        selects.forEach(select => {
-            // 移除任何Materialize添加的类
-            select.classList.remove('initialized');
-            select.classList.remove('select-wrapper');
-            
-            // 移除相邻的Materialize元素
-            let sibling = select.nextElementSibling;
-            while (sibling) {
-                if (sibling.classList && (
-                    sibling.classList.contains('caret') || 
-                    sibling.classList.contains('select-wrapper') || 
-                    sibling.classList.contains('dropdown-trigger') ||
-                    sibling.classList.contains('select-dropdown')
-                )) {
-                    sibling.remove();
-                    sibling = select.nextElementSibling;
-                } else {
-                    break;
-                }
-            }
-            
-            // 确保select框本身可见
-            select.style.display = 'block';
-            select.style.visibility = 'visible';
-            select.style.opacity = '1';
-            select.style.position = 'relative';
-            select.style.zIndex = '200';
-        });
-    }
-    
-    // 在document ready时运行
-    $(document).ready(function() {
-        cleanupSelects();
-        
-        // 每100ms检查一次，防止Materialize重新处理
-        setInterval(cleanupSelects, 100);
-    });
-    
-    // 也在load事件时运行
-    window.addEventListener('load', function() {
-        setTimeout(cleanupSelects, 100);
-    });
-    
-    // 对MutationObserver的支持，监听DOM变化
-    if (window.MutationObserver) {
-        var observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                if (mutation.type === 'childList') {
-                    cleanupSelects();
-                }
-            });
-        });
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true,
-                attributes: false
-            });
-        });
-    }
-})();
-</script>
+<script src="/js/qsl.js" defer></script>
 
 
     <footer class="page-footer bg-color">
