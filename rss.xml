@@ -9,8 +9,62 @@
     <atom:link href="https://tukwhy.top/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>tukwhy&#39;s blog</description>
-    <pubDate>Mon, 31 Aug 2026 02:52:49 GMT</pubDate>
+    <pubDate>Thu, 05 Nov 2026 14:53:47 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>一点关于爱的胡乱思考</title>
+      <link>https://tukwhy.top/what-is-love/</link>
+      <guid>https://tukwhy.top/what-is-love/</guid>
+      <pubDate>Thu, 05 Nov 2026 14:00:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;表白墙好像突然回到了大表白时代。读了很多大作文，以及过去半年感觉接触了各种各样的例子，思考良久，得出了以下的一家之言。&lt;/p&gt;
+&lt;p&gt;我理解很多人可能对于异性，满足喜欢这一点，就能all in了。我曾经也是这样想的，直到后来我终于发现我并不适合柏拉图式的恋爱。所以我的故事暂</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>表白墙好像突然回到了大表白时代。读了很多大作文，以及过去半年感觉接触了各种各样的例子，思考良久，得出了以下的一家之言。</p><p>我理解很多人可能对于异性，满足喜欢这一点，就能all in了。我曾经也是这样想的，直到后来我终于发现我并不适合柏拉图式的恋爱。所以我的故事暂时结束了，我也得出了一个阶段性的结论，我或许不只是在寻找那个我喜欢的人，而是寻找一个有可能陪伴我一生的人。</p><p>普通朋友其实在人生中来了又去，真正能找到陪伴一生的挚友吗？网络上的各种《读者》式的推送告诉我是可能的，但是从我的观察来看，或许这只是幸存者偏差。我时常能感觉到，我缺少的其实是那种随时能呼唤，随时能依靠的朋友，因为我时常感觉我在自己独吞孤独。</p><p>海豹：“谈了恋爱兄弟也不会跑的。”</p><p>鬼话。</p><p>我觉得我缺少的其实是志趣相投，并且可以无条件陪伴的朋友。这是一种非常稳定的朋友关系，稳定到除非它是一种已经经过时间沉淀进入的稳态，那么必须要靠一种外部刺激来保证这种稳态，暂时的稳态（亚稳态）。</p><p>那么这种外部刺激其实就是爱情。只有爱的那种感觉可以迅速地让友谊进入这种阶段，并可能保证长期的维持。</p><p>在我的观点中，谈恋爱就是为了找到人生的另一半去的，而另一半正是能稳定保证这种陪伴关系的人。</p><p>可惜的是，恋爱本身并不能保证这种关系，暧昧与热恋期带来的大量荷尔蒙分泌，可能会让你误以为这件事情就是水到渠成的，自然而然的，直到麻痹之后现实问题一件件暴露，让这种看似稳固的关系迎风摇曳。</p><p>看到有人在表白墙问，过了暧昧期热恋期，没感觉了怎么办。大家的回复很一致，当朋友处。很显然这个时候这种稳固的关系已经建立了，这其实就是我觉得的恋爱最终的理想的状态。</p>]]></content:encoded>
+      
+      
+      <category domain="https://tukwhy.top/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</category>
+      
+      
+      <category domain="https://tukwhy.top/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</category>
+      
+      
+      <comments>https://tukwhy.top/what-is-love/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>NJU-Connect</title>
+      <link>https://tukwhy.top/nju-connect/</link>
+      <guid>https://tukwhy.top/nju-connect/</guid>
+      <pubDate>Thu, 08 Oct 2026 09:00:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;呢喃更新了vpn平台，使用全新的atrust进行连接。除了依旧全局代理之外，还有神秘的自启动死活关不掉。于是彻底抛弃atrust，延续原来easier-connect的思路，重新vibe了一套东西，我们暂且称呼为nju-connect。&lt;/p&gt;
+&lt;p&gt;依旧是对原有的&lt;a h</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>呢喃更新了vpn平台，使用全新的atrust进行连接。除了依旧全局代理之外，还有神秘的自启动死活关不掉。于是彻底抛弃atrust，延续原来easier-connect的思路，重新vibe了一套东西，我们暂且称呼为nju-connect。</p><p>依旧是对原有的<a href="https://github.com/Mythologyli/zju-connect">zju-connect</a>进行大魔改，获取到ip网段之后塞进clash的mixin进行分流，这样就能在不使用全局代理的情况下，自动分流校内地址访问和和常规代理访问了。并且规则可以自动检测脚本是否启动，在未启动的情况下继续直连访问。</p><p>项目已开源到<a href="https://github.com/tukwhy/NJU-Connect">NJU-Connect</a>。</p>]]></content:encoded>
+      
+      
+      <category domain="https://tukwhy.top/categories/%E6%8A%98%E8%85%BE/">折腾</category>
+      
+      
+      <category domain="https://tukwhy.top/tags/%E7%BD%91%E7%BB%9C/">网络</category>
+      
+      
+      <comments>https://tukwhy.top/nju-connect/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>再别康桥</title>
@@ -89,6 +143,8 @@
       <category domain="https://tukwhy.top/tags/nas/">nas</category>
       
       <category domain="https://tukwhy.top/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/">云服务</category>
+      
+      <category domain="https://tukwhy.top/tags/%E7%BD%91%E7%BB%9C/">网络</category>
       
       
       <comments>https://tukwhy.top/cloud-service2/#disqus_thread</comments>
@@ -203,6 +259,8 @@
       <category domain="https://tukwhy.top/tags/nas/">nas</category>
       
       <category domain="https://tukwhy.top/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/">云服务</category>
+      
+      <category domain="https://tukwhy.top/tags/%E7%BD%91%E7%BB%9C/">网络</category>
       
       
       <comments>https://tukwhy.top/cloud-service/#disqus_thread</comments>

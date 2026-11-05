@@ -6,7 +6,7 @@
   <link href="https://tukwhy.top/atom.xml" rel="self"/>
   
   <link href="https://tukwhy.top/"/>
-  <updated>2026-08-31T02:52:49.338Z</updated>
+  <updated>2026-11-05T14:53:47.011Z</updated>
   <id>https://tukwhy.top/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一点关于爱的胡乱思考</title>
+    <link href="https://tukwhy.top/what-is-love/"/>
+    <id>https://tukwhy.top/what-is-love/</id>
+    <published>2026-11-05T14:00:00.000Z</published>
+    <updated>2026-11-05T14:53:47.011Z</updated>
+    
+    <content type="html"><![CDATA[<p>表白墙好像突然回到了大表白时代。读了很多大作文，以及过去半年感觉接触了各种各样的例子，思考良久，得出了以下的一家之言。</p><p>我理解很多人可能对于异性，满足喜欢这一点，就能all in了。我曾经也是这样想的，直到后来我终于发现我并不适合柏拉图式的恋爱。所以我的故事暂时结束了，我也得出了一个阶段性的结论，我或许不只是在寻找那个我喜欢的人，而是寻找一个有可能陪伴我一生的人。</p><p>普通朋友其实在人生中来了又去，真正能找到陪伴一生的挚友吗？网络上的各种《读者》式的推送告诉我是可能的，但是从我的观察来看，或许这只是幸存者偏差。我时常能感觉到，我缺少的其实是那种随时能呼唤，随时能依靠的朋友，因为我时常感觉我在自己独吞孤独。</p><p>海豹：“谈了恋爱兄弟也不会跑的。”</p><p>鬼话。</p><p>我觉得我缺少的其实是志趣相投，并且可以无条件陪伴的朋友。这是一种非常稳定的朋友关系，稳定到除非它是一种已经经过时间沉淀进入的稳态，那么必须要靠一种外部刺激来保证这种稳态，暂时的稳态（亚稳态）。</p><p>那么这种外部刺激其实就是爱情。只有爱的那种感觉可以迅速地让友谊进入这种阶段，并可能保证长期的维持。</p><p>在我的观点中，谈恋爱就是为了找到人生的另一半去的，而另一半正是能稳定保证这种陪伴关系的人。</p><p>可惜的是，恋爱本身并不能保证这种关系，暧昧与热恋期带来的大量荷尔蒙分泌，可能会让你误以为这件事情就是水到渠成的，自然而然的，直到麻痹之后现实问题一件件暴露，让这种看似稳固的关系迎风摇曳。</p><p>看到有人在表白墙问，过了暧昧期热恋期，没感觉了怎么办。大家的回复很一致，当朋友处。很显然这个时候这种稳固的关系已经建立了，这其实就是我觉得的恋爱最终的理想的状态。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;表白墙好像突然回到了大表白时代。读了很多大作文，以及过去半年感觉接触了各种各样的例子，思考良久，得出了以下的一家之言。&lt;/p&gt;
+&lt;p&gt;我理解很多人可能对于异性，满足喜欢这一点，就能all in了。我曾经也是这样想的，直到后来我终于发现我并不适合柏拉图式的恋爱。所以我的故事暂</summary>
+      
+    
+    
+    
+    <category term="碎碎念" scheme="https://tukwhy.top/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+    <category term="碎碎念" scheme="https://tukwhy.top/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NJU-Connect</title>
+    <link href="https://tukwhy.top/nju-connect/"/>
+    <id>https://tukwhy.top/nju-connect/</id>
+    <published>2026-10-08T09:00:00.000Z</published>
+    <updated>2026-11-05T14:55:28.968Z</updated>
+    
+    <content type="html"><![CDATA[<p>呢喃更新了vpn平台，使用全新的atrust进行连接。除了依旧全局代理之外，还有神秘的自启动死活关不掉。于是彻底抛弃atrust，延续原来easier-connect的思路，重新vibe了一套东西，我们暂且称呼为nju-connect。</p><p>依旧是对原有的<a href="https://github.com/Mythologyli/zju-connect">zju-connect</a>进行大魔改，获取到ip网段之后塞进clash的mixin进行分流，这样就能在不使用全局代理的情况下，自动分流校内地址访问和和常规代理访问了。并且规则可以自动检测脚本是否启动，在未启动的情况下继续直连访问。</p><p>项目已开源到<a href="https://github.com/tukwhy/NJU-Connect">NJU-Connect</a>。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;呢喃更新了vpn平台，使用全新的atrust进行连接。除了依旧全局代理之外，还有神秘的自启动死活关不掉。于是彻底抛弃atrust，延续原来easier-connect的思路，重新vibe了一套东西，我们暂且称呼为nju-connect。&lt;/p&gt;
+&lt;p&gt;依旧是对原有的&lt;a h</summary>
+      
+    
+    
+    
+    <category term="折腾" scheme="https://tukwhy.top/categories/%E6%8A%98%E8%85%BE/"/>
+    
+    
+    <category term="网络" scheme="https://tukwhy.top/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>再别康桥</title>
@@ -72,7 +122,7 @@
     <link href="https://tukwhy.top/cloud-service2/"/>
     <id>https://tukwhy.top/cloud-service2/</id>
     <published>2026-05-22T16:30:00.000Z</published>
-    <updated>2026-05-22T16:35:06.589Z</updated>
+    <updated>2026-11-05T14:44:01.439Z</updated>
     
     <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>上家云服务因为宁波区大手收紧，FRP的对等流量业务被发现了，因此服务器就4了。由于没有办法完整迁移服务器到阿里云的新服务器上，因此选择了重开。</p><h2 id="结构改变"><a href="#结构改变" class="headerlink" title="结构改变"></a>结构改变</h2><p>总体结构和实现思路完全没有变化，区别在于这次三个子域名的访问全部接入1Panel，然后创建三个独立的站点（静态页面），然后通过编写不同的配置文件实现不同的跳转功能。</p><p><img src="/cloud-service2/image.png" alt="结构拓扑图"></p><p>至于这次为什么这么设计……因为我换了一个AI（）</p><p>这么做的好处是彻底隔离了三个子域名的访问，并且全部同时支持了http和https协议，并且对于FRP的端口有了更严格的阻断，全部经过配置文件的转发流入FRPS的虚拟隧道，阻断不许可的端口和协议。非http/https协议的FRP依旧是直接暴露在公网。</p><p>这个做法和之前拥有同样的缺点，一个端口不能同时被两个nginx进程监听，因此使用i和o子域名访问nas的同一个端口时必须在外部使用不同的端口。</p><h2 id="神秘小bug"><a href="#神秘小bug" class="headerlink" title="神秘小bug"></a>神秘小bug</h2><p>由于webdav和管理页面全部走的是http协议，如果frpc直接连接frps，在直接指定外网域名的情况下，进入内部虚拟隧道的转发流量会被全部裁切掉端口号信息，转发出来之后的流量自动匹配的端口号优先匹配了管理页面的http，因此即使外部访问了webdav的端口仍会跳转出管理页面。</p><p>解决办法是在frp的连接中定义虚拟的域名作为区分。</p><p>frpc</p><pre><code class="language-toml">[[proxies]]name = "admin"type = "http"localIP = "127.0.0.1"localPort = 1145customDomains = ["admin.fnos"][[proxies]]name = "webdav"type = "http"localIP = "127.0.0.1"localPort = 1919customDomains = ["webdav.fnos"]</code></pre><p>nginx</p><pre><code class="language-nginx">location / {        # 默认阻断        set $frp_host "block";                # 1. 如果是控制台端口进来的流量，把 Host 改写为 admin.fnos        if ($server_port ~* "^(1145)$") {            set $frp_host "admin.fnos";        }                # 2. 如果是 WebDAV 端口进来的流量，把 Host 改写为 webdav.fnos        if ($server_port ~* "^(1919)$") {            set $frp_host "webdav.fnos";        }        # 安全防空机制：如果有人敲 80/443，直接挂断        if ($frp_host = "block") {            return 444;        }        proxy_pass http://127.0.0.1:8080; # 虚拟隧道        proxy_set_header Host $frp_host;                proxy_ssl_verify off; # 防止网站ssl证书和fnos管理页自签证书不匹配被阻断连接    }</code></pre>]]></content>
     
@@ -90,6 +140,8 @@
     <category term="nas" scheme="https://tukwhy.top/tags/nas/"/>
     
     <category term="云服务" scheme="https://tukwhy.top/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/"/>
+    
+    <category term="网络" scheme="https://tukwhy.top/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -178,7 +230,7 @@
     <link href="https://tukwhy.top/cloud-service/"/>
     <id>https://tukwhy.top/cloud-service/</id>
     <published>2026-03-08T13:45:00.000Z</published>
-    <updated>2026-03-08T13:45:20.000Z</updated>
+    <updated>2026-11-05T14:44:00.851Z</updated>
     
     <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>原来的NAS放家里，是退役台式机改的，并且享有尊贵的公网IP。由于近几年公网IP逐渐限制，即是现在仍然拥有公网IP，但是很多端口已经封死，原先的ftp端口稳定性极差。加之Windows系统与台式机的组合功耗巨大，系统盘也达到了接近报废的健康度，于是下了二百大洋血本，从海鲜市场严肃购入双盘位J3160NAS小主机，并继承了原来的16t企业盘。并且为了尽可能利用学校<del>免费</del>（大概是吧）的高上行带宽，于是选择把NAS部署在网络环境较为稳定的社团工作室。</p><h2 id="NAS配置"><a href="#NAS配置" class="headerlink" title="NAS配置"></a>NAS配置</h2><p>非常简单啊，就是一个飞牛OS。但是呢，预装的系统用一整个盘作为系统分区，因此没有地方开存储空间放应用了（飞牛严格的文件安全要求应用数据必须存放于存储空间），于是就这样水灵灵的重开了。</p><p>另外飞牛仅支持挂载NTFS分区磁盘，不支持在上面创建存储空间。所以企业盘也重开了。。。</p><p>其他的就非常简单了，该开的端口打开，就可以内网访问了。</p><h2 id="外网访问"><a href="#外网访问" class="headerlink" title="外网访问"></a>外网访问</h2><p>显然绝大多数时候都是外网访问的场景，那么必须要做一些外网访问的工作了。把要用的端口在路由器防火墙上库库一通放行。</p><h3 id="总体结构"><a href="#总体结构" class="headerlink" title="总体结构"></a>总体结构</h3><p><img src="/cloud-service/cloud-service-1.png"></p><h3 id="校外访问"><a href="#校外访问" class="headerlink" title="校外访问"></a>校外访问</h3><p>理论上是可以直接zerotier或者tailscale打洞，但是网速实在是感人。所以这次直接借用云服务较大的带宽做了frp反代。用了一个子域名作为区分，加上指定端口就可以反代到NAS主机上了。由于主站是基于1panel的openresty插件搭的，里面的nginx配置文件过于沟槽（大概是套了三层），导致stream模块没有办法在主站的conf下面运行，所以不得已只能放弃对于子域名的强制限制。</p><h3 id="校内访问"><a href="#校内访问" class="headerlink" title="校内访问"></a>校内访问</h3><p>理论上是可以通过内网IP直接访问的，但是为了<del>保证访问的优雅性</del>（其实是IP分流做不了了），所以另外开了一个子域名。通过增加nginx配置内容，就可以实现使用子域名加指定端口访问http协议的内容就可以直接被重定向到校内IP。</p><h3 id="沟槽的校园网"><a href="#沟槽的校园网" class="headerlink" title="沟槽的校园网"></a>沟槽的校园网</h3><p>为什么做不了IP分流？因为校园网是BGP，说不定就走移动的端口就出去了，这样的话就不像教育网一样可以走固定的IP范围出来了，分流就白做了。另外，校内部分IP地址之间由于沟槽的内网/dockerIP与校园网IP冲突导致回包被截胡因此并不互通，这种场景下与其自动分流不如手动选择直连还是frp。最后还预留了类似ddns的功能，在NAS校内IP变化之后可以自动上传云服务并修改重定向的目标IP。</p>]]></content>
     
@@ -196,6 +248,8 @@
     <category term="nas" scheme="https://tukwhy.top/tags/nas/"/>
     
     <category term="云服务" scheme="https://tukwhy.top/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/"/>
+    
+    <category term="网络" scheme="https://tukwhy.top/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
