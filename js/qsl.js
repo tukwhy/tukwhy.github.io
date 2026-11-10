@@ -75,7 +75,7 @@
 
     function render() {
         [startInput, endInput].forEach(input => {
-            page.querySelector(`[data-date-display="${input.id}"]`).textContent = input.value || '年-月-日';
+            page.querySelector(`[data-date-display="${input.id}"]`).textContent = input.value ? input.value.replace(/-/g, '.') : 'yyyy.mm.dd';
             input.parentElement.classList.toggle('has-value', Boolean(input.value));
         });
         const query = callsignInput.value.trim().toUpperCase();
