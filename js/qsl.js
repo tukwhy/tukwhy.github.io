@@ -74,6 +74,10 @@
     }
 
     function render() {
+        [startInput, endInput].forEach(input => {
+            page.querySelector(`[data-date-display="${input.id}"]`).textContent = input.value || '年-月-日';
+            input.parentElement.classList.toggle('has-value', Boolean(input.value));
+        });
         const query = callsignInput.value.trim().toUpperCase();
         const invalidDates = Boolean(startInput.value && endInput.value && startInput.value > endInput.value);
         dateError.hidden = !invalidDates;
@@ -137,6 +141,23 @@
         render();
     }));
     sortInput.addEventListener('change', render);
+    [startInput, endInput].forEach(input => {
+        input.addEventListener('input', () => {
+            exactCallsign = '';
+            render();
+        });
+        const openCalendar = () => {
+            if (typeof input.showPicker !== 'function') return;
+            try { input.showPicker(); } catch (_) { /* Native input remains available as a fallback. */ }
+        };
+        input.addEventListener('click', openCalendar);
+        input.addEventListener('keydown', event => {
+            if ((event.key === 'Enter' || event.key === ' ') && typeof input.showPicker === 'function') {
+                event.preventDefault();
+                openCalendar();
+            }
+        });
+    });
 
     page.addEventListener('click', event => {
         const button = event.target.closest('button');
@@ -159,5 +180,6 @@
         }
     });
 
+    page.classList.add('qsl-date-enhanced');
     render();
 })();

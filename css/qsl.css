@@ -107,6 +107,16 @@ body.DarkMode .qsl-hero {
 .qsl-filter-secondary { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-top: 14px; }
 .qsl-date-range { display: grid; grid-template-columns: minmax(0, 172px) auto minmax(0, 172px); align-items: end; gap: 10px; min-width: 0; }
 .qsl-date-range input { font-variant-numeric: tabular-nums; }
+.qsl-date-control { position: relative; display: block; min-width: 0; }
+.qsl-page .qsl-date-display { display: none; }
+.qsl-page.qsl-date-enhanced .qsl-date-display { display: flex; align-items: center; justify-content: space-between; gap: 6px; pointer-events: none; color: var(--qsl-muted); font-variant-numeric: tabular-nums; }
+.qsl-page.qsl-date-enhanced .qsl-date-control input { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.qsl-date-display > span { white-space: nowrap; }
+.qsl-date-display > i { flex-shrink: 0; font-size: 13px; color: var(--qsl-muted); }
+.qsl-page.qsl-date-enhanced .qsl-date-control.has-value .qsl-date-display { color: var(--qsl-ink); }
+.qsl-page .qsl-date-control:focus-within .qsl-date-display { border-color: var(--qsl-blue); box-shadow: 0 0 0 3px var(--qsl-tint); }
+.qsl-page .qsl-date-control:has(input[aria-invalid="true"]) .qsl-date-display { border-color: #b42318; }
+body.DarkMode .qsl-page .qsl-date-control:has(input[aria-invalid="true"]) .qsl-date-display { border-color: #fda4af; }
 .qsl-date-separator { padding-bottom: 12px; color: var(--qsl-muted); }
 .qsl-page .qsl-form-error { margin-top: 10px; color: #b42318; font-size: 12px; }
 .qsl-page .qsl-control[aria-invalid="true"] { border-color: #b42318; }
